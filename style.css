@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.time-slots {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.time-slot {
+    padding: 10px 15px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.time-slot:hover {
+    background: #ddd;
+}
+
+.schedule {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
