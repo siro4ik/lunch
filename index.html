@@ -3,17 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>График обедов</title>
 </head>
 <body>
 
-    <h1>Когда ты идешь на обед?</h1>
-    <input type="time" id="startTimePicker">
-    <input type="time" id="endTimePicker">
+    <h1>🍎 График обедов 🍏</h1>
+    <div class="controls"></div>
+    <input type="text" placeholder="Ваше имя" id="userName">
+    <input type="time" id="start" min="00:00" max="23:30">
+    <input type="time" id="end" min="00:30" max="24:00">
+    <button onclick="addLunch()">Добавить обед</button>
 
-    <button id="confrmBtn">Выбрать</button>
+<table id="calendar">
+    <thead>
+        <tr>
+            <th>Время</th>
+            <th>Понедельник</th>
+            <th>Вторник</th>
+            <th>Среда</th>
+            <th>Четверг</th>
+            <th>Пятница</th>
+            <th>Суббота</th>
+            <th>Воскресенье</th>
+        </tr>
+    </thead>
+    <tbody id="slots">
 
-    <div class="result"></div>
+    </tbody>
+</table>
 
 
 
