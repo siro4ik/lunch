@@ -7,13 +7,15 @@
     <title>График обедов</title>
 </head>
 <body>
-
-    <h1>🍎 График обедов 🍏</h1>
-    <div class="controls"></div>
-    <input type="text" placeholder="Ваше имя" id="userName">
-    <input type="time" id="start" min="00:00" max="23:30">
-    <input type="time" id="end" min="00:30" max="24:00">
-    <button onclick="addLunch()">Добавить обед</button>
+<div class="header">
+    <h1> График обедов </h1>
+    <div class="controls">
+        <input type="text" id="userName" placeholder="Ваше имя">
+        <input type="time" id="start" step="1800" value="12:00">
+        <input type="time" id="end" step="1800" value="13:00">
+        <button onclick="addLunch()">Добавить обед</button>
+    </div>
+</div>
 
 <table id="calendar">
     <thead>
