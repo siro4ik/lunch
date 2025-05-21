@@ -1,11 +1,11 @@
 body {
     font-family: "Playfair Display", serif;
     padding: 20px;
-    background-color: #000000f5;
+    background-color: #141414f5;
 }
 
 .time-cell {
-    background-color: #f5f5f5;
+    background-color: #141414f5;
     font-weight: bold;
 }
 
@@ -37,7 +37,7 @@ th {
     top: 0;
 }
 .lunch-time {
-    background-color: #d6f1d7;
+    background-color: #d7d8d7;
     font-weight: bold;
     color: #000;
 }
