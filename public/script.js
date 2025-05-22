@@ -42,18 +42,28 @@ function loadLunches() {
         if (!lunches) return;
 
 
-        document.querySelectorAll('#slots td:not(.time-cell)').forEach(cell => {
+        document.querySelectorAll('.lunch-time').forEach(cell => {
             cell.textContent = '';
             cell.classList.remove('lunch-time');
         });
 
 
-        Object.entries(lunches).forEach(([key, lunch]) => {
-            const [hour, minute] = lunch.start.split(':').map(Number);
-            const cell = document.getElementById(`d${lunch.day}h${hour}m${minute}`);
-            if (cell) {
-                cell.textContent = `${lunch.user}: ${lunch.start}-${lunch.end}`;
-                cell.classList.add('lunch-time');
+        Object.values(lunches).forEach(lunch => {
+            const [startHour, startMinute] = lunch.start.split(':').map(Number);
+            const [endHour, endMinute] = lunch.end.split(':').map(Number);
+            const duration = (endHour * 60 + endMinute) - (startHour * 60 + startMinute);
+            const slotCount = Math.ceil(duration / 30);
+
+            for (let i = 0; i < slotCount; i++) {
+                const slotTime = (startHour * 60 + startMinute) + (i * 30);
+                const hour = Math.floor(slotTime / 60);
+                const minute = slotTime % 60;
+                const cell = document.getElementById(`d${lunch.day}h${hour}m${minute}`);
+
+                if (cell) {
+                    cell.textContent = `${lunch.user}: ${lunch.start}-${lunch.end}`;
+                    cell.classList.add('lunch-time');
+                }
             }
         });
     });
@@ -66,9 +76,33 @@ function addLunch() {
     const day = new Date().getDay();
 
 
-    if (start >= end) {
+    const [startHour, startMinute] = start.split(':').map(Number);
+    const [endHour, endMinute] = end.split(':').map(Number);
+
+
+    const startTotal = startHour * 60 + startMinute;
+    const endTotal = endHour * 60 + endMinute;
+
+    if (startTotal >= endTotal) {
         alert('Конец обеда должен быть позже начала!');
         return;
+    }
+
+
+    const duration = endTotal - startTotal;
+    const slotCount = Math.ceil(duration / 30);
+
+
+    for (let i = 0; i < slotCount; i++) {
+        const slotTime = startTotal + (i * 30);
+        const hour = Math.floor(slotTime / 60);
+        const minute = slotTime % 60;
+
+        const cell = document.getElementById(`d${day}h${hour}m${minute}`);
+        if (cell) {
+            cell.textContent = `${userName}: ${start}-${end}`;
+            cell.classList.add('lunch-time');
+        }
     }
 
 
