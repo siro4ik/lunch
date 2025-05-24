@@ -17,6 +17,18 @@ function createTimeSlots() {
     const table = document.getElementById('slots');
     table.innerHTML = '';
 
+    const oldLine = document.querySelector('.current-time-line');
+    if (oldLine) oldLine.remove();
+
+
+    const line = document.createElement('div');
+    line.className = 'current-time-line';
+    document.getElementById('calendar').appendChild(line);
+
+    const lineContainer = document.createElement('div');
+    lineContainer.className = 'current-time-line';
+    document.body.appendChild(lineContainer);
+
     for(let hour = 0; hour < 24; hour++) {
         for (let minute = 0; minute < 60; minute += 30) {
             const row = document.createElement('tr');
@@ -35,6 +47,53 @@ function createTimeSlots() {
         }
     }
 }
+
+function updateCurrentTimeLine() {
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+    const currentTotalMinutes = currentHour * 60 + currentMinute;
+
+    const table = document.getElementById('calendar');
+    const timeSlots = document.querySelectorAll('#slots tr');
+
+    if (timeSlots.length === 0) return;
+
+
+    const tableRect = table.getBoundingClientRect();
+    const firstRowRect = timeSlots[0].getBoundingClientRect();
+    const lastRowRect = timeSlots[timeSlots.length-1].getBoundingClientRect();
+
+
+    const tableHeight = lastRowRect.bottom - firstRowRect.top;
+    const positionPercent = (currentTotalMinutes / (24 * 60));
+    const positionPixels = positionPercent * tableHeight;
+
+
+    const line = document.querySelector('.current-time-line');
+    if (line) {
+        line.style.top = `${firstRowRect.top + positionPixels - tableRect.top}px`;
+        // line.style.left = `${tableRect.left}px`;
+        line.style.width = `${tableRect.width}px`;
+    }
+
+
+    timeSlots.forEach(slot => {
+        slot.classList.remove('current-time-slot');
+        const timeStr = slot.querySelector('td:first-child').textContent;
+        const [slotHour, slotMinute] = timeStr.split(':').map(Number);
+
+        if (currentHour === slotHour &&
+            currentMinute >= slotMinute &&
+            currentMinute < slotMinute + 30) {
+            slot.classList.add('current-time-slot');
+        }
+    });
+}
+
+
+setInterval(updateCurrentTimeLine, 60000);
+updateCurrentTimeLine();
 
 function loadLunches() {
     database.ref('lunches').on('value', (snapshot) => {
@@ -73,7 +132,7 @@ function addLunch() {
     const start = document.getElementById('start').value;
     const end = document.getElementById('end').value;
     const userName = document.getElementById('userName').value || 'Аноним';
-    const day = new Date().getDay();
+    const day = (new Date().getDay() + 6) % 7;
 
 
     const [startHour, startMinute] = start.split(':').map(Number);
@@ -115,8 +174,27 @@ function addLunch() {
     });
 }
 
+const oldLine = document.querySelector('.current-time-line');
+if (oldLine) oldLine.remove();
+
+
+const line = document.createElement('div');
+line.className = 'current-time-line';
+document.getElementById('calendar').appendChild(line);
+
 
 window.onload = function() {
     createTimeSlots();
     loadLunches();
+    updateCurrentTimeLine();
+    setInterval(updateCurrentTimeLine, 30000);
 };
+
+
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(updateCurrentTimeLine, 100);
+});
+
+window.addEventListener('scroll', updateCurrentTimeLine);
