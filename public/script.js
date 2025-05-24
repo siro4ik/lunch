@@ -95,6 +95,34 @@ function updateCurrentTimeLine() {
 setInterval(updateCurrentTimeLine, 60000);
 updateCurrentTimeLine();
 
+function adjustTime(field, minutes) {
+    const input = document.getElementById(field);
+    if (!input.value) {
+        input.value = "12:00";
+        return;
+    }
+
+
+    const [hoursStr, minsStr] = input.value.split(':');
+    let hours = parseInt(hoursStr) || 0;
+    let mins = parseInt(minsStr) || 0;
+
+
+    let totalMinutes = hours * 60 + mins + minutes;
+
+
+    totalMinutes = (totalMinutes + 1440) % 1440;
+
+
+    hours = Math.floor(totalMinutes / 60);
+    mins = totalMinutes % 60;
+
+
+    input.value =
+        hours.toString().padStart(2, '0') + ':' +
+        mins.toString().padStart(2, '0');
+}
+
 function loadLunches() {
     database.ref('lunches').on('value', (snapshot) => {
         const lunches = snapshot.val();
@@ -149,7 +177,7 @@ function loadLunches() {
 }
 
 function deleteLunch(id, day, hour, minute) {
-    
+
     if (confirm('Удалить эту запись?')) {
         database.ref(`lunches/${id}`).remove()
             .then(() => {

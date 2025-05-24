@@ -183,3 +183,29 @@ button:hover{
     font-weight: bold;
     color: #ea4335;
 }
+
+.time-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.time-controls button {
+    padding: 5px 10px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.time-controls button:hover {
+    background: #e0e0e0;
+}
+
+.time-controls input {
+    padding: 5px;
+    border-radius: 5px;
+    width: 80px;
+    text-align: center;
+}

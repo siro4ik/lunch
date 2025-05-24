@@ -14,8 +14,13 @@
     <h1> График обедов </h1>
     <div class="controls">
         <input type="text" id="userName" placeholder="Ваше имя" maxlength="10">
+        <button onclick="adjustTime('start', -30)">-30 мин</button>
         <input type="time" id="start" step="1800" value="12:00">
+        <button onclick="adjustTime('start', 30)">+30 мин</button>
+
+        <button onclick="adjustTime('end', -30)">-30 мин</button>
         <input type="time" id="end" step="1800" value="13:00">
+        <button onclick="adjustTime('end', 30)">+30 мин</button>
         <button onclick="addLunch()">Добавить обед</button>
     </div>
 </div>
