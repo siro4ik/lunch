@@ -100,14 +100,13 @@ function loadLunches() {
         const lunches = snapshot.val();
         if (!lunches) return;
 
-
         document.querySelectorAll('.lunch-time').forEach(cell => {
             cell.textContent = '';
             cell.classList.remove('lunch-time');
+            cell.onclick = null;
         });
 
-
-        Object.values(lunches).forEach(lunch => {
+        Object.entries(lunches).forEach(([id, lunch]) => {
             const [startHour, startMinute] = lunch.start.split(':').map(Number);
             const [endHour, endMinute] = lunch.end.split(':').map(Number);
             const duration = (endHour * 60 + endMinute) - (startHour * 60 + startMinute);
@@ -120,12 +119,50 @@ function loadLunches() {
                 const cell = document.getElementById(`d${lunch.day}h${hour}m${minute}`);
 
                 if (cell) {
-                    cell.textContent = `${lunch.user}: ${lunch.start}-${lunch.end}`;
+
+                    const container = document.createElement('div');
+                    container.className = 'lunch-container';
+
+
+                    const timeText = document.createElement('span');
+                    timeText.textContent = `${lunch.user}: ${lunch.start}-${lunch.end}`;
+
+
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.innerHTML = '×';
+                    deleteBtn.className = 'delete-btn';
+                    deleteBtn.onclick = (e) => {
+                        e.stopPropagation();
+                        deleteLunch(id, lunch.day, hour, minute);
+                    };
+
+
+                    container.appendChild(timeText);
+                    container.appendChild(deleteBtn);
+                    cell.appendChild(container);
                     cell.classList.add('lunch-time');
+                    cell.dataset.lunchId = id;
                 }
             }
         });
     });
+}
+
+function deleteLunch(id, day, hour, minute) {
+    
+    if (confirm('Удалить эту запись?')) {
+        database.ref(`lunches/${id}`).remove()
+            .then(() => {
+                const cell = document.getElementById(`d${day}h${hour}m${minute}`);
+                if (cell) {
+                    cell.innerHTML = '';
+                    cell.classList.remove('lunch-time');
+                }
+            })
+            .catch(error => {
+                alert('Ошибка при удалении: ' + error.message);
+            });
+    }
 }
 
 function addLunch() {
