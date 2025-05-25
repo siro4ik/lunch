@@ -43,8 +43,10 @@ th, td {
     padding: 8px;
     text-align: center;
     width: 150px;
-    min-width: 150px;
-    max-width: 150px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     box-sizing: border-box;
 }
 
@@ -71,6 +73,10 @@ th {
     transform: scale(0.9);
 }
 
+span{
+    font-size: 12px;
+}
+
 .lunch-container {
     display: flex;
     justify-content: space-between;
@@ -90,8 +96,8 @@ th {
     color: white;
     border: none;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     font-size: 14px;
     line-height: 1;
     cursor: pointer;
