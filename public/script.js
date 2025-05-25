@@ -17,17 +17,13 @@ function createTimeSlots() {
     const table = document.getElementById('slots');
     table.innerHTML = '';
 
-    const oldLine = document.querySelector('.current-time-line');
-    if (oldLine) oldLine.remove();
+    // Удаляем все существующие линии времени
+    document.querySelectorAll('.current-time-line').forEach(el => el.remove());
 
-
+    // Создаем только одну линию
     const line = document.createElement('div');
     line.className = 'current-time-line';
     document.getElementById('calendar').appendChild(line);
-
-    const lineContainer = document.createElement('div');
-    lineContainer.className = 'current-time-line';
-    document.body.appendChild(lineContainer);
 
     for(let hour = 0; hour < 24; hour++) {
         for (let minute = 0; minute < 60; minute += 30) {
@@ -59,16 +55,13 @@ function updateCurrentTimeLine() {
 
     if (timeSlots.length === 0) return;
 
-
     const tableRect = table.getBoundingClientRect();
     const firstRowRect = timeSlots[0].getBoundingClientRect();
-    const lastRowRect = timeSlots[timeSlots.length-1].getBoundingClientRect();
-
+    const lastRowRect = timeSlots[timeSlots.length - 1].getBoundingClientRect();
 
     const tableHeight = lastRowRect.bottom - firstRowRect.top;
-    const positionPercent = (currentTotalMinutes / (24 * 60));
+    const positionPercent = currentTotalMinutes / (24 * 60);
     const positionPixels = positionPercent * tableHeight;
-
 
     const line = document.querySelector('.current-time-line');
     if (line) {
@@ -76,20 +69,8 @@ function updateCurrentTimeLine() {
         // line.style.left = `${tableRect.left}px`;
         line.style.width = `${tableRect.width}px`;
     }
-
-
-    timeSlots.forEach(slot => {
-        slot.classList.remove('current-time-slot');
-        const timeStr = slot.querySelector('td:first-child').textContent;
-        const [slotHour, slotMinute] = timeStr.split(':').map(Number);
-
-        if (currentHour === slotHour &&
-            currentMinute >= slotMinute &&
-            currentMinute < slotMinute + 30) {
-            slot.classList.add('current-time-slot');
-        }
-    });
 }
+
 
 
 setInterval(updateCurrentTimeLine, 60000);
