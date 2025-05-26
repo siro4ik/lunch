@@ -17,10 +17,10 @@ function createTimeSlots() {
     const table = document.getElementById('slots');
     table.innerHTML = '';
 
-    // Удаляем все существующие линии времени
+
     document.querySelectorAll('.current-time-line').forEach(el => el.remove());
 
-    // Создаем только одну линию
+
     const line = document.createElement('div');
     line.className = 'current-time-line';
     document.getElementById('calendar').appendChild(line);
@@ -42,6 +42,25 @@ function createTimeSlots() {
             table.appendChild(row);
         }
     }
+}
+
+function isSlotAvailable(day, start, end) {
+    const [startHour, startMinute] = start.split(':').map(Number);
+    const [endHour, endMinute] = end.split(':').map(Number);
+    const startTotal = startHour * 60 + startMinute;
+    const endTotal = endHour * 60 + endMinute;
+
+
+    for (let time = startTotal; time < endTotal; time += 30) {
+        const hour = Math.floor(time / 60);
+        const minute = time % 60;
+        const cell = document.getElementById(`d${day}h${hour}m${minute}`);
+
+        if (cell && cell.classList.contains('lunch-time')) {
+            return false;
+        }
+    }
+    return true;
 }
 
 function updateCurrentTimeLine() {
@@ -129,6 +148,9 @@ function loadLunches() {
 
                 if (cell) {
 
+                    cell.dataset.lunchId = id;
+                    cell.classList.add('lunch-time');
+
                     const container = document.createElement('div');
                     container.className = 'lunch-container';
 
@@ -180,11 +202,14 @@ function addLunch() {
     const userName = document.getElementById('userName').value || 'Аноним';
     const day = (new Date().getDay() + 6) % 7;
 
+    if (!isSlotAvailable(day, start, end)) {
+        alert('Это время уже занято! Выберите другое время.');
+        return;
+    }
+
 
     const [startHour, startMinute] = start.split(':').map(Number);
     const [endHour, endMinute] = end.split(':').map(Number);
-
-
     const startTotal = startHour * 60 + startMinute;
     const endTotal = endHour * 60 + endMinute;
 
@@ -202,8 +227,8 @@ function addLunch() {
         const slotTime = startTotal + (i * 30);
         const hour = Math.floor(slotTime / 60);
         const minute = slotTime % 60;
-
         const cell = document.getElementById(`d${day}h${hour}m${minute}`);
+
         if (cell) {
             cell.textContent = `${userName}: ${start}-${end}`;
             cell.classList.add('lunch-time');
