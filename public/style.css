@@ -11,6 +11,11 @@ body {
 
 .time-cell {
     font-weight: bold;
+    width: 100px;
+}
+
+th:first-child{
+    width: 100px;
 }
 
 .header{
@@ -42,13 +47,15 @@ th, td {
     color: #f2f2f2;
     padding: 8px;
     text-align: center;
-    width: 150px;
+    width: 200px;
     height: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     box-sizing: border-box;
 }
+
+
 
 
 h1{
@@ -74,7 +81,7 @@ th {
 }
 
 span{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .lunch-container {
@@ -139,8 +146,9 @@ button:hover{
     width: 100%;
     max-width: 190px;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
+    font-size: 16px;
 }
 
 #start{
@@ -193,7 +201,7 @@ button:hover{
     width: 100%;
     overflow-x: hidden;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1500px;
 }
 
 .current-time-slot td:not(.time-cell) {
