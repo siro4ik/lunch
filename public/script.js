@@ -13,6 +13,24 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
+// Темная/светлая тема
+const colorToggle = document.querySelector("#themeToggle");
+
+function toggle(){
+    if (colorToggle.checked){
+        document.body.classList.remove('dark-theme')
+    }else{
+        document.body.classList.add('dark-theme')
+    }
+};
+
+colorToggle.addEventListener("change", ()=>{
+    toggle();
+});
+
+
+
+// Создание временных слотов
 function createTimeSlots() {
     const table = document.getElementById('slots');
     table.innerHTML = '';
@@ -160,7 +178,7 @@ function loadLunches() {
 
 
                     const deleteBtn = document.createElement('button');
-                    deleteBtn.innerHTML = '×';
+                    deleteBtn.innerHTML = 'x';
                     deleteBtn.className = 'delete-btn';
                     deleteBtn.onclick = (e) => {
                         e.stopPropagation();
