@@ -27,6 +27,24 @@ right:7%;
 transform: translate(-50%, -50%);
 }
 
+body.dark-theme #cat{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#cat{
+    max-width: 200px;
+    position: absolute;
+    right: 6%;
+    bottom: 51.5%;
+    z-index: 1;
+    transition: ease 0.3s;
+}
+
+.invisible{
+    opacity: 0;
+}
+
 #themeToggle{
 position: relative;
 width: 130px;

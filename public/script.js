@@ -13,6 +13,18 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
+// появление/скрытие кота
+const catDisappear = document.querySelector("#cat");
+
+function disappear(){
+    if (document.body.classList.contains("dark-theme")){
+        catDisappear.style.opacity = '0' 
+    }else{
+        catDisappear.style.opacity = '1'
+    }
+}
+
+
 // Темная/светлая тема
 const colorToggle = document.querySelector("#themeToggle");
 
