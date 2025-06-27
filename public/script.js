@@ -26,7 +26,7 @@ function disappear(){
 
 // сокрытие элемента при скролле
 const hide = document.querySelector (".element-to-hide");
-const scrollDistance = 388;
+const scrollDistance = 309;
 
 
 window.addEventListener('scroll',()=>{
