@@ -35,7 +35,7 @@ body.dark-theme #cat{
 #cat{
     max-width: 200px;
     position: absolute;
-    right: 6%;
+    left: 89%;
     bottom: 51.5%;
     z-index: 1;
     transition: ease 0.3s;
@@ -250,7 +250,7 @@ th, td {
     border: 1px solid #4d4d4da9;
     padding: 8px;
     text-align: center;
-    width: 200px;
+    width: 230px;
     height: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -262,6 +262,7 @@ th, td {
 th {
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 .lunch-time {
     position: relative;

@@ -24,6 +24,20 @@ function disappear(){
     }
 }
 
+// сокрытие элемента при скролле
+const hide = document.querySelector (".element-to-hide");
+const scrollDistance = 388;
+
+
+window.addEventListener('scroll',()=>{
+    if ( window.scrollY > scrollDistance){
+        hide.textContent = '';
+    }else{
+        hide.textContent = 'Время';
+    }
+})
+
+
 
 // Темная/светлая тема
 const colorToggle = document.querySelector("#themeToggle");
