@@ -1,5 +1,7 @@
 body {
-    font-family: "Playfair Display", serif;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     padding: 20px;
     overflow-x: hidden;
     background: #9E6FC3;
@@ -39,9 +41,10 @@ body.dark-theme #cat{
 #cat{
     max-width: 200px;
     position: absolute;
-    right: -1%;
+    right: -0.5%;
     bottom: -20%;
     z-index: 1;
+    rotate: -8deg;
     transition: ease 0.3s;
 }
 
@@ -219,7 +222,6 @@ box-shadow: 0px 0px 10px #f5deb4,
 }
 
 .time-cell {
-    font-weight: bold;
     width: 100px;
 }
 
@@ -272,7 +274,6 @@ th {
     position: relative;
     padding: 0 !important;
     background-color: #ffffff;
-    font-weight: bold;
     color: #000;
     transition: 0.3s ease;
 }
@@ -302,11 +303,9 @@ span{
 }
 
 .delete-btn {
-    background: #ff4444;
     border: none;
-    width: 17px;
     height: 17px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1;
     cursor: pointer;
     display: flex;
@@ -316,7 +315,7 @@ span{
 }
 
 .delete-btn:hover {
-    background: #cc0000;
+    color: #ff0000;
 }
 
 .controls{
@@ -329,6 +328,7 @@ span{
 .addMeal{
     padding:10px;
     font-size: 14px;
+    font-weight: 600;
 }
 
 button{
@@ -338,8 +338,8 @@ button{
     background-color: #ffffff;
 }
 
-button:hover{
-    background-color: #f5cdff;
+.bg-red:hover{
+    background-color: #ffa4a4;
 }
 
 #userName{
@@ -416,7 +416,6 @@ button:hover{
 }
 
 .current-time-slot td:first-child {
-    font-weight: bold;
     color: #ea4335;
 }
 
