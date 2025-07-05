@@ -33,19 +33,24 @@ right:7%;
 transform: translate(-50%, -50%);
 }
 
-body.dark-theme #cat{
-    opacity: 0;
-    pointer-events: none;
-}
-
 #cat{
     max-width: 200px;
     position: absolute;
-    right: -0.5%;
-    bottom: -20%;
+    right: 0;
+    bottom: -19%;
     z-index: 1;
     rotate: -8deg;
-    transition: ease 0.3s;
+    transition: 0.4s ease;
+}
+
+#cat2{
+    max-width: 200px;
+    position: absolute;
+    left: 3%;
+    bottom: -38%;
+    z-index: 1;
+    rotate: 84deg;
+    transition: 0.4s ease;
 }
 
 .invisible{
@@ -244,6 +249,10 @@ h2{
     text-align: center;
 }
 
+#slots{
+    border-radius: 20px;
+}
+
 table {
     width: auto;
     /* min-width: 100%; */
@@ -262,6 +271,7 @@ th, td {
     text-overflow: ellipsis;
     white-space: nowrap;
     box-sizing: border-box;
+    border-radius: 5px;
 }
 
 
@@ -275,7 +285,7 @@ th {
     padding: 0 !important;
     background-color: #ffffff;
     color: #000;
-    transition: 0.3s ease;
+    transition: 0.4s ease;
 }
 
 .lunch-time.removing {
@@ -311,7 +321,7 @@ span{
     display: flex;
     align-items: center;
     justify-content: center; 
-    transition: 0.3s ease ;
+    transition: 0.4s ease ;
 }
 
 .delete-btn:hover {
@@ -320,13 +330,15 @@ span{
 
 .controls{
     margin-bottom: 30px;
+    max-width: 190px;
     display: flex;
     gap: 10px;
     flex-direction: column;
+    align-items: center;
 }
 
 .addMeal{
-    padding:10px;
+    padding:10px 59px;
     font-size: 14px;
     font-weight: 600;
 }
@@ -334,8 +346,9 @@ span{
 button{
     padding: 5px;
     border-radius: 10px;
-    transition: 0.2s ease ;
+    transition: 0.4s ease ;
     background-color: #ffffff;
+    border:none;
 }
 
 .bg-red:hover{
@@ -344,11 +357,12 @@ button{
 
 #userName{
     width: 100%;
-    max-width: 190px;
+    max-width: 172px;
     text-align: center;
     padding: 8px;
     border-radius: 10px;
     font-size: 16px;
+    border:none;
 }
 
 #start{
@@ -443,4 +457,9 @@ button{
     border-radius: 5px;
     width: 80px;
     text-align: center;
+
+}
+
+input{
+    border:none;
 }
