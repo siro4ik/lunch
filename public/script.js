@@ -317,26 +317,26 @@ line.className = 'current-time-line';
 document.getElementById('calendar').appendChild(line);
 
 
-function checkLunchTime() {
-    const now = new Date();
-    const currentHour = now.getHours();
-    const currentMinute = now.getMinutes();
+// function checkLunchTime() {
+//     const now = new Date();
+//     const currentHour = now.getHours();
+//     const currentMinute = now.getMinutes();
 
-    console.log('Текущее время:', currentHour, ':', currentMinute);
+//     console.log('Текущее время:', currentHour, ':', currentMinute);
     
-    database.ref('lunches').once('value').then((snapshot) => {
-        const lunches = snapshot.val();
-        if (!lunches) return;
+//     database.ref('lunches').once('value').then((snapshot) => {
+//         const lunches = snapshot.val();
+//         if (!lunches) return;
 
-        Object.values(lunches).forEach(lunch => {
-            const [startHour, startMinute] = lunch.start.split(':').map(Number);
+//         Object.values(lunches).forEach(lunch => {
+//             const [startHour, startMinute] = lunch.start.split(':').map(Number);
 
-            if (currentHour === startHour && currentMinute === startMinute - 5) {
-                alert(`Скоро обед у ${lunch.user}! Начало в ${lunch.start}`);
-            }
-        });
-    });
-}
+//             if (currentHour === startHour && currentMinute === startMinute - 5) {
+//                 alert(`Скоро обед у ${lunch.user}! Начало в ${lunch.start}`);
+//             }
+//         });
+//     });
+// }
 
 window.onload = function() {
     createTimeSlots();
@@ -344,8 +344,8 @@ window.onload = function() {
     updateCurrentTimeLine();
     // disappearCat();
     setInterval(updateCurrentTimeLine, 30000);
-    checkLunchTime();
-    setInterval(checkLunchTime, 60000);
+    // checkLunchTime();
+    // setInterval(checkLunchTime, 60000);
 };
 
 
