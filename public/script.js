@@ -15,33 +15,33 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 // появление/скрытие кота (черного и серого)
-const blackCatDisappear = document.querySelector("#cat");
-const greyCatDisappear = document.querySelector("#cat2");
+// const blackCatDisappear = document.querySelector("#cat");
+// const greyCatDisappear = document.querySelector("#cat2");
 
 
 
-function disappearCat(){
+// function disappearCat(){
 
-    if (!blackCatDisappear || !greyCatDisappear) {
-  console.error("Один из элементов не найден!");
-  return;
-    }
+//     if (!blackCatDisappear || !greyCatDisappear) {
+//   console.error("Один из элементов не найден!");
+//   return;
+//     }
 
-    if (document.body.classList.contains("dark-theme")){
-        blackCatDisappear.style.opacity = '0';
-        greyCatDisappear.style.opacity = '1';
-    }else{
-        blackCatDisappear.style.opacity = '1';
-        greyCatDisappear.style.opacity = '0';
-    }
+//     if (document.body.classList.contains("dark-theme")){
+//         blackCatDisappear.style.opacity = '0';
+//         greyCatDisappear.style.opacity = '1';
+//     }else{
+//         blackCatDisappear.style.opacity = '1';
+//         greyCatDisappear.style.opacity = '0';
+//     }
 
-    colorToggle.addEventListener("change", ()=>{
-    toggle();
-    disappearCat();
-});
+//     colorToggle.addEventListener("change", ()=>{
+//     toggle();
+//     disappearCat();
+// });
 
   
-};
+// };
 
 // сокрытие элемента при скролле
 const hide = document.querySelector (".element-to-hide");
@@ -321,7 +321,7 @@ window.onload = function() {
     createTimeSlots();
     loadLunches();
     updateCurrentTimeLine();
-    disappearCat();
+    // disappearCat();
     setInterval(updateCurrentTimeLine, 30000);
 };
 
