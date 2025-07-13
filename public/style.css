@@ -4,13 +4,13 @@ body {
     font-style: normal;
     padding: 20px;
     overflow-x: hidden;
-    background: #b9a5c8;
-    background: linear-gradient(270deg,rgba(169, 91, 228, 0.235) 10%, rgba(86, 212, 47, 0.219) 90%, rgba(255, 255, 255, 1) 100%);
+    background: #dbffd4;
+    /* background: linear-gradient(270deg,rgba(169, 91, 228, 0.235) 10%, rgba(86, 212, 47, 0.219) 90%, rgba(255, 255, 255, 1) 100%); */
     transition: background-color 0.34s ease, color 0.4s ease;
 }
 
 .dark-theme{
-    background: #141414f5;
+    background: #000000f5;
 }
 
 .header{
@@ -58,7 +58,9 @@ transform: translate(-50%, -50%);
 } */
 
 #themeToggle{
-position: relative;
+position: absolute;
+right: -180px;
+top: 10px;
 width: 130px;
 height: 50px;
 margin: 0px;
@@ -264,7 +266,7 @@ table {
 }
 
 th, td {
-    border: 1px solid #555454a9;
+    border: 1px solid #575757a9;
     padding: 8px;
     text-align: center;
     width: 230px;
@@ -349,7 +351,7 @@ button{
     border-radius: 10px;
     transition: 0.4s ease ;
     background-color: #ffffff;
-    border:none;
+    border:solid 1px;
 }
 
 .bg-red:hover{
@@ -363,19 +365,21 @@ button{
     padding: 8px;
     border-radius: 10px;
     font-size: 16px;
-    border:none;
+    border:solid 1px;
 }
 
 #start{
     text-align: center;
     padding: 5px;
     border-radius: 10px;
+    border:solid 1px;
 }
 
 #end{
     text-align: center;
     padding: 5px;
     border-radius: 10px;
+    border:solid 1px;
 }
 
 .current-time-line {
@@ -432,36 +436,4 @@ button{
 .current-time-slot td:first-child {
     color: #ea4335;
 }
-
-.time-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.time-controls button {
-    padding: 5px 10px;
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.time-controls button:hover {
-    background: #e0e0e0;
-}
-
-.time-controls input {
-    padding: 5px;
-    border-radius: 5px;
-    width: 80px;
-    text-align: center;
-
-}
-
-input{
-    border:none;
-}
-
-/* идея - сделать на темной теме - темно-фиолетовый цвет, на светлой - салатовый(нежный), по возможности - фигурки/круги/символика  */
+/* идея - сделать на темной теме - темно-фиолетовый цвет, на светлой - салатовый(нежный), по возможности - фигурки/круги/символика Сделать настройку, где можно менять разный фон,цвета, */
