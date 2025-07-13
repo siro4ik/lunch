@@ -4,13 +4,13 @@ body {
     font-style: normal;
     padding: 20px;
     overflow-x: hidden;
-    background: #dbffd4;
+    background: #f1fff0;
     /* background: linear-gradient(270deg,rgba(169, 91, 228, 0.235) 10%, rgba(86, 212, 47, 0.219) 90%, rgba(255, 255, 255, 1) 100%); */
     transition: background-color 0.34s ease, color 0.4s ease;
 }
 
 .dark-theme{
-    background: #000000f5;
+    background: #101010f5;
 }
 
 .header{
@@ -435,5 +435,32 @@ button{
 
 .current-time-slot td:first-child {
     color: #ea4335;
+}
+
+.time-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.time-controls button {
+    padding: 5px 10px;
+    background: #ffffff;
+    border: 1px solid #cbcbcb;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.time-controls button:hover {
+    background: #562f2f;
+}
+
+.time-controls input {
+    padding: 5px;
+    border-radius: 5px;
+    width: 80px;
+    text-align: center;
+
 }
 /* идея - сделать на темной теме - темно-фиолетовый цвет, на светлой - салатовый(нежный), по возможности - фигурки/круги/символика Сделать настройку, где можно менять разный фон,цвета, */
