@@ -364,6 +364,15 @@ OpenModalButton.addEventListener('click', ()=>{
 
 
   const buttonCross = createModalButton ('buttonCross', 'X', closeModal);
+
+  const settingsHeader = document.createElement('div');
+  settingsHeader.className = "settingsHeader";
+  
+  const settingsHeaderText = document.createElement('h2');
+  settingsHeaderText.textContent = 'Настройки';
+
+  settingsHeader.appendChild(settingsHeaderText);
+
   const themes = document.createElement ('div');
   themes.className = 'themesContainer';
 
@@ -377,6 +386,7 @@ OpenModalButton.addEventListener('click', ()=>{
   wrapper.appendChild(backdrop);
 
   modalWindow.appendChild(buttonCross);
+  modalWindow.appendChild(settingsHeader);
   modalWindow.appendChild(themes);
   
   document.body.appendChild(wrapper);
