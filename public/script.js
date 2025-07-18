@@ -364,14 +364,10 @@ OpenModalButton.addEventListener('click', ()=>{
 
 
   const buttonCross = createModalButton ('buttonCross', 'X', closeModal);
-  const buttonOk = createModalButton ('modalOkButton', 'Ок', closeModal);
-  const buttonCancel = createModalButton ('buttonCancel', 'Отмена', closeModal);
 
   wrapper.appendChild(modalWindow)
 
   document.body.appendChild(wrapper)
-  modalWindow.appendChild(buttonOk)
-  modalWindow.appendChild(buttonCancel)
   modalWindow.appendChild(buttonCross)
 })
 

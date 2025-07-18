@@ -483,6 +483,7 @@ button{
 
 .otp-3{
     right:10%;
+    top:25%;
 }
 
 
@@ -526,9 +527,9 @@ place-items: center;
 
 .modalWindow{
   width: 80%;
-  max-width: 500px;
+  max-width: 600px;
   height: 80%;
-  max-height: 400px;
+  max-height: 550px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   z-index: 9999;
@@ -549,30 +550,13 @@ place-items: center;
   align-items: center;
 }
 
-.modalOkButton{
-  background-color: rgba(121, 237, 121, 0.694);
-  margin-right: 15px;
-  padding: 1px 15px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-}
-
-.buttonCancel{
-  background-color: rgba(48, 46, 46, 0.558);
-  color: white;
-  padding: 1px 15px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-}
-
 .buttonCross{
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 3px;
+  right: 5px;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
   background: transparent;
 }
 
