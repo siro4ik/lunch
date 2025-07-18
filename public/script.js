@@ -356,7 +356,7 @@ OpenModalButton.addEventListener('click', ()=>{
     wrapper.remove();
   });
 
-  wrapper.appendChild(backdrop);
+
 
   const modalWindow = document.createElement('div');
   modalWindow.className = 'modalWindow';
@@ -364,11 +364,24 @@ OpenModalButton.addEventListener('click', ()=>{
 
 
   const buttonCross = createModalButton ('buttonCross', 'X', closeModal);
+  const themes = document.createElement ('div');
+  themes.className = 'themesContainer';
 
-  wrapper.appendChild(modalWindow)
+  const themeText = document.createElement('h2');
+  themeText.className = "themeText";
+  themeText.textContent = 'Темы';
 
-  document.body.appendChild(wrapper)
-  modalWindow.appendChild(buttonCross)
+  themes.appendChild(themeText);
+
+  wrapper.appendChild(modalWindow);
+  wrapper.appendChild(backdrop);
+
+  modalWindow.appendChild(buttonCross);
+  modalWindow.appendChild(themes);
+  
+  document.body.appendChild(wrapper);
+  
+
 })
 
 function closeModal(){
