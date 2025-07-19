@@ -341,12 +341,15 @@ span{
 }
 
 .addMeal{
-    padding:10px 59px;
-    font-size: 14px;
+    padding:10px 64px;
+    border-radius: 10px;
+    transition: 0.4s ease ;
+    background-color: #ffffff;
+    border:solid 1px;
     font-weight: 600;
 }
 
-button{
+.lunch-button{
     padding: 5px;
     border-radius: 10px;
     transition: 0.4s ease ;
@@ -492,23 +495,29 @@ button{
     top:180%;
 }
 
-.setting-btn {
-position: absolute;
-top: 20px;
-z-index: 3;
-width: 50px;
-height: 50px;
-border: none;
-background: none;
-padding: 0;
-cursor: pointer;
-border-radius: 50%;
-transition:0.2s ease;
-display: grid;
-place-items: center;
+
+
+.setting-btn{
+    opacity: 0;
 }
 
-.setting-btn:hover {
+.bi{
+    position: absolute;
+    top: 20px;
+    z-index: 3;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition:0.2s ease;
+    display: grid;
+    place-items: center;
+}
+
+.bi:hover {
   transform: rotate(60deg);
 }
 
