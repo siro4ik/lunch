@@ -317,6 +317,8 @@ line.className = 'current-time-line';
 document.getElementById('calendar').appendChild(line);
 
 
+// Уведомления - доделать
+
 // function checkLunchTime() {
 //     const now = new Date();
 //     const currentHour = now.getHours();
@@ -338,7 +340,7 @@ document.getElementById('calendar').appendChild(line);
 //     });
 // }
 
-// Модальное окно
+// Модальное окно, изменение цвета кнопки - сделать
 
 const OpenModalButton = document.querySelector('#setting-btn');
 
