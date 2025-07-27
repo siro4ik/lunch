@@ -365,7 +365,7 @@ OpenModalButton.addEventListener('click', ()=>{
 
 
 
-  const buttonCross = createModalButton ('buttonCross', 'X', closeModal);
+  const buttonCross = createModalButton ('buttonCross', 'x', closeModal);
 
   const settingsHeader = document.createElement('div');
   settingsHeader.className = "settingsHeader";
