@@ -365,14 +365,8 @@ span{
 	font-family: "Archivo Black";
   padding: 10px;
   width: 80%;
-<<<<<<< HEAD
   max-width: 400px;
   height: 80%;
-=======
-  max-width: 600px;
-  height: 80%;
-  max-height: 600px;
->>>>>>> 819b69b73b8b279e6c952a5097d3c2ff927d9497
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   z-index: 9999;
@@ -418,7 +412,6 @@ span{
 .buttonCross{
 	color: #5c5c5c;
   position: absolute;
-<<<<<<< HEAD
 	display: flex;
   align-items: center;
   justify-content: center;
@@ -431,13 +424,6 @@ span{
 	font-size: 20px;
   border: none;
   cursor: pointer;
-=======
-  top: 3px;
-  right: 5px;
-  border: none;
-  cursor: pointer;
-  font-size: 15px;
->>>>>>> 819b69b73b8b279e6c952a5097d3c2ff927d9497
   background: transparent;
   transition: 0.1s ease;
 }
