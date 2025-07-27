@@ -346,7 +346,11 @@ OpenModalButton.addEventListener('click', ()=>{
 
 
 
+<<<<<<< HEAD
   const buttonCross = createModalButton ('buttonCross', 'x', closeModal);
+=======
+  const buttonCross = createModalButton ('buttonCross', 'X', closeModal);
+>>>>>>> 819b69b73b8b279e6c952a5097d3c2ff927d9497
 
   const settingsHeader = document.createElement('div');
   settingsHeader.className = "settingsHeader";
@@ -404,6 +408,11 @@ toggleInput.addEventListener('change', function() {
   document.body.appendChild(wrapper);
   
 
+<<<<<<< HEAD
+=======
+  document.body.appendChild(wrapper)
+  modalWindow.appendChild(buttonCross)
+>>>>>>> 819b69b73b8b279e6c952a5097d3c2ff927d9497
 })
 
 function closeModal(){
