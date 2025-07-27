@@ -56,25 +56,6 @@ window.addEventListener('scroll',()=>{
     }
 })
 
-
-
-// Темная/светлая тема
-const colorToggle = document.querySelector("#themeToggle");
-
-function toggle(){
-    if (colorToggle.checked){
-        document.body.classList.remove('dark-theme')
-    }else{
-        document.body.classList.add('dark-theme')
-    }
-};
-
-colorToggle.addEventListener("change", ()=>{
-    toggle();
-});
-
-
-
 // Создание временных слотов
 function createTimeSlots() {
     const table = document.getElementById('slots');
@@ -317,6 +298,8 @@ line.className = 'current-time-line';
 document.getElementById('calendar').appendChild(line);
 
 
+// Уведомления - доделать
+
 // function checkLunchTime() {
 //     const now = new Date();
 //     const currentHour = now.getHours();
@@ -338,7 +321,7 @@ document.getElementById('calendar').appendChild(line);
 //     });
 // }
 
-// Модальное окно
+// Модальное окно, изменение цвета кнопки - сделать
 
 const OpenModalButton = document.querySelector('#setting-btn');
 
@@ -356,19 +339,71 @@ OpenModalButton.addEventListener('click', ()=>{
     wrapper.remove();
   });
 
-  wrapper.appendChild(backdrop);
+
 
   const modalWindow = document.createElement('div');
   modalWindow.className = 'modalWindow';
 
 
 
-  const buttonCross = createModalButton ('buttonCross', 'X', closeModal);
+  const buttonCross = createModalButton ('buttonCross', 'x', closeModal);
 
-  wrapper.appendChild(modalWindow)
+  const settingsHeader = document.createElement('div');
+  settingsHeader.className = "settingsHeader";
+  
+  const settingsHeaderText = document.createElement('h2');
+  settingsHeaderText.textContent = 'Настройки';
 
-  document.body.appendChild(wrapper)
-  modalWindow.appendChild(buttonCross)
+  settingsHeader.appendChild(settingsHeaderText);
+
+  const themes = document.createElement ('div');
+  themes.className = 'themesContainer';
+
+  const themeText = document.createElement('h2');
+  themeText.className = "themeText";
+  themeText.textContent = 'Темы';
+
+const themeTextBlack = document.createElement('div');
+themeTextBlack.className = "theme-option"; 
+
+const themeLabel = document.createElement('span');
+themeLabel.className = "theme-label";
+themeLabel.textContent = 'Темная тема';
+
+const toggleContainer = document.createElement('label');
+toggleContainer.className = "toggle-container";
+
+const toggleInput = document.createElement('input');
+toggleInput.type = "checkbox";
+toggleInput.className = "toggle-input";
+
+const toggleSlider = document.createElement('span');
+toggleSlider.className = "toggle-slider";
+
+
+toggleContainer.appendChild(toggleInput);
+toggleContainer.appendChild(toggleSlider);
+themeTextBlack.appendChild(themeLabel);
+themeTextBlack.appendChild(toggleContainer);
+
+
+toggleInput.addEventListener('change', function() {
+  document.body.classList.toggle('dark-theme', this.checked);
+});
+
+  themes.appendChild(themeText);
+  themes.appendChild(themeTextBlack);
+
+  wrapper.appendChild(modalWindow);
+  wrapper.appendChild(backdrop);
+
+  modalWindow.appendChild(buttonCross);
+  modalWindow.appendChild(settingsHeader);
+  modalWindow.appendChild(themes);
+  
+  document.body.appendChild(wrapper);
+  
+
 })
 
 function closeModal(){
