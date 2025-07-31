@@ -328,6 +328,7 @@ const OpenModalButton = document.querySelector('#setting-btn');
 document.addEventListener('DOMContentLoaded', () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
   if (isDarkTheme) {
+    document.body.toggleSlider.toggle('dark-theme', this.checked );
     document.body.classList.add('dark-theme');
     
   }
