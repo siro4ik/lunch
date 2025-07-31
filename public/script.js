@@ -447,7 +447,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('dark-theme');
   }
   
-  // Остальная инициализация
   createTimeSlots();
   loadLunches();
   updateCurrentTimeLine();
