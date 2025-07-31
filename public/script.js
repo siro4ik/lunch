@@ -325,7 +325,13 @@ document.getElementById('calendar').appendChild(line);
 
 const OpenModalButton = document.querySelector('#setting-btn');
 
-
+document.addEventListener('DOMContentLoaded', () => {
+  const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+  if (isDarkTheme) {
+    document.body.classList.add('dark-theme');
+    
+  }
+});
 
 OpenModalButton.addEventListener('click', ()=>{
 
@@ -389,6 +395,7 @@ themeTextBlack.appendChild(toggleContainer);
 
 toggleInput.addEventListener('change', function() {
   document.body.classList.toggle('dark-theme', this.checked);
+  localStorage.setItem('darkTheme', this.checked);
 });
 
   themes.appendChild(themeText);
