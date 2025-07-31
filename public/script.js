@@ -205,10 +205,10 @@ function loadLunches() {
 
                     const deleteBtn = document.createElement('button');
                     if(lunch.user.includes('z') || lunch.user.includes('Z')){
-											deleteBtn.textContent = 'z'
-										}else{
-											deleteBtn.textContent = 'x' 
-										}
+						deleteBtn.textContent = 'z'
+							}else{
+								deleteBtn.textContent = 'x' 
+                            }
                     deleteBtn.className = 'delete-btn';
                     deleteBtn.onclick = (e) => {
                         e.stopPropagation();
