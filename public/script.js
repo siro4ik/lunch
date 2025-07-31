@@ -325,15 +325,6 @@ document.getElementById('calendar').appendChild(line);
 
 const OpenModalButton = document.querySelector('#setting-btn');
 
-document.addEventListener('DOMContentLoaded', () => {
-  const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
-  if (isDarkTheme) {
-    document.body.toggleSlider.toggle('dark-theme', this.checked );
-    document.body.classList.add('dark-theme');
-    
-  }
-});
-
 OpenModalButton.addEventListener('click', ()=>{
 
   const wrapper = document.createElement('div');
@@ -380,12 +371,21 @@ themeLabel.textContent = 'Темная тема';
 const toggleContainer = document.createElement('label');
 toggleContainer.className = "toggle-container";
 
-const toggleInput = document.createElement('input');
-toggleInput.type = "checkbox";
-toggleInput.className = "toggle-input";
+  const toggleInput = document.createElement('input');
+  toggleInput.type = "checkbox";
+  toggleInput.className = "toggle-input";
+  toggleInput.checked = localStorage.getItem('darkTheme') === 'true';
 
+  toggleInput.addEventListener('change', function() {
+    document.body.classList.toggle('dark-theme', this.checked);
+    localStorage.setItem('darkTheme', this.checked);
+  });
+
+ 
 const toggleSlider = document.createElement('span');
 toggleSlider.className = "toggle-slider";
+
+
 
 
 toggleContainer.appendChild(toggleInput);
@@ -414,6 +414,8 @@ toggleInput.addEventListener('change', function() {
 
 })
 
+
+
 function closeModal(){
   const modal = document.querySelector('.modalWrapper')
 
@@ -439,15 +441,30 @@ function createModalButton(className, text, func){
 
 }
 
-window.onload = function() {
-    createTimeSlots();
-    loadLunches();
-    updateCurrentTimeLine();
+document.addEventListener('DOMContentLoaded', () => {
+  const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+  if (isDarkTheme) {
+    document.body.classList.add('dark-theme');
+  }
+  
+  // Остальная инициализация
+  createTimeSlots();
+  loadLunches();
+  updateCurrentTimeLine();
+	setInterval(updateCurrentTimeLine, 30000);
+});
+
+
+
+// window.onload = function() {
+    // createTimeSlots();
+    // loadLunches();
+    // updateCurrentTimeLine();
     // disappearCat();
-    setInterval(updateCurrentTimeLine, 30000);
+
     // checkLunchTime();
     // setInterval(checkLunchTime, 60000);
-};
+// };
 
 
 let resizeTimeout;
