@@ -1,0 +1,12 @@
+.dark-theme{
+    background: #101010f5;
+}
+
+.dark-theme h1,
+.dark-theme .time,
+.dark-theme th,
+.dark-theme td,
+.dark-theme #setting-btn{
+  color: #ddd;
+  fill:white;
+}

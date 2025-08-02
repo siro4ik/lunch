@@ -1,0 +1,97 @@
+.delete-btn {
+    border: none;
+    height: 17px;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    transition: 0.4s ease ;
+}
+
+.delete-btn:hover {
+    color: #ff0000;
+}
+
+.controls{
+    margin-bottom: 30px;
+    max-width: 230px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addMeal{
+    padding:10px 64px;
+    border-radius: 10px;
+    transition: 0.4s ease ;
+    background-color: #ffffff;
+    border:solid 1px;
+    font-weight: 600;
+}
+
+.lunch-button{
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.4s ease ;
+    background-color: #ffffff;
+    border:solid 1px;
+}
+
+.bg-red:hover{
+    background-color: #ffa4a4;
+}
+
+
+.time-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.time-controls button {
+    padding: 5px 10px;
+    background: #ffffff;
+    border: 1px solid #cbcbcb;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.time-controls button:hover {
+    background: #562f2f;
+}
+
+.time-controls input {
+    padding: 5px;
+    border-radius: 5px;
+    width: 80px;
+    text-align: center;
+
+}
+
+.setting-btn{
+    opacity: 0;
+}
+
+.bi{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition:0.2s ease;
+    display: grid;
+    place-items: center;
+}
+
+.bi:hover {
+  transform: rotate(60deg);
+}

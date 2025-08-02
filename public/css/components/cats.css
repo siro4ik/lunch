@@ -1,0 +1,24 @@
+
+/* #cat{
+    max-width: 200px;
+    position: absolute;
+    right: 1.5%;
+    top:10%;
+    z-index: 1;
+    rotate: -8deg;
+    transition: 0.4s ease;
+}
+
+#cat2{
+    max-width: 200px;
+    position: absolute;
+    left: 4%;
+    top:16.5%;
+    z-index: 1;
+    rotate: 84deg;
+    transition: 0.4s ease;
+}
+
+.invisible{
+    opacity: 0;
+} */
