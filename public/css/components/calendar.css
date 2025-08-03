@@ -17,13 +17,10 @@ th:first-child{
     margin: 0;
     margin-top: 20px;
     margin-bottom:10px;
-    font-size: clamp(0.5rem, 0.404rem + 0.482vw, 1rem);
+    font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
     text-align: center;
 }
 
-#slots{
-    border-radius: 20px;
-}
 
 table {
     position: relative;
@@ -36,11 +33,12 @@ table {
 
 th, td {
     border: 1px solid #575757a9;
-    padding: 7px;
+    padding: clamp(0.125rem, 0.053rem + 0.361vw, 0.5rem);
     text-align: center;
-    width: clamp(2.5rem, 0.211rem + 11.446vw, 14.375rem);
-    height: clamp(1.563rem, 1.382rem + 0.904vw, 2.5rem);
-    font-size: clamp(0.5rem, 0.404rem + 0.482vw, 1rem);
+    width: clamp(1.25rem, -1.28rem + 12.651vw, 14.375rem);
+    /* height: clamp(0.938rem, 0.636rem + 1.506vw, 2.5rem); */
+    height:  5px;
+    font-size: clamp(0.313rem, 0.216rem + 0.482vw, 0.813rem);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -67,7 +65,8 @@ th {
 }
 
 span{
-    font-size: clamp(0.5rem, 0.44rem + 0.301vw, 0.813rem);
+    /* font-size: clamp(0.5rem, 0.428rem + 0.361vw, 0.875rem); */
+    font-size: clamp(0.25rem, 0.06rem + 0.608vw, 0.813rem);
     color: #000;
 }
 
