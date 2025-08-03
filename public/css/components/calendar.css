@@ -4,7 +4,7 @@
 }
 
 .time-cell {
-    width: 100px;
+    width: 50px;
 }
 
 th:first-child{
@@ -17,7 +17,7 @@ th:first-child{
     margin: 0;
     margin-top: 20px;
     margin-bottom:10px;
-    font-size: 16px;
+    font-size: clamp(0.5rem, 0.404rem + 0.482vw, 1rem);
     text-align: center;
 }
 
@@ -36,10 +36,11 @@ table {
 
 th, td {
     border: 1px solid #575757a9;
-    padding: 8px;
+    padding: 7px;
     text-align: center;
-    width: 230px;
-    height: 40px;
+    width: clamp(2.5rem, 0.211rem + 11.446vw, 14.375rem);
+    height: clamp(1.563rem, 1.382rem + 0.904vw, 2.5rem);
+    font-size: clamp(0.5rem, 0.404rem + 0.482vw, 1rem);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -66,7 +67,7 @@ th {
 }
 
 span{
-    font-size: 13px;
+    font-size: clamp(0.5rem, 0.44rem + 0.301vw, 0.813rem);
     color: #000;
 }
 
@@ -162,4 +163,10 @@ span{
 
 .current-time-slot td:first-child {
     color: #ea4335;
+}
+
+@media (max-width: 1800px){
+    .otp-icon{
+        display: none;
+    }
 }
