@@ -94,13 +94,23 @@
   padding: 8px 0;
 }
 
+
+
 .sergeyTheme{
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 30px;
   padding: 8px 0;
+}
+
+.sergeyThemeText{
+  font-size: 20px;
+	color: #3a3a3a;
+	font-weight: 600;
+  margin: 0;
 }
 
 .theme-label{

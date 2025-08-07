@@ -417,6 +417,7 @@ toggleContainerSergey.className = 'toggle-container';
 const toggleInputSergey = document.createElement ('input');
 toggleInputSergey.type = 'checkbox';
 toggleInputSergey.className = "toggle-input";
+toggleInputSergey.checked = localStorage.getItem('sergeyRainMode') ==='true';
 
 toggleInputSergey.addEventListener('change', function() {
     const rainContainer = document.getElementById('rain-container');
@@ -520,6 +521,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+  const isRainEnabled = localStorage.getItem('sergeyRainMode') === 'true';
+
+  const rainContainer = document.getElementById('rain-container');
+  rainContainer.style.display = isRainEnabled ? 'block' : 'none'; 
+
   if (isDarkTheme) {
     document.body.classList.add('dark-theme');
   }
