@@ -445,6 +445,42 @@ function createModalButton(className, text, func){
 
 }
 
+// Дождь для Sergey mode
+
+document.addEventListener('DOMContentLoaded', () => {
+  const rainContainer = document.getElementById('rain-container');
+  const rainDropsCount = 300;
+
+  for (let i = 0; i < rainDropsCount; i++) {
+    createRainDrop();
+  }
+
+  function createRainDrop() {
+    const raindrop = document.createElement('div');
+    raindrop.classList.add('raindrop');
+
+    const posX = Math.random() * window.innerWidth;
+    const delay = Math.random() * 2;
+    const duration = 0.5 + Math.random() * 1;
+
+    raindrop.style.left = `${posX}px`;
+    raindrop.style.top = `${-20 - Math.random() * 20}px`; 
+    raindrop.style.animationDelay = `${delay}s`;
+    raindrop.style.animationDuration = `${duration}s`;
+
+    rainContainer.appendChild(raindrop);
+
+    setTimeout(() => {
+      raindrop.remove();
+      createRainDrop();
+    }, duration * 1000);
+  }
+
+  window.addEventListener('resize', () => {
+    rainContainer.style.height = `${document.body.scrollHeight}px`;
+  });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
   if (isDarkTheme) {
@@ -477,6 +513,7 @@ window.addEventListener('resize', () => {
 });
 
 window.addEventListener('scroll', updateCurrentTimeLine);
+
 
 
 
