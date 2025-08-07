@@ -366,21 +366,22 @@ OpenModalButton.addEventListener('click', ()=>{
   themeText.textContent = 'Темы';
 
 const themeTextBlack = document.createElement('div');
-themeTextBlack.className = "theme-option"; 
+themeTextBlack.className = "theme-black"; 
 
 const themeLabel = document.createElement('span');
 themeLabel.className = "theme-label";
 themeLabel.textContent = 'Темная тема';
 
-const toggleContainer = document.createElement('label');
-toggleContainer.className = "toggle-container";
 
-  const toggleInput = document.createElement('input');
-  toggleInput.type = "checkbox";
-  toggleInput.className = "toggle-input";
-  toggleInput.checked = localStorage.getItem('darkTheme') === 'true';
+const toggleContainerBlack = document.createElement('label');
+toggleContainerBlack.className = "toggle-container";
 
-  toggleInput.addEventListener('change', function() {
+  const toggleInputTheme = document.createElement('input');
+  toggleInputTheme.type = "checkbox";
+  toggleInputTheme.className = "toggle-input";
+  toggleInputTheme.checked = localStorage.getItem('darkTheme') === 'true';
+
+  toggleInputTheme.addEventListener('change', function() {
     document.body.classList.toggle('dark-theme', this.checked);
     localStorage.setItem('darkTheme', this.checked);
   });
@@ -392,19 +393,55 @@ toggleSlider.className = "toggle-slider";
 
 
 
-toggleContainer.appendChild(toggleInput);
-toggleContainer.appendChild(toggleSlider);
+toggleContainerBlack.appendChild(toggleInputTheme);
+toggleContainerBlack.appendChild(toggleSlider);
 themeTextBlack.appendChild(themeLabel);
-themeTextBlack.appendChild(toggleContainer);
+themeTextBlack.appendChild(toggleContainerBlack);
 
 
-toggleInput.addEventListener('change', function() {
+toggleInputTheme.addEventListener('change', function() {
   document.body.classList.toggle('dark-theme', this.checked);
   localStorage.setItem('darkTheme', this.checked);
 });
 
+const sergeyTheme = document.createElement('div');
+sergeyTheme.className = 'sergeyTheme';
+
+const sergeyThemeText = document.createElement('h2');
+sergeyThemeText.className = 'sergeyThemeText';
+sergeyThemeText.textContent = 'Сережка';
+
+const toggleContainerSergey = document.createElement('label');
+toggleContainerSergey.className = 'toggle-container';
+
+const toggleInputSergey = document.createElement ('input');
+toggleInputSergey.type = 'checkbox';
+toggleInputSergey.className = "toggle-input";
+
+toggleInputSergey.addEventListener('change', function() {
+    const rainContainer = document.getElementById('rain-container');
+    rainContainer.style.display = this.checked ? 'block' : 'none';
+    localStorage.setItem('sergeyRainMode', this.checked);
+});
+
+const toggleSliderSergey = document.createElement('span');
+toggleSliderSergey.className = "toggle-slider";
+
+sergeyTheme.appendChild(sergeyThemeText);
+sergeyTheme.appendChild(toggleContainerSergey);
+
+toggleContainerSergey.appendChild(toggleInputSergey);
+toggleContainerSergey.appendChild(toggleSliderSergey);
+
+// Добавляем toggleContainerSergey в sergeyTheme
+  // <- Вот это было пропущено!
+
+
+
   themes.appendChild(themeText);
   themes.appendChild(themeTextBlack);
+  sergeyTheme.appendChild(sergeyThemeText);
+  themes.appendChild(sergeyTheme);
 
   wrapper.appendChild(modalWindow);
   wrapper.appendChild(backdrop);
@@ -449,7 +486,7 @@ function createModalButton(className, text, func){
 
 document.addEventListener('DOMContentLoaded', () => {
   const rainContainer = document.getElementById('rain-container');
-  const rainDropsCount = 300;
+  const rainDropsCount = 200;
 
   for (let i = 0; i < rainDropsCount; i++) {
     createRainDrop();
@@ -490,7 +527,7 @@ document.addEventListener('DOMContentLoaded', () => {
   createTimeSlots();
   loadLunches();
   updateCurrentTimeLine();
-	setInterval(updateCurrentTimeLine, 30000);
+  setInterval(updateCurrentTimeLine, 30000);
 });
 
 
