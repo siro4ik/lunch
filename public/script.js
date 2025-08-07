@@ -434,8 +434,6 @@ sergeyTheme.appendChild(toggleContainerSergey);
 toggleContainerSergey.appendChild(toggleInputSergey);
 toggleContainerSergey.appendChild(toggleSliderSergey);
 
-// Добавляем toggleContainerSergey в sergeyTheme
-  // <- Вот это было пропущено!
 
 
 
