@@ -517,6 +517,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Сделать эффекты hover мышки 
+
 document.addEventListener('DOMContentLoaded', () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
   const isRainEnabled = localStorage.getItem('sergeyRainMode') === 'true';
