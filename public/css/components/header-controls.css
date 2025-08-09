@@ -80,8 +80,8 @@
     position: absolute;
     top: 0;
     left:0;
-    width: clamp(1.875rem, 1.453rem + 1.351vw, 3.125rem);
-    height: clamp(1.875rem, 1.453rem + 1.351vw, 3.125rem);
+    width: clamp(1.25rem, 0.903rem + 1.852vw, 3.125rem);
+    height: clamp(1.25rem, 0.903rem + 1.852vw, 3.125rem);
     border: none;
     background: none;
     padding: 0;
