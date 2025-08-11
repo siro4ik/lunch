@@ -167,7 +167,6 @@ function adjustTime(field, minutes) {
         mins.toString().padStart(2, '0');
 }
 
-const timeRegion = document.querySelector('.lunch-time');
 
 function loadLunches() {
     database.ref('lunches').on('value', (snapshot) => {
