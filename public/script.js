@@ -167,6 +167,8 @@ function adjustTime(field, minutes) {
         mins.toString().padStart(2, '0');
 }
 
+const timeRegion = document.querySelector('.lunch-time');
+
 function loadLunches() {
     database.ref('lunches').on('value', (snapshot) => {
         const lunches = snapshot.val();
@@ -206,6 +208,7 @@ function loadLunches() {
                     const deleteBtn = document.createElement('button');
                     if(lunch.user.includes('z') || lunch.user.includes('Z')){
 						deleteBtn.textContent = 'z'
+                        cell.style.backgroundColor = "#ffbdbdff"
 							}else{
 								deleteBtn.textContent = 'x' 
                             }
