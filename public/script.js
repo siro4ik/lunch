@@ -521,13 +521,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Сделать эффекты hover мышки 
 
+
+
 let mouseX = 0;
 let mouseY = 0;
 
-document.addEventListener('mousemove',(event) =>{
-    mouseX = event.clientX;
-    mouseY = event.clientY;
+document.addEventListener('mousemove',(move) =>{
+    mouseX = move.clientX;
+    mouseY = move.clientY;
+
+    mouseMove(mouseX, mouseY);
 });
+
+function mouseMove (x, y){
+    
+    console.log(`положение мышки x = ${x} y = ${y}`);
+
+}
 
 
 
