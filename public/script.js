@@ -535,8 +535,10 @@ document.addEventListener('mousemove',(move) =>{
 
 function mouseMove (x, y){
 
-  
+  mouseAnimation.style.left = `${x}px`
+  mouseAnimation.style.top = `${y}px`
 
+  console.log (`x ${x} y ${y}`)
 
 }
 
