@@ -519,26 +519,28 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Сделать эффекты hover мышки 
 
-const mouseAnimation = document.querySelector('.mouse-animation');
+
+// эффект hover мышки 
 
 let mouseX = 0;
 let mouseY = 0;
 
 document.addEventListener('mousemove',(move) =>{
-    mouseX = move.clientX;
-    mouseY = move.clientY;
+    mouseX = move.pageX;
+    mouseY = move.pageY;
 
-    mouseMove(mouseX, mouseY);
+  mouseMove(mouseX, mouseY);
+    
 });
 
 function mouseMove (x, y){
 
+const mouseAnimation = document.querySelector('.mouse-animation');
+
   mouseAnimation.style.left = `${x}px`
   mouseAnimation.style.top = `${y}px`
 
-  console.log (`x ${x} y ${y}`)
 
 }
 
