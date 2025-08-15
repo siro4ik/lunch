@@ -422,9 +422,11 @@ toggleInputSergey.className = "toggle-input";
 toggleInputSergey.checked = localStorage.getItem('sergeyRainMode') ==='true';
 
 toggleInputSergey.addEventListener('change', function() {
-    const rainContainer = document.getElementById('rain-container');
-    rainContainer.style.display = this.checked ? 'block' : 'none';
-    localStorage.setItem('sergeyRainMode', this.checked);
+  const isEnabled = this.checked;
+  const rainContainer = document.getElementById('rain-container');
+  rainContainer.style.display = this.checked ? 'block' : 'none';
+  mouseTracker(isEnabled);
+  localStorage.setItem('sergeyRainMode', isEnabled);
 });
 
 const toggleSliderSergey = document.createElement('span');
@@ -524,37 +526,45 @@ document.addEventListener('DOMContentLoaded', () => {
 // эффект hover мышки 
 
 
-function mouseTracker(){
+function mouseTracker(enable = true){
+  const mouseAnimation = document.querySelector('.mouse-animation');
+  if (!mouseAnimation) return;
+
   let mouseX = 0;
   let mouseY = 0;
 
-  document.addEventListener('mousemove',(move) =>{
-      mouseX = move.pageX;
-      mouseY = move.pageY;
-
-    mouseMove(mouseX, mouseY);
-      
-  });
-
   function mouseMove (x, y){
-
-  const mouseAnimation = document.querySelector('.mouse-animation');
 
     mouseAnimation.style.left = `${x}px`
     mouseAnimation.style.top = `${y}px`
 
-
   }
-  
-    }   
+
+  function handleMouseMove(move) {
+    mouseX = move.pageX;
+    mouseY = move.pageY;
+    mouseMove(mouseX, mouseY);
+  }
+
+   if (enable) {
+    mouseAnimation.style.display = 'block';
+    document.addEventListener('mousemove', handleMouseMove);
+  } else {
+    mouseAnimation.style.display = 'none';
+    document.removeEventListener('mousemove', handleMouseMove);
+  }
+}
+
+
 
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const mouseAnimation = document.querySelector('.mouse-animation');
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
   const isRainEnabled = localStorage.getItem('sergeyRainMode') === 'true';
+
+  localStorage.setItem('mouseTrackerEnabled', isRainEnabled.toString());
 
   const rainContainer = document.getElementById('rain-container');
   rainContainer.style.display = isRainEnabled ? 'block' : 'none'; 
@@ -563,11 +573,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('dark-theme');
   }
 
-  if(isRainEnabled){
-    mouseTracker();
-  } else {
-   mouseAnimation.style.display = 'none';
-  }
+  mouseTracker(isRainEnabled);
   
   createTimeSlots();
   loadLunches();
