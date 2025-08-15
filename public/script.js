@@ -523,30 +523,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // эффект hover мышки 
 
-let mouseX = 0;
-let mouseY = 0;
 
-document.addEventListener('mousemove',(move) =>{
-    mouseX = move.pageX;
-    mouseY = move.pageY;
+function mouseTracker(){
+  let mouseX = 0;
+  let mouseY = 0;
 
-  mouseMove(mouseX, mouseY);
-    
-});
+  document.addEventListener('mousemove',(move) =>{
+      mouseX = move.pageX;
+      mouseY = move.pageY;
 
-function mouseMove (x, y){
+    mouseMove(mouseX, mouseY);
+      
+  });
 
-const mouseAnimation = document.querySelector('.mouse-animation');
+  function mouseMove (x, y){
 
-  mouseAnimation.style.left = `${x}px`
-  mouseAnimation.style.top = `${y}px`
+  const mouseAnimation = document.querySelector('.mouse-animation');
+
+    mouseAnimation.style.left = `${x}px`
+    mouseAnimation.style.top = `${y}px`
 
 
-}
+  }
+  
+    }   
+
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  const mouseAnimation = document.querySelector('.mouse-animation');
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
   const isRainEnabled = localStorage.getItem('sergeyRainMode') === 'true';
 
@@ -555,6 +561,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (isDarkTheme) {
     document.body.classList.add('dark-theme');
+  }
+
+  if(isRainEnabled){
+    mouseTracker();
+  } else {
+   mouseAnimation.style.display = 'none';
   }
   
   createTimeSlots();
