@@ -604,4 +604,4 @@ window.addEventListener('scroll', updateCurrentTimeLine);
 
 
 
-
+// прелоадер, дождь, анимация градиента
