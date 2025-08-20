@@ -487,39 +487,124 @@ function createModalButton(className, text, func){
 
 // Дождь для Sergey mode
 
-document.addEventListener('DOMContentLoaded', () => {
-  const rainContainer = document.getElementById('rain-container');
-  const rainDropsCount = 200;
+// document.addEventListener('DOMContentLoaded', () => {
+//   const rainContainer = document.getElementById('rain-container');
+//   const rainDropsCount = 200;
 
-  for (let i = 0; i < rainDropsCount; i++) {
-    createRainDrop();
+//   for (let i = 0; i < rainDropsCount; i++) {
+//     createRainDrop();
+//   }
+
+//   function createRainDrop() {
+//     const raindrop = document.createElement('div');
+//     raindrop.classList.add('raindrop');
+
+//     const posX = Math.random() * window.innerWidth;
+//     const delay = Math.random() * 2;
+//     const duration = 0.5 + Math.random() * 1;
+
+//     raindrop.style.left = `${posX}px`;
+//     raindrop.style.top = `${-20 - Math.random() * 20}px`; 
+//     raindrop.style.animationDelay = `${delay}s`;
+//     raindrop.style.animationDuration = `${duration}s`;
+
+//     rainContainer.appendChild(raindrop);
+
+//     setTimeout(() => {
+//       raindrop.remove();
+//       createRainDrop();
+//     }, duration * 1000);
+//   }
+
+//   window.addEventListener('resize', () => {
+//     rainContainer.style.height = `${document.body.scrollHeight}px`;
+//   });
+// });
+
+
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
+
+
+let drops = [];
+const dropColour = "#5C97BF";
+const dropLengths = [10, 12, 14, 16, 18, 20, 22];
+const dropSkews = [-2, -1, 0, 1, 2];
+const maxDrops = 500;
+
+
+class Droplet {
+  constructor(x, y, length, skew) {
+    this.x = x;
+    this.y = y;
+    this.length = length;
+    this.skew = skew;
   }
 
-  function createRainDrop() {
-    const raindrop = document.createElement('div');
-    raindrop.classList.add('raindrop');
+  move() {
 
-    const posX = Math.random() * window.innerWidth;
-    const delay = Math.random() * 2;
-    const duration = 0.5 + Math.random() * 1;
+    this.y += this.length / 2;
+    this.x += this.skew / 5;
 
-    raindrop.style.left = `${posX}px`;
-    raindrop.style.top = `${-20 - Math.random() * 20}px`; 
-    raindrop.style.animationDelay = `${delay}s`;
-    raindrop.style.animationDuration = `${duration}s`;
-
-    rainContainer.appendChild(raindrop);
-
-    setTimeout(() => {
-      raindrop.remove();
-      createRainDrop();
-    }, duration * 1000);
+    if (this.y > height) {
+      this.y = 0;
+    }
+    if (this.x > width || this.x < 0) {
+      this.y = 0;
+      this.x = Math.floor(Math.random() * width);
+    }
   }
 
-  window.addEventListener('resize', () => {
-    rainContainer.style.height = `${document.body.scrollHeight}px`;
-  });
-});
+  draw(ctx) {
+    ctx.beginPath();
+    ctx.moveTo(this.x, this.y);
+    ctx.lineTo(this.x + this.skew, this.y + this.length);
+    ctx.strokeStyle = dropColour;
+    ctx.stroke();
+  }
+}
+
+
+for (let i = 0; i < maxDrops; i++) {
+  let instance = new Droplet(
+    Math.floor(Math.random() * width),
+    Math.floor(Math.random() * height),
+    randVal(dropLengths),
+    randVal(dropSkews)
+  );
+  drops.push(instance);
+}
+
+
+function loop() {
+  
+  ctx.clearRect(0, 0, width, height);
+
+  for (let drop of drops) {
+    drop.move();
+    drop.draw(ctx);
+  }
+
+  requestAnimationFrame(loop)
+}
+
+loop();
+
+
+window.addEventListener('resize', resize);
+function resize() {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+}
+
+
+function randVal(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
 
 
 
