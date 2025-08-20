@@ -32,6 +32,7 @@
     font-weight: 600;
 }
 
+
 .lunch-button{
     padding: 5px;
     border-radius: 10px;
@@ -40,9 +41,7 @@
     border:solid 1px;
 }
 
-.bg-red:hover{
-    background-color: #ffa4a4;
-}
+
 
 
 .time-controls {

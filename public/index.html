@@ -39,18 +39,18 @@
         <div class="start">
             <input type="text" id="userName" placeholder="Ваше имя" maxlength="13">
             <h2 class="time">Время начала</h2>
-            <button onclick="adjustTime('start', -30) " class="bg-red lunch-button">-30 мин</button>
+            <button onclick="adjustTime('start', -30) " class=" lunch-button glow-on-hover">-30 мин</button>
             <input type="time" id="start" step="1800" value="12:00">
-            <button onclick="adjustTime('start', 30)" class="bg-red lunch-button">+30 мин</button>
+            <button onclick="adjustTime('start', 30)" class=" lunch-button glow-on-hover">+30 мин</button>
         </div>
         <div class="end">
 
             <h2 class="time">Время конца</h2>
-            <button onclick="adjustTime('end', -30)" class="bg-red lunch-button">-30 мин</button>
+            <button onclick="adjustTime('end', -30)" class=" lunch-button glow-on-hover">-30 мин</button>
             <input type="time" id="end" step="1800" value="13:00">
-            <button onclick="adjustTime('end', 30)" class="bg-red lunch-button">+30 мин</button>
+            <button onclick="adjustTime('end', 30)" class=" lunch-button glow-on-hover">+30 мин</button>
         </div>
-        <button onclick="addLunch()" class="addMeal bg-red ">Добавить</button>
+        <button onclick="addLunch()" class="addMeal  glow-on-hover">Добавить</button>
     </div>
 </div>
 
