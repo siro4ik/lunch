@@ -32,7 +32,7 @@ table {
 }
 
 th, td {
-    border: 1px solid #575757a9;
+    border: 1px solid #595959;
     padding: clamp(0.125rem, 0.053rem + 0.361vw, 0.5rem);
     text-align: center;
     width: clamp(1.25rem, -1.28rem + 12.651vw, 14.375rem);
