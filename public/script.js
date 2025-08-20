@@ -1,4 +1,3 @@
-
 const firebaseConfig = {
     apiKey: "AIzaSyAy9OEzVWlqWTGwzpcV5847sugtmvOYedU",
     authDomain: "lunch-575f4.firebaseapp.com",
@@ -10,48 +9,17 @@ const firebaseConfig = {
     measurementId: "G-N5V8E7TV4D"
 };
 
-
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
-// появление/скрытие кота (черного и серого)
-// const blackCatDisappear = document.querySelector("#cat");
-// const greyCatDisappear = document.querySelector("#cat2");
-
-
-
-// function disappearCat(){
-
-//     if (!blackCatDisappear || !greyCatDisappear) {
-//   console.error("Один из элементов не найден!");
-//   return;
-//     }
-
-//     if (document.body.classList.contains("dark-theme")){
-//         blackCatDisappear.style.opacity = '0';
-//         greyCatDisappear.style.opacity = '1';
-//     }else{
-//         blackCatDisappear.style.opacity = '1';
-//         greyCatDisappear.style.opacity = '0';
-//     }
-
-//     colorToggle.addEventListener("change", ()=>{
-//     toggle();
-//     disappearCat();
-// });
-
-  
-// };
-
 // сокрытие элемента при скролле
-const hide = document.querySelector (".element-to-hide");
+const hide = document.querySelector(".element-to-hide");
 const scrollDistance = 309;
 
-
-window.addEventListener('scroll',()=>{
-    if ( window.scrollY > scrollDistance){
+window.addEventListener('scroll', () => {
+    if (window.scrollY > scrollDistance) {
         hide.textContent = '';
-    }else{
+    } else {
         hide.textContent = 'Время';
     }
 })
@@ -61,15 +29,13 @@ function createTimeSlots() {
     const table = document.getElementById('slots');
     table.innerHTML = '';
 
-
     document.querySelectorAll('.current-time-line').forEach(el => el.remove());
-
 
     const line = document.createElement('div');
     line.className = 'current-time-line';
     document.getElementById('calendar').appendChild(line);
 
-    for(let hour = 0; hour < 24; hour++) {
+    for (let hour = 0; hour < 24; hour++) {
         for (let minute = 0; minute < 60; minute += 30) {
             const row = document.createElement('tr');
 
@@ -93,7 +59,6 @@ function isSlotAvailable(day, start, end) {
     const [endHour, endMinute] = end.split(':').map(Number);
     const startTotal = startHour * 60 + startMinute;
     const endTotal = endHour * 60 + endMinute;
-
 
     for (let time = startTotal; time < endTotal; time += 30) {
         const hour = Math.floor(time / 60);
@@ -129,15 +94,11 @@ function updateCurrentTimeLine() {
     const line = document.querySelector('.current-time-line');
     if (line) {
         line.style.top = `${firstRowRect.top + positionPixels - tableRect.top}px`;
-        // line.style.left = `${tableRect.left}px`;
         line.style.width = `${tableRect.width}px`;
     }
 }
 
-
-
 setInterval(updateCurrentTimeLine, 60000);
-updateCurrentTimeLine();
 
 function adjustTime(field, minutes) {
     const input = document.getElementById(field);
@@ -146,27 +107,20 @@ function adjustTime(field, minutes) {
         return;
     }
 
-
     const [hoursStr, minsStr] = input.value.split(':');
     let hours = parseInt(hoursStr) || 0;
     let mins = parseInt(minsStr) || 0;
 
-
     let totalMinutes = hours * 60 + mins + minutes;
-
-
     totalMinutes = (totalMinutes + 1440) % 1440;
-
 
     hours = Math.floor(totalMinutes / 60);
     mins = totalMinutes % 60;
-
 
     input.value =
         hours.toString().padStart(2, '0') + ':' +
         mins.toString().padStart(2, '0');
 }
-
 
 function loadLunches() {
     database.ref('lunches').on('value', (snapshot) => {
@@ -192,31 +146,27 @@ function loadLunches() {
                 const cell = document.getElementById(`d${lunch.day}h${hour}m${minute}`);
 
                 if (cell) {
-
                     cell.dataset.lunchId = id;
                     cell.classList.add('lunch-time');
 
                     const container = document.createElement('div');
                     container.className = 'lunch-container';
 
-
                     const timeText = document.createElement('span');
                     timeText.textContent = `${lunch.user}: ${lunch.start}-${lunch.end}`;
 
-
                     const deleteBtn = document.createElement('button');
-                    if(lunch.user.includes('z') || lunch.user.includes('Z')){
-						deleteBtn.textContent = 'z'
+                    if (lunch.user.includes('z') || lunch.user.includes('Z')) {
+                        deleteBtn.textContent = 'z'
                         cell.style.backgroundColor = "#ffd4d4ff"
-							}else{
-								deleteBtn.textContent = 'x' 
-                            }
+                    } else {
+                        deleteBtn.textContent = 'x'
+                    }
                     deleteBtn.className = 'delete-btn';
                     deleteBtn.onclick = (e) => {
                         e.stopPropagation();
                         deleteLunch(id, lunch.day, hour, minute);
                     };
-
 
                     container.appendChild(timeText);
                     container.appendChild(deleteBtn);
@@ -230,7 +180,6 @@ function loadLunches() {
 }
 
 function deleteLunch(id, day, hour, minute) {
-
     if (confirm('Удалить эту запись?')) {
         database.ref(`lunches/${id}`).remove()
             .then(() => {
@@ -257,7 +206,6 @@ function addLunch() {
         return;
     }
 
-
     const [startHour, startMinute] = start.split(':').map(Number);
     const [endHour, endMinute] = end.split(':').map(Number);
     const startTotal = startHour * 60 + startMinute;
@@ -268,10 +216,8 @@ function addLunch() {
         return;
     }
 
-
     const duration = endTotal - startTotal;
     const slotCount = Math.ceil(duration / 30);
-
 
     for (let i = 0; i < slotCount; i++) {
         const slotTime = startTotal + (i * 30);
@@ -285,7 +231,6 @@ function addLunch() {
         }
     }
 
-
     database.ref('lunches').push({
         user: userName,
         start: start,
@@ -295,398 +240,298 @@ function addLunch() {
     });
 }
 
-const oldLine = document.querySelector('.current-time-line');
-if (oldLine) oldLine.remove();
-
-
+// Удаляем старую линию времени и создаем новую
+document.querySelectorAll('.current-time-line').forEach(el => el.remove());
 const line = document.createElement('div');
 line.className = 'current-time-line';
 document.getElementById('calendar').appendChild(line);
 
-
-// Уведомления - доделать
-
-// function checkLunchTime() {
-//     const now = new Date();
-//     const currentHour = now.getHours();
-//     const currentMinute = now.getMinutes();
-
-//     console.log('Текущее время:', currentHour, ':', currentMinute);
-    
-//     database.ref('lunches').once('value').then((snapshot) => {
-//         const lunches = snapshot.val();
-//         if (!lunches) return;
-
-//         Object.values(lunches).forEach(lunch => {
-//             const [startHour, startMinute] = lunch.start.split(':').map(Number);
-
-//             if (currentHour === startHour && currentMinute === startMinute - 5) {
-//                 alert(`Скоро обед у ${lunch.user}! Начало в ${lunch.start}`);
-//             }
-//         });
-//     });
-// }
-
-// Модальное окно, изменение цвета кнопки - сделать
-
+// Модальное окно
 const OpenModalButton = document.querySelector('#setting-btn');
 
-OpenModalButton.addEventListener('click', ()=>{
+OpenModalButton.addEventListener('click', () => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'modalWrapper';
 
-  const wrapper = document.createElement('div');
-  wrapper.className = 'modalWrapper';
+    const backdrop = document.createElement('div');
+    backdrop.className = 'backdrop';
+    backdrop.addEventListener('click', () => {
+        wrapper.remove();
+    });
 
+    const modalWindow = document.createElement('div');
+    modalWindow.className = 'modalWindow';
 
-  const backdrop = document.createElement('div');
-  backdrop.className = 'backdrop';
-  backdrop.addEventListener('click', () =>{
-    wrapper.remove();
-  });
+    const buttonCross = createModalButton('buttonCross', 'x', closeModal);
 
+    const settingsHeader = document.createElement('div');
+    settingsHeader.className = "settingsHeader";
 
+    const settingsHeaderText = document.createElement('h2');
+    settingsHeaderText.textContent = 'Настройки';
 
-  const modalWindow = document.createElement('div');
-  modalWindow.className = 'modalWindow';
+    settingsHeader.appendChild(settingsHeaderText);
 
+    const themes = document.createElement('div');
+    themes.className = 'themesContainer';
 
+    const themeText = document.createElement('h2');
+    themeText.className = "themeText";
+    themeText.textContent = 'Темы';
 
-  const buttonCross = createModalButton ('buttonCross', 'x', closeModal);
+    const themeTextBlack = document.createElement('div');
+    themeTextBlack.className = "theme-black";
 
-  const settingsHeader = document.createElement('div');
-  settingsHeader.className = "settingsHeader";
-  
-  const settingsHeaderText = document.createElement('h2');
-  settingsHeaderText.textContent = 'Настройки';
+    const themeLabel = document.createElement('span');
+    themeLabel.className = "theme-label";
+    themeLabel.textContent = 'Темная тема';
 
-  settingsHeader.appendChild(settingsHeaderText);
+    const toggleContainerBlack = document.createElement('label');
+    toggleContainerBlack.className = "toggle-container";
 
-  const themes = document.createElement ('div');
-  themes.className = 'themesContainer';
+    const toggleInputTheme = document.createElement('input');
+    toggleInputTheme.type = "checkbox";
+    toggleInputTheme.className = "toggle-input";
+    toggleInputTheme.checked = localStorage.getItem('darkTheme') === 'true';
 
-  const themeText = document.createElement('h2');
-  themeText.className = "themeText";
-  themeText.textContent = 'Темы';
+    toggleInputTheme.addEventListener('change', function () {
+        document.body.classList.toggle('dark-theme', this.checked);
+        localStorage.setItem('darkTheme', this.checked);
+    });
 
-const themeTextBlack = document.createElement('div');
-themeTextBlack.className = "theme-black"; 
+    const toggleSlider = document.createElement('span');
+    toggleSlider.className = "toggle-slider";
 
-const themeLabel = document.createElement('span');
-themeLabel.className = "theme-label";
-themeLabel.textContent = 'Темная тема';
+    toggleContainerBlack.appendChild(toggleInputTheme);
+    toggleContainerBlack.appendChild(toggleSlider);
+    themeTextBlack.appendChild(themeLabel);
+    themeTextBlack.appendChild(toggleContainerBlack);
 
+    const sergeyTheme = document.createElement('div');
+    sergeyTheme.className = 'sergeyTheme';
 
-const toggleContainerBlack = document.createElement('label');
-toggleContainerBlack.className = "toggle-container";
+    const sergeyThemeText = document.createElement('h2');
+    sergeyThemeText.className = 'sergeyThemeText';
+    sergeyThemeText.textContent = 'Сережка';
 
-  const toggleInputTheme = document.createElement('input');
-  toggleInputTheme.type = "checkbox";
-  toggleInputTheme.className = "toggle-input";
-  toggleInputTheme.checked = localStorage.getItem('darkTheme') === 'true';
+    const toggleContainerSergey = document.createElement('label');
+    toggleContainerSergey.className = 'toggle-container';
 
-  toggleInputTheme.addEventListener('change', function() {
-    document.body.classList.toggle('dark-theme', this.checked);
-    localStorage.setItem('darkTheme', this.checked);
-  });
+    const toggleInputSergey = document.createElement('input');
+    toggleInputSergey.type = 'checkbox';
+    toggleInputSergey.className = "toggle-input";
+    toggleInputSergey.checked = localStorage.getItem('sergeyRainMode') === 'true';
 
- 
-const toggleSlider = document.createElement('span');
-toggleSlider.className = "toggle-slider";
+    toggleInputSergey.addEventListener('change', function () {
+        const isEnabled = this.checked;
+        toggleRainVisibility(isEnabled);
+        mouseTracker(isEnabled);
+        localStorage.setItem('sergeyRainMode', isEnabled);
+    });
 
+    const toggleSliderSergey = document.createElement('span');
+    toggleSliderSergey.className = "toggle-slider";
 
+    sergeyTheme.appendChild(sergeyThemeText);
+    sergeyTheme.appendChild(toggleContainerSergey);
 
+    toggleContainerSergey.appendChild(toggleInputSergey);
+    toggleContainerSergey.appendChild(toggleSliderSergey);
 
-toggleContainerBlack.appendChild(toggleInputTheme);
-toggleContainerBlack.appendChild(toggleSlider);
-themeTextBlack.appendChild(themeLabel);
-themeTextBlack.appendChild(toggleContainerBlack);
+    themes.appendChild(themeText);
+    themes.appendChild(themeTextBlack);
+    themes.appendChild(sergeyTheme);
 
+    wrapper.appendChild(modalWindow);
+    wrapper.appendChild(backdrop);
 
-toggleInputTheme.addEventListener('change', function() {
-  document.body.classList.toggle('dark-theme', this.checked);
-  localStorage.setItem('darkTheme', this.checked);
-});
+    modalWindow.appendChild(buttonCross);
+    modalWindow.appendChild(settingsHeader);
+    modalWindow.appendChild(themes);
 
-const sergeyTheme = document.createElement('div');
-sergeyTheme.className = 'sergeyTheme';
-
-const sergeyThemeText = document.createElement('h2');
-sergeyThemeText.className = 'sergeyThemeText';
-sergeyThemeText.textContent = 'Сережка';
-
-const toggleContainerSergey = document.createElement('label');
-toggleContainerSergey.className = 'toggle-container';
-
-const toggleInputSergey = document.createElement ('input');
-toggleInputSergey.type = 'checkbox';
-toggleInputSergey.className = "toggle-input";
-toggleInputSergey.checked = localStorage.getItem('sergeyRainMode') ==='true';
-
-toggleInputSergey.addEventListener('change', function() {
-  const isEnabled = this.checked;
-  const rainContainer = document.getElementById('rain-container');
-  rainContainer.style.display = this.checked ? 'block' : 'none';
-  mouseTracker(isEnabled);
-  localStorage.setItem('sergeyRainMode', isEnabled);
-});
-
-const toggleSliderSergey = document.createElement('span');
-toggleSliderSergey.className = "toggle-slider";
-
-sergeyTheme.appendChild(sergeyThemeText);
-sergeyTheme.appendChild(toggleContainerSergey);
-
-toggleContainerSergey.appendChild(toggleInputSergey);
-toggleContainerSergey.appendChild(toggleSliderSergey);
-
-
-
-
-  themes.appendChild(themeText);
-  themes.appendChild(themeTextBlack);
-  sergeyTheme.appendChild(sergeyThemeText);
-  themes.appendChild(sergeyTheme);
-
-  wrapper.appendChild(modalWindow);
-  wrapper.appendChild(backdrop);
-
-  modalWindow.appendChild(buttonCross);
-  modalWindow.appendChild(settingsHeader);
-  modalWindow.appendChild(themes);
-  
-  document.body.appendChild(wrapper);
-  
-
+    document.body.appendChild(wrapper);
 })
 
-
-
-function closeModal(){
-  const modal = document.querySelector('.modalWrapper')
-
-  if (!modal){
-    console.log('Модальное окно не найдено');
-    return;
-  }
-
-  modal.remove();
+function closeModal() {
+    const modal = document.querySelector('.modalWrapper')
+    if (!modal) {
+        console.log('Модальное окно не найдено');
+        return;
+    }
+    modal.remove();
 }
 
-function createModalButton(className, text, func){
-  const button = document.createElement('button');
-  button.setAttribute('type', 'button');
-  button.className = className;
-  button.innerText = text;
-  button.addEventListener('click', () => {
-    func();
-  })
-
-  return button;
-
-
+function createModalButton(className, text, func) {
+    const button = document.createElement('button');
+    button.setAttribute('type', 'button');
+    button.className = className;
+    button.innerText = text;
+    button.addEventListener('click', () => {
+        func();
+    })
+    return button;
 }
 
-// Дождь для Sergey mode
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const rainContainer = document.getElementById('rain-container');
-//   const rainDropsCount = 200;
-
-//   for (let i = 0; i < rainDropsCount; i++) {
-//     createRainDrop();
-//   }
-
-//   function createRainDrop() {
-//     const raindrop = document.createElement('div');
-//     raindrop.classList.add('raindrop');
-
-//     const posX = Math.random() * window.innerWidth;
-//     const delay = Math.random() * 2;
-//     const duration = 0.5 + Math.random() * 1;
-
-//     raindrop.style.left = `${posX}px`;
-//     raindrop.style.top = `${-20 - Math.random() * 20}px`; 
-//     raindrop.style.animationDelay = `${delay}s`;
-//     raindrop.style.animationDuration = `${duration}s`;
-
-//     rainContainer.appendChild(raindrop);
-
-//     setTimeout(() => {
-//       raindrop.remove();
-//       createRainDrop();
-//     }, duration * 1000);
-//   }
-
-//   window.addEventListener('resize', () => {
-//     rainContainer.style.height = `${document.body.scrollHeight}px`;
-//   });
-// });
-
-
-const canvas = document.getElementById('canvas');
+// ===== КОД ДЛЯ ДОЖДЯ =====
+const canvas = document.getElementById('rain-container');
 const ctx = canvas.getContext('2d');
+let animationId = null;
 
-
-let width = canvas.width = window.innerWidth;
-let height = canvas.height = window.innerHeight;
-
+// Устанавливаем размеры canvas
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
 
 let drops = [];
 const dropColour = "#5C97BF";
 const dropLengths = [10, 12, 14, 16, 18, 20, 22];
 const dropSkews = [-2, -1, 0, 1, 2];
-const maxDrops = 500;
-
+const maxDrops = 200;
 
 class Droplet {
-  constructor(x, y, length, skew) {
-    this.x = x;
-    this.y = y;
-    this.length = length;
-    this.skew = skew;
-  }
-
-  move() {
-
-    this.y += this.length / 2;
-    this.x += this.skew / 5;
-
-    if (this.y > height) {
-      this.y = 0;
+    constructor(x, y, length, skew) {
+        this.x = x;
+        this.y = y;
+        this.length = length;
+        this.skew = skew;
+        this.speed = this.length / 2;
     }
-    if (this.x > width || this.x < 0) {
-      this.y = 0;
-      this.x = Math.floor(Math.random() * width);
+
+    move() {
+        this.y += this.speed;
+        this.x += this.skew / 5;
+
+        if (this.y > canvas.height) {
+            this.y = 0 - this.length;
+            this.x = Math.random() * canvas.width;
+        }
+        if (this.x > canvas.width || this.x < 0) {
+            this.y = 0 - this.length;
+            this.x = Math.random() * canvas.width;
+        }
     }
-  }
 
-  draw(ctx) {
-    ctx.beginPath();
-    ctx.moveTo(this.x, this.y);
-    ctx.lineTo(this.x + this.skew, this.y + this.length);
-    ctx.strokeStyle = dropColour;
-    ctx.stroke();
-  }
+    draw(ctx) {
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(this.x + this.skew, this.y + this.length);
+        ctx.strokeStyle = dropColour;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    }
 }
 
-
-for (let i = 0; i < maxDrops; i++) {
-  let instance = new Droplet(
-    Math.floor(Math.random() * width),
-    Math.floor(Math.random() * height),
-    randVal(dropLengths),
-    randVal(dropSkews)
-  );
-  drops.push(instance);
+// Создаем капли дождя
+function createDrops() {
+    drops = [];
+    for (let i = 0; i < maxDrops; i++) {
+        let instance = new Droplet(
+            Math.random() * canvas.width,
+            Math.random() * canvas.height,
+            randVal(dropLengths),
+            randVal(dropSkews)
+        );
+        drops.push(instance);
+    }
 }
-
-
-function loop() {
-  
-  ctx.clearRect(0, 0, width, height);
-
-  for (let drop of drops) {
-    drop.move();
-    drop.draw(ctx);
-  }
-
-  requestAnimationFrame(loop)
-}
-
-loop();
-
-
-window.addEventListener('resize', resize);
-function resize() {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
-}
-
 
 function randVal(array) {
-  return array[Math.floor(Math.random() * array.length)];
+    return array[Math.floor(Math.random() * array.length)];
 }
 
+function animateRain() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    for (let drop of drops) {
+        drop.move();
+        drop.draw(ctx);
+    }
+
+    animationId = requestAnimationFrame(animateRain);
+}
+
+// Управление видимостью дождя
+function toggleRainVisibility(visible) {
+    if (visible) {
+        canvas.style.display = 'block';
+        resizeCanvas();
+        createDrops();
+        if (animationId) cancelAnimationFrame(animationId);
+        animateRain();
+    } else {
+        canvas.style.display = 'none';
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+    }
+}
 
 // эффект hover мышки 
+function mouseTracker(enable = true) {
+    const mouseAnimation = document.querySelector('.mouse-animation');
+    if (!mouseAnimation) return;
 
+    let mouseX = 0;
+    let mouseY = 0;
 
-function mouseTracker(enable = true){
-  const mouseAnimation = document.querySelector('.mouse-animation');
-  if (!mouseAnimation) return;
+    function mouseMove(x, y) {
+        mouseAnimation.style.left = `${x}px`;
+        mouseAnimation.style.top = `${y}px`;
+    }
 
-  let mouseX = 0;
-  let mouseY = 0;
+    function handleMouseMove(move) {
+        mouseX = move.pageX;
+        mouseY = move.pageY;
+        mouseMove(mouseX, mouseY);
+    }
 
-  function mouseMove (x, y){
-
-    mouseAnimation.style.left = `${x}px`
-    mouseAnimation.style.top = `${y}px`
-
-  }
-
-  function handleMouseMove(move) {
-    mouseX = move.pageX;
-    mouseY = move.pageY;
-    mouseMove(mouseX, mouseY);
-  }
-
-   if (enable) {
-    mouseAnimation.style.display = 'block';
-    document.addEventListener('mousemove', handleMouseMove);
-  } else {
-    mouseAnimation.style.display = 'none';
-    document.removeEventListener('mousemove', handleMouseMove);
-  }
+    if (enable) {
+        mouseAnimation.style.display = 'block';
+        document.addEventListener('mousemove', handleMouseMove);
+    } else {
+        mouseAnimation.style.display = 'none';
+        document.removeEventListener('mousemove', handleMouseMove);
+    }
 }
 
-
-
-
-
-
+// Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
-  const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
-  const isRainEnabled = localStorage.getItem('sergeyRainMode') === 'true';
+    const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+    const isRainEnabled = localStorage.getItem('sergeyRainMode') === 'true';
 
-  localStorage.setItem('mouseTrackerEnabled', isRainEnabled.toString());
+    if (isDarkTheme) {
+        document.body.classList.add('dark-theme');
+    }
 
-  const rainContainer = document.getElementById('rain-container');
-  rainContainer.style.display = isRainEnabled ? 'block' : 'none'; 
+    // Инициализируем canvas
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
-  if (isDarkTheme) {
-    document.body.classList.add('dark-theme');
-  }
+    // Инициализируем дождь только если он включен
+    if (isRainEnabled) {
+        toggleRainVisibility(true);
+        mouseTracker(true);
+    } else {
+        canvas.style.display = 'none';
+    }
 
-  mouseTracker(isRainEnabled);
-  
-  createTimeSlots();
-  loadLunches();
-  updateCurrentTimeLine();
-  setInterval(updateCurrentTimeLine, 30000);
+    // Инициализируем график
+    createTimeSlots();
+    loadLunches();
+    updateCurrentTimeLine();
+    setInterval(updateCurrentTimeLine, 30000);
 });
 
-
-
-// window.onload = function() {
-    // createTimeSlots();
-    // loadLunches();
-    // updateCurrentTimeLine();
-    // disappearCat();
-
-    // checkLunchTime();
-    // setInterval(checkLunchTime, 60000);
-// };
-
-
+// Обработчики изменения размера окна
 let resizeTimeout;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(updateCurrentTimeLine, 100);
+    resizeTimeout = setTimeout(() => {
+        updateCurrentTimeLine();
+        resizeCanvas();
+    }, 100);
 });
 
 window.addEventListener('scroll', updateCurrentTimeLine);
-
-
-
-// прелоадер, дождь, анимация градиента
