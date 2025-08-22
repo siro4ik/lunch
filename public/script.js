@@ -395,12 +395,12 @@ class Droplet {
         this.y = y;
         this.length = length;
         this.skew = skew;
-        this.speed = this.length / 2;
+        this.speed = this.length / 1.5;
     }
 
     move() {
         this.y += this.speed;
-        this.x += this.skew / 5;
+        this.x += this.skew / 4;
 
         if (this.y > canvas.height) {
             this.y = 0 - this.length;
