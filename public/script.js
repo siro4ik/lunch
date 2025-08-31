@@ -26,7 +26,7 @@ window.addEventListener('scroll', () => {
 
 // ВИДЖЕТ ПРОВЕРКИ НОМЕРА (настроить)
 
-<div id="kody_widget"><a href="https://www.kody.su/" target="_blank"><img alt="kody.su: телефонные коды" src="https://www.kody.su/img/mlogo.png"></a></div>
+{/* <div id="kody_widget"><a href="https://www.kody.su/" target="_blank"><img alt="kody.su: телефонные коды" src="https://www.kody.su/img/mlogo.png"></a></div>
 <script>
 var kody_options = {id:'kody_widget', caption:'Оператор/город по номеру телефона'};
   (function(){
@@ -34,7 +34,7 @@ var kody_options = {id:'kody_widget', caption:'Оператор/город по 
     s.async = true; s.src = "https://www.kody.su/embed/widget.min.js";
     document.getElementsByTagName('head')[0].appendChild(s);
   })();
-</script>
+</script> */}
 
 // Создание временных слотов
 function createTimeSlots() {
