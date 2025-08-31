@@ -170,7 +170,8 @@ function loadLunches() {
                     const deleteBtn = document.createElement('button');
                     if (lunch.user.includes('z') || lunch.user.includes('Z')) {
                         deleteBtn.textContent = 'z'
-                        cell.style.backgroundColor = "#ffd4d4ff"
+                        cell.style.backgroundColor = "#ff0080ff"
+                        timeText.style.color = "#ffffffde"
                     } else {
                         deleteBtn.textContent = 'x'
                     }
