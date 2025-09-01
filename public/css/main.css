@@ -85,10 +85,9 @@ body {
 
 .header{
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: 50px repeat(4,1fr);
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 /* BG-иконки */
