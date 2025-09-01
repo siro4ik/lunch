@@ -98,6 +98,50 @@
   transform: rotate(60deg);
 }
 
+#kody_result{
+    display: flex !important;
+    align-items: center ;
+    justify-content: center ;
+    flex-direction: column ;
+}
+
+.w_container{
+    display: flex ;
+    align-items: center; 
+    justify-content: center ;
+    flex-direction: column ;
+}
+
+.result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    gap: 10px;
+}
+
 .result_number{
     color:  rgb(0, 0, 0) !important;
+    font-weight: 400 !important;
+}
+
+.number{
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+.submit{
+    background-color: #ffffff;
+    border: solid 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.submit:hover{
+    color: rgb(13, 255, 0);
+    background-color: #191919;
 }

@@ -4,7 +4,7 @@ body {
   font-style: normal;
   padding:10px 10px 0 10px;
   overflow-x: hidden;
-  background-image:linear-gradient( 140deg,#a6ffa33e,#87ffb959,#76c8ff3a,#e9ff894b,#e097ff36);
+  background-image:linear-gradient( 140deg,#11ff090b,#00ff6a0d,#0099ff0b,#d0ff000f,#b300ff0f);
   /* background: linear-gradient(270deg,rgba(169, 91, 228, 0.235) 10%, rgba(86, 212, 47, 0.219) 90%, rgba(255, 255, 255, 1) 100%); */
   background-size:400%;
   animation: beginani 15s infinite;
@@ -37,7 +37,7 @@ body {
 
 .glow-on-hover:before {
     content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background: linear-gradient(60deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
     top: -2px;
     left:-2px;
