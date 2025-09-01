@@ -97,3 +97,7 @@
 .bi:hover {
   transform: rotate(60deg);
 }
+
+.result_number{
+    color:  rgb(0, 0, 0) !important;
+}

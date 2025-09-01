@@ -11,7 +11,8 @@
 .dark-theme .request h4,
 .dark-theme .result_clock,
 .dark-theme .result_time,
-.dark-theme .result_bdpn{
-  color: #ddd;
-  fill:white;
+.dark-theme .result_bdpn,
+.dark-theme .result_number{
+  color: #ddd !important;
+  fill:white !important;
 }
