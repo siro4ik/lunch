@@ -95,23 +95,3 @@
 .bi:hover {
   transform: rotate(60deg);
 }
-
-.result h4{
-    color: white;
-}
-
-.request h4{
-    color: white;
-}
-
-.result_clock{
-    color: white;
-}
-
-.result_time{
-    color: white;
-}
-
-.result_bdpn{
-    color: white;
-}

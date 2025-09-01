@@ -6,7 +6,12 @@
 .dark-theme .time,
 .dark-theme th,
 .dark-theme td,
-.dark-theme #setting-btn{
+.dark-theme #setting-btn,
+.dark-theme .result h4,
+.dark-theme .request h4,
+.dark-theme .result_clock,
+.dark-theme .result_time,
+.dark-theme .result_bdpn{
   color: #ddd;
   fill:white;
 }
