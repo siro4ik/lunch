@@ -146,3 +146,7 @@ form{
     color: rgb(13, 255, 0);
     background-color: #191919;
 }
+
+.result_table{
+    border-radius: 10px !important;
+}

@@ -328,7 +328,7 @@ OpenModalButton.addEventListener('click', () => {
     toggleInputSergey.addEventListener('change', function () {
         const isEnabled = this.checked;
         toggleRainVisibility(isEnabled);
-        mouseTracker(isEnabled);
+        // mouseTracker(isEnabled);
         localStorage.setItem('sergeyRainMode', isEnabled);
     });
 
@@ -472,32 +472,32 @@ function toggleRainVisibility(visible) {
 }
 
 // эффект hover мышки 
-function mouseTracker(enable = true) {
-    const mouseAnimation = document.querySelector('.mouse-animation');
-    if (!mouseAnimation) return;
+// function mouseTracker(enable = true) {
+//     const mouseAnimation = document.querySelector('.mouse-animation');
+//     if (!mouseAnimation) return;
 
-    let mouseX = 0;
-    let mouseY = 0;
+//     let mouseX = 0;
+//     let mouseY = 0;
 
-    function mouseMove(x, y) {
-        mouseAnimation.style.left = `${x}px`;
-        mouseAnimation.style.top = `${y}px`;
-    }
+//     function mouseMove(x, y) {
+//         mouseAnimation.style.left = `${x}px`;
+//         mouseAnimation.style.top = `${y}px`;
+//     }
 
-    function handleMouseMove(move) {
-        mouseX = move.pageX;
-        mouseY = move.pageY;
-        mouseMove(mouseX, mouseY);
-    }
+//     function handleMouseMove(move) {
+//         mouseX = move.pageX;
+//         mouseY = move.pageY;
+//         mouseMove(mouseX, mouseY);
+//     }
 
-    if (enable) {
-        mouseAnimation.style.display = 'block';
-        document.addEventListener('mousemove', handleMouseMove);
-    } else {
-        mouseAnimation.style.display = 'none';
-        document.removeEventListener('mousemove', handleMouseMove);
-    }
-}
+//     if (enable) {
+//         mouseAnimation.style.display = 'block';
+//         document.addEventListener('mousemove', handleMouseMove);
+//     } else {
+//         mouseAnimation.style.display = 'none';
+//         document.removeEventListener('mousemove', handleMouseMove);
+//     }
+// }
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Инициализируем дождь только если он включен
     if (isRainEnabled) {
         toggleRainVisibility(true);
-        mouseTracker(true);
+        // mouseTracker(true);
     } else {
         canvas.style.display = 'none';
     }
