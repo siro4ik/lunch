@@ -13,7 +13,8 @@
 .dark-theme .result_time,
 .dark-theme .result_bdpn,
 .dark-theme .result_number,
-.dark-theme .result_row{
+.dark-theme .result_row,
+.dark-theme .result{
   color: #ffffff !important;
   fill:white !important;
 }
