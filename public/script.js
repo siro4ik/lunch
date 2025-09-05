@@ -390,7 +390,7 @@ let drops = [];
 const dropColour = "#5C97BF";
 const dropLengths = [10, 12, 14, 16, 18, 20, 22];
 const dropSkews = [-2, -1, 0, 1, 2];
-const maxDrops = 200;
+const maxDrops = 50;
 
 class Droplet {
     constructor(x, y, length, skew) {
