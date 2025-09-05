@@ -501,20 +501,50 @@ function toggleRainVisibility(visible) {
 
 // ОПРЕДЕЛЕНИЕ ЗЗ/ВОЗРАСТА
 
-// const zodiacSigns = [
-//     { name: "Овен", start: { month: 3, day: 21 }, end: { month: 4, day: 20 } },
-//     { name: "Телец", start: { month: 4, day: 21 }, end: { month: 5, day: 20 } },
-//     { name: "Близнецы", start: { month: 5, day: 21 }, end: { month: 6, day: 21 } },
-//     { name: "Рак", start: { month: 6, day: 22 }, end: { month: 7, day: 22 } },
-//     { name: "Лев", start: { month: 7, day: 23 }, end: { month: 8, day: 23 } },
-//     { name: "Дева", start: { month: 8, day: 24 }, end: { month: 9, day: 23 } },
-//     { name: "Весы", start: { month: 9, day: 24 }, end: { month: 10, day: 23 } },
-//     { name: "Скорпион", start: { month: 10, day: 24 }, end: { month: 11, day: 22 } },
-//     { name: "Стрелец", start: { month: 11, day: 23 }, end: { month: 12, day: 21 } },
-//     { name: "Козерог", start: { month: 12, day: 22 }, end: { month: 1, day: 20 } },
-//     { name: "Водолей", start: { month: 1, day: 21 }, end: { month: 2, day: 20 } },
-//     { name: "Рыбы", start: { month: 2, day: 21 }, end: { month: 3, day: 20 } }
-// ];
+const zodiacSigns = [
+    { name: "Овен", start: { month: 3, day: 21 }, end: { month: 4, day: 20 } },
+    { name: "Телец", start: { month: 4, day: 21 }, end: { month: 5, day: 20 } },
+    { name: "Близнецы", start: { month: 5, day: 21 }, end: { month: 6, day: 21 } },
+    { name: "Рак", start: { month: 6, day: 22 }, end: { month: 7, day: 22 } },
+    { name: "Лев", start: { month: 7, day: 23 }, end: { month: 8, day: 23 } },
+    { name: "Дева", start: { month: 8, day: 24 }, end: { month: 9, day: 23 } },
+    { name: "Весы", start: { month: 9, day: 24 }, end: { month: 10, day: 23 } },
+    { name: "Скорпион", start: { month: 10, day: 24 }, end: { month: 11, day: 22 } },
+    { name: "Стрелец", start: { month: 11, day: 23 }, end: { month: 12, day: 21 } },
+    { name: "Козерог", start: { month: 12, day: 22 }, end: { month: 1, day: 20 } },
+    { name: "Водолей", start: { month: 1, day: 21 }, end: { month: 2, day: 20 } },
+    { name: "Рыбы", start: { month: 2, day: 21 }, end: { month: 3, day: 20 } }
+];
+
+// Парсинг строки, удаление ненужных символов, проверка на число и на корректность ввода, относительно промежутка чисел
+
+function parseDate (dateString){
+
+    const clearing = dateString.replace (/[^\d.]/g, '');
+
+    const parts = clearing.split('.');
+
+    if (parts.length !== 3) return null;
+
+    const day = parseInt(parts[0]);
+    const month = parseInt(parts[1]);
+    const year = parseInt(parts[2]);
+
+    if (isNaN(day) || isNaN(month) || isNaN(year)) return 'Это должно быть число!';
+
+    if (day < 1 || day > 31){
+        alert('День должен быть корректным!');
+        return;
+    }else if(month < 1 || month > 12){
+        alert('Месяц должен быть корректным!');
+        return;
+    }else if(year < 1900 || year > new Date().getFullYear()){
+        alert('Год должен быть корректным!');
+        return;
+    }else{
+        return {day, month, year}
+    }
+}
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {

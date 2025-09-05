@@ -137,17 +137,22 @@ form{
 
 .submit{
     background-color: #ffffff;
+    padding:2px;
     border: solid 1px;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: 0.1s ease;
 }
 
 .submit:hover{
-    color: rgb(13, 255, 0);
-    background-color: #191919;
+    color: rgb(47, 255, 0);
 }
 
 .result_table{
     border-radius: 10px !important;
 }
+
+.caption{
+    font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
+}
+
