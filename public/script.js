@@ -533,7 +533,6 @@ function parseDate (dateString){
     const year = parseInt(parts[2]);
 
     if (isNaN(day) || isNaN(month) || isNaN(year)) return 'Это должно быть число!';
-а 
     if (day < 1 || day > 31){
         alert('День должен быть корректным!');
         return;
