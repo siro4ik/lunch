@@ -518,6 +518,8 @@ const zodiacSigns = [
 
 // Парсинг строки, удаление ненужных символов, проверка на число и на корректность ввода, относительно промежутка чисел
 
+const dateInput = document.querySelector ("#birthDate")
+
 function parseDate (dateString){
 
     const clearing = dateString.replace (/[^\d.]/g, '');
@@ -531,7 +533,7 @@ function parseDate (dateString){
     const year = parseInt(parts[2]);
 
     if (isNaN(day) || isNaN(month) || isNaN(year)) return 'Это должно быть число!';
-
+а 
     if (day < 1 || day > 31){
         alert('День должен быть корректным!');
         return;
@@ -545,6 +547,7 @@ function parseDate (dateString){
         return {day, month, year}
     }
 }
+
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
