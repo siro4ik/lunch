@@ -1,5 +1,5 @@
 .dark-theme{
-    background: #101010f5;
+    background: #000000;
 }
 
 .dark-theme h1,
@@ -17,4 +17,8 @@
 .dark-theme .result{
   color: #ffffff !important;
   fill:white !important;
+}
+
+.dark-theme .header{
+  background-color: #1a1a1ae9;
 }

@@ -80,8 +80,8 @@
 
 .bi{
     position: absolute;
-    top: 0;
-    left:0;
+    top: 10;
+    left:10;
     width: clamp(1.25rem, 0.903rem + 1.852vw, 3.125rem);
     height: clamp(1.25rem, 0.903rem + 1.852vw, 3.125rem);
     border: none;

@@ -88,6 +88,11 @@ body {
     display: grid;
     grid-template-columns: 50px repeat(4,1fr);
     justify-content: center;
+    background-color: hsla(0, 0%, 100%, 0);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgb(0, 0, 0);
 }
 
 /* BG-иконки */
