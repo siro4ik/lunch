@@ -3,6 +3,7 @@
 }
 
 .dark-theme h1,
+.dark-theme span,
 .dark-theme .time,
 .dark-theme th,
 .dark-theme td,
@@ -14,7 +15,8 @@
 .dark-theme .result_bdpn,
 .dark-theme .result_number,
 .dark-theme .result_row,
-.dark-theme .result{
+.dark-theme .result,
+.dark-theme .zodiac-main-text{
   color: #ffffff !important;
   fill:white !important;
 }
