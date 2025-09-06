@@ -164,3 +164,13 @@ form{
     padding: 5px;
 }
 
+.zodiac-button{
+    padding: 5px;
+}
+
+#birthDate{
+    border-radius: 8px;
+    padding: 2px;
+    border: none;
+}
+
