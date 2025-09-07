@@ -163,7 +163,7 @@ span{
     color: #ea4335;
 }
 
-@media (max-width: 1800px){
+@media (max-width: 1200px){
     .otp-icon{
         display: none;
     }
