@@ -547,10 +547,34 @@ function parseDate (dateString){
     }
 }
 
+function getZodiacSign(day, month){
+
+    const checkDate = new Date(2000, month - 1, day);
+
+    for (const sign of zodiacSigns){
+        const startDate = new Date(2000, sign.start.month - 1, sign.start.day);
+        const endDate = new Date (2000, sign.end.month - 1, sign.end.day);
+
+        if( sign.start.month > sign.end.month){
+            endDate.setFullYear(2001)
+        }
+
+        if( checkDate >= startDate && checkDate <= endDate){
+            return sign.name;
+        }
+    }
+    return 'Не удалось определить!'
+}
+
 document.getElementById("zodiacForm").addEventListener('submit', function(e){
     e.preventDefault();
     const dateValue = dateInput.value;
     const result = parseDate(dateValue);
+
+    if(result) {
+
+        const zodiac = getZodiacSign(result.day, result.month); 
+    }
 })
 
 
