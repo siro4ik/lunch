@@ -547,6 +547,8 @@ function parseDate (dateString){
     }
 }
 
+// ФУНКЦИЯ ЗЗ
+
 function getZodiacSign(day, month){
 
     const checkDate = new Date(2000, month - 1, day);
@@ -572,7 +574,6 @@ document.getElementById("zodiacForm").addEventListener('submit', function(e){
     const result = parseDate(dateValue);
 
     if(result) {
-
         const zodiac = getZodiacSign(result.day, result.month); 
     }
 })
