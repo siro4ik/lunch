@@ -137,9 +137,9 @@ form{
 
 .submit{
     background-color: #ffffff;
-    padding:2px;
+    padding: 5px 10px;
     border: solid 1px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: 0.1s ease;
 }
@@ -169,36 +169,56 @@ form{
 }
 
 .zodiac-button{
-    padding: 5px;
+    padding: 5px 10px;
+    border: 1px solid;
 }
 
 #birthDate{
     border-radius: 8px;
     padding: 2px;
-    border: none;
+    border: 1px solid;
 }
 
 #result{
-    width: 100%;
-    margin-top: 40px;
+    width: 50%;
+    margin-top: 50px;
     gap: 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#zodiacSign{
+    font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
+    font-weight: 600;
+}
+
+#age{
+    font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
+    font-weight: 600;
 }
 
 .result-item{
-    font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-between;
 }
 
 .result-item span{
     font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
+    font-weight: 600;
 }
 
+
+@media(max-width:1500px){
+    #result{
+        width: 80%;
+    }
+}
 
 
