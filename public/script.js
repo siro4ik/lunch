@@ -554,7 +554,16 @@ function getZodiacSign(day, month){
     const checkDate = new Date(2000, month - 1, day);
     console.log('Check date:', checkDate);
 
-    if(month === 1)
+    if(month === 1){
+        
+        const nextYearDate = new Date(2001, month - 1, day);
+        const capricornStart = new Date(2000, 11, 22);
+        const capricornEnd = new Date (2001, 0, 20); 
+
+        if(nextYearDate >= capricornStart && nextYearDate <= capricornEnd){
+            return "Козерог"
+        }
+    }
 
     for (const sign of zodiacSigns){
         const startDate = new Date(2000, sign.start.month - 1, sign.start.day);
