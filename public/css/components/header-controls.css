@@ -16,14 +16,13 @@
 }
 
 .controls{
-    padding:10px 0;
-    margin-bottom: 30px;
-    width: 100%;
+    padding:10px 0; 
     display: flex;
     gap: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.315);
 }
 
 .addMeal{
@@ -106,6 +105,10 @@
     flex-direction: column ;
 }
 
+#kody_widget{
+    border-right: 1px solid rgba(0, 0, 0, 0.315);
+}
+
 .w_container{
     display: flex ;
     align-items: center; 
@@ -162,6 +165,7 @@ form{
     align-items: center;
     gap:10px;
     padding: 5px;
+    border-right: 1px solid rgba(0, 0, 0, 0.315);
 }
 
 .zodiac-main-text{
@@ -187,7 +191,7 @@ form{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    border: 1px solid;
+    border: 1px solid rgba(0, 0, 0, 0.341);
     padding: 10px;
     border-radius: 10px;
 }

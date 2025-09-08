@@ -24,3 +24,13 @@
 .dark-theme .header{
   background-color: #1a1a1ae9;
 }
+
+.dark-theme .zodiacSign,
+.dark-theme #kody_widget,
+.dark-theme .controls{
+  border-right: 1px solid rgba(255, 255, 255, 0.341);
+}
+
+.dark-theme #result{
+  border: 1px solid rgba(255, 255, 255, 0.341);
+}
