@@ -551,6 +551,8 @@ function parseDate (dateString){
 
 function getZodiacSign(day, month){
 
+    
+
     const checkDate = new Date(2000, month - 1, day);
     console.log('Check date:', checkDate);
 
@@ -578,8 +580,10 @@ function getZodiacSign(day, month){
         if( checkDate >= startDate && checkDate <= endDate){
             return sign.name;
         }
+        
     }
     return 'Не удалось определить!'
+    
 }
 
 function calculateAge (day, month, year){
@@ -619,9 +623,20 @@ document.getElementById("zodiacForm").addEventListener('submit', function(e){
 
         const fullAge = document.querySelector('#age');
         fullAge.textContent = age;
+        zodiacSign.style.opacity = '0';
+        fullAge.style.opacity = '0';
+        
+        setTimeout(() => {
+            zodiacSign.textContent = zodiac;
+            fullAge.textContent = age;
+            
+            zodiacSign.style.opacity = '1';
+            fullAge.style.opacity = '1';
+        }, 100);
     }else{
         console.log('Парсинг не удался');
     }
+    
 })
 
 

@@ -206,6 +206,16 @@ form{
     font-weight: 600;
 }
 
+#zodiacSign, #age {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#zodiacSign.show, #age.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .result-item{
     width: 100%;
     display: flex;
