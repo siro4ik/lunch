@@ -522,7 +522,7 @@ const dateInput = document.querySelector ("#birthDate")
 
 function parseDate (dateString){
 
-    const clearing = dateString.replace (/[^\d.]/g, '');
+    const clearing = dateString.replace(/[^\d.]/g, '');
 
     const parts = clearing.split('.');
 
@@ -595,6 +595,11 @@ document.getElementById("zodiacForm").addEventListener('submit', function(e){
 
         const age = calculateAge(result.day, result.month, result.year);
 
+        const zodiacSign = document.querySelector('#zodiacSign');
+        zodiacSign.textContent = zodiac;
+
+        const fullAge = document.querySelector('#age');
+        fullAge.textContent = age;
     }
 })
 
@@ -625,8 +630,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loadLunches();
     updateCurrentTimeLine();
     setInterval(updateCurrentTimeLine, 30000);
-    checkLunchTime();
-    setInterval(checkLunchTime, 60000);
+    // checkLunchTime();
+    // setInterval(checkLunchTime, 60000);
 });
 
 // Обработчики изменения размера окна
