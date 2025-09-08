@@ -568,13 +568,33 @@ function getZodiacSign(day, month){
     return 'Не удалось определить!'
 }
 
+function calculateAge (day, month, year){
+    
+    const birthDate = new Date (year, month - 1 , day);
+
+    const today = new Date();
+
+    const age = today.getFullYear() - birthDate.getFullYear();
+
+    const currentMonth = today.getMonth();
+    const birthMonth = birthDate.getMonth();
+
+    if(currentMonth < birthMonth || (currentMonth === birthMonth && today.getDate() < day)){
+        return age - 1;
+    }
+    return age;
+}
+
 document.getElementById("zodiacForm").addEventListener('submit', function(e){
     e.preventDefault();
     const dateValue = dateInput.value;
     const result = parseDate(dateValue);
 
     if(result) {
-        const zodiac = getZodiacSign(result.day, result.month); 
+        const zodiac = getZodiacSign(result.day, result.month);
+
+        const age = calculateAge(result.day, result.month, result.year);
+
     }
 })
 
