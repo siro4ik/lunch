@@ -160,8 +160,12 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap:10px;
     padding: 5px;
+}
+
+.zodiac-main-text{
+    font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
 }
 
 .zodiac-button{
@@ -173,4 +177,28 @@ form{
     padding: 2px;
     border: none;
 }
+
+#result{
+    width: 100%;
+    margin-top: 40px;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.result-item{
+    font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.result-item span{
+    font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
+}
+
+
 
