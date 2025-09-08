@@ -552,13 +552,18 @@ function parseDate (dateString){
 function getZodiacSign(day, month){
 
     const checkDate = new Date(2000, month - 1, day);
+    console.log('Check date:', checkDate);
+
+    if(month === 1)
 
     for (const sign of zodiacSigns){
         const startDate = new Date(2000, sign.start.month - 1, sign.start.day);
         const endDate = new Date (2000, sign.end.month - 1, sign.end.day);
+        console.log(sign.name, 'start:', startDate, 'end:', endDate); 
 
         if( sign.start.month > sign.end.month){
-            endDate.setFullYear(2001)
+            endDate.setFullYear(2001);
+            console.log('Fixed end date for Capricorn:', endDate);
         }
 
         if( checkDate >= startDate && checkDate <= endDate){
@@ -588,18 +593,25 @@ function calculateAge (day, month, year){
 document.getElementById("zodiacForm").addEventListener('submit', function(e){
     e.preventDefault();
     const dateValue = dateInput.value;
+    console.log('Введенная дата:', dateValue);
+
     const result = parseDate(dateValue);
+    console.log('Результат парсинга:', result);
 
     if(result) {
         const zodiac = getZodiacSign(result.day, result.month);
+        console.log('Знак зодиака:', zodiac);
 
         const age = calculateAge(result.day, result.month, result.year);
+        console.log('Возраст:', age);
 
         const zodiacSign = document.querySelector('#zodiacSign');
         zodiacSign.textContent = zodiac;
 
         const fullAge = document.querySelector('#age');
         fullAge.textContent = age;
+    }else{
+        console.log('Парсинг не удался');
     }
 })
 
