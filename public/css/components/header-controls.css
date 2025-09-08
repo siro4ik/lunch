@@ -170,6 +170,7 @@ form{
 
 .zodiac-main-text{
     font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
+    
 }
 
 .zodiac-button{
