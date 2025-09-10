@@ -499,6 +499,9 @@ function toggleRainVisibility(visible) {
 //     }
 // }
 
+
+const dateInput = document.querySelector ("#birthDate")
+
 // ОПРЕДЕЛЕНИЕ ЗЗ/ВОЗРАСТА
 
 const zodiacSigns = [
@@ -518,7 +521,7 @@ const zodiacSigns = [
 
 // Парсинг строки, удаление ненужных символов, проверка на число и на корректность ввода, относительно промежутка чисел
 
-const dateInput = document.querySelector ("#birthDate")
+
 
 function parseDate (dateString){
 
