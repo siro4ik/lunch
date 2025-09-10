@@ -560,8 +560,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loadLunches();
     updateCurrentTimeLine();
     setInterval(updateCurrentTimeLine, 30000);
-    // checkLunchTime();
-    // setInterval(checkLunchTime, 60000);
+    checkLunchTime();
+    setInterval(checkLunchTime, 60000);
 });
 
 // Обработчики изменения размера окна
