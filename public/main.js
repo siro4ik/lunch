@@ -24,14 +24,7 @@ window.addEventListener('scroll', () => {
     }
 })
 
-
-
-
 setInterval(updateCurrentTimeLine, 60000);
-
-
-
-
 
 // Удаляем старую линию времени и создаем новую
 document.querySelectorAll('.current-time-line').forEach(el => el.remove());
