@@ -32,17 +32,35 @@ body {
   }
 }
 
-/* кнопки - переливание*/
 
-.glow-on-hover {
-    border: none;
-    outline: none;
-    color: #000000;
-    background: #ffffff;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
+.glow-on-hover{
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  color: #000 !important;
+  cursor: pointer;
+
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(60deg, #ff0000, #ff7300, #fffb00, #48ff00,
+                            #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000) border-box !important;
+  background-size: 100% 100%, 400% 100% !important;
+  animation: kody-glowing 20s linear infinite !important;
+
+  transition: box-shadow .25s ease, transform .1s ease;
+}
+#kody_widget form input[type="submit"].submit:hover { box-shadow: 0 0 12px rgba(255,0,128,.35) !important; }
+#kody_widget form input[type="submit"].submit:active { transform: translateY(1px) !important; }
+
+@keyframes kody-glowing {
+  0% { background-position: 0 0,   0% 0; }
+  50%{ background-position: 0 0, 400% 0; }
+  100%{background-position: 0 0,   0% 0; }
 }
 
 .glow-on-hover:before {
@@ -92,6 +110,37 @@ body {
     100% { background-position: 0 0; }
 }
 
+#kody_widget form input[type="submit"].submit,
+ #kody_number,#birthDate{
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  color: #000 !important;
+  cursor: pointer;
+  text-align: center;
+
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(60deg, #ff0000, #ff7300, #fffb00, #48ff00,
+                            #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000) border-box !important;
+  background-size: 100% 100%, 400% 100% !important;
+  animation: kody-glowing 20s linear infinite !important;
+
+  transition: box-shadow .25s ease, transform .1s ease;
+}
+#kody_widget form input[type="submit"].submit:hover { box-shadow: 0 0 12px rgba(255,0,128,.35) !important; }
+#kody_widget form input[type="submit"].submit:active { transform: translateY(1px) !important; }
+
+@keyframes kody-glowing {
+  0% { background-position: 0 0,   0% 0; }
+  50%{ background-position: 0 0, 400% 0; }
+  100%{background-position: 0 0,   0% 0; }
+}
 
 .header{
     position: relative;

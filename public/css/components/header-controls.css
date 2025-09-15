@@ -147,9 +147,6 @@ form{
     transition: 0.1s ease;
 }
 
-.submit:hover{
-    color: rgb(47, 255, 0);
-}
 
 .result_table{
     border-radius: 10px !important;
