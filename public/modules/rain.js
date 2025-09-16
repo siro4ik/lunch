@@ -47,9 +47,11 @@ export function initRain(canvasElement) {
 }
 
 // Изменение размера canvas
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+export function resizeCanvas() {
+    if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
 }
 
 // Создаем капли дождя
