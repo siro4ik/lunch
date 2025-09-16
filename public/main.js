@@ -2,7 +2,7 @@ import { zodiacSigns, parseDate, getZodiacSign, calculateAge } from "./modules/z
 import { app, database } from './modules/firebase.js';
 import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, deleteLunch, addLunch, adjustTime } from './modules/timeSlots.js';
 import { initModal } from './modules/modal.js';
-import { toggleRainVisibility, createDrops, animateRain, initRain, canvas, ctx } from './modules/rain.js';
+import { toggleRainVisibility, createDrops, animateRain, initRain } from './modules/rain.js';
 
 
 
@@ -36,20 +36,6 @@ document.querySelectorAll('.current-time-line').forEach(el => el.remove());
 const line = document.createElement('div');
 line.className = 'current-time-line';
 document.getElementById('calendar').appendChild(line);
-
-
-
-// ===== КОД ДЛЯ ДОЖДЯ =====
-
-let animationId = null;
-
-// Устанавливаем размеры canvas
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-
 
 // эффект hover мышки 
 // function mouseTracker(enable = true) {
@@ -128,6 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('dark-theme');
     }
 
+    // Инициализируем canvas для дождя
+    const rainCanvas = document.getElementById('rain-container');
+    if (rainCanvas) {
+        initRain(rainCanvas);
+    }
+    
     // Инициализируем canvas
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);

@@ -1,7 +1,4 @@
 // Переменные модуля
-export const canvas = document.getElementById('rain-container');
-export const ctx = canvas.getContext('2d');
-
 let drops = [];
 let maxDrops = 100;
 let canvas, ctx;
