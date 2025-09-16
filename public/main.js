@@ -2,10 +2,9 @@ import { zodiacSigns, parseDate, getZodiacSign, calculateAge } from "./modules/z
 import { app, database } from './modules/firebase.js';
 import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, deleteLunch, addLunch, adjustTime } from './modules/timeSlots.js';
 import { initModal } from './modules/modal.js';
-import { toggleRainVisibility, createDrops, animateRain,  } from './modules/rain.js';
+import { toggleRainVisibility, createDrops, animateRain, initRain, canvas, ctx } from './modules/rain.js';
 
 
-// Firebase инициализирован в modules/firebase.js, database импортируется оттуда
 
 // Делаем функции доступными для inline-обработчиков в index.html
 window.addLunch = addLunch;
@@ -38,57 +37,16 @@ const line = document.createElement('div');
 line.className = 'current-time-line';
 document.getElementById('calendar').appendChild(line);
 
-// Модальное окно
 
 
 // ===== КОД ДЛЯ ДОЖДЯ =====
-const canvas = document.getElementById('rain-container');
-const ctx = canvas.getContext('2d');
+
 let animationId = null;
 
 // Устанавливаем размеры canvas
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-}
-
-let drops = [];
-const dropColour = "#5C97BF";
-const dropLengths = [10, 12, 14, 16, 18, 20, 22];
-const dropSkews = [-2, -1, 0, 1, 2];
-const maxDrops = 50;
-
-class Droplet {
-    constructor(x, y, length, skew) {
-        this.x = x;
-        this.y = y;
-        this.length = length;
-        this.skew = skew;
-        this.speed = this.length / 1.5;
-    }
-
-    move() {
-        this.y += this.speed;
-        this.x += this.skew / 4;
-
-        if (this.y > canvas.height) {
-            this.y = 0 - this.length;
-            this.x = Math.random() * canvas.width;
-        }
-        if (this.x > canvas.width || this.x < 0) {
-            this.y = 0 - this.length;
-            this.x = Math.random() * canvas.width;
-        }
-    }
-
-    draw(ctx) {
-        ctx.beginPath();
-        ctx.moveTo(this.x, this.y);
-        ctx.lineTo(this.x + this.skew, this.y + this.length);
-        ctx.strokeStyle = dropColour;
-        ctx.lineWidth = 2;
-        ctx.stroke();
-    }
 }
 
 
