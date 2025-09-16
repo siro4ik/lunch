@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "binlookup": "^2.0.1",
     "firebase": "^11.10.0"
   }
 }

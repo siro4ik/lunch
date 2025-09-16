@@ -104,6 +104,10 @@ document.getElementById("zodiacForm").addEventListener('submit', function(e){
     
 })
 
+// Создание БИН чекера через npm - binlookup
+
+// const lookup = require('binlookup')();
+
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
