@@ -2,6 +2,7 @@ import { zodiacSigns, parseDate, getZodiacSign, calculateAge } from "./modules/z
 import { app, database } from './modules/firebase.js';
 import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, deleteLunch, addLunch, adjustTime } from './modules/timeSlots.js';
 import { initModal } from './modules/modal.js';
+import { toggleRainVisibility, createDrops, animateRain,  } from './modules/rain.js';
 
 
 // Firebase инициализирован в modules/firebase.js, database импортируется оттуда
@@ -9,6 +10,9 @@ import { initModal } from './modules/modal.js';
 // Делаем функции доступными для inline-обработчиков в index.html
 window.addLunch = addLunch;
 window.adjustTime = adjustTime;
+window.toggleRainVisibility = toggleRainVisibility;
+window.createDrops = createDrops;
+window.animateRain = animateRain;
 
 
 const OpenModalButton = document.querySelector('#setting-btn');
@@ -87,51 +91,7 @@ class Droplet {
     }
 }
 
-// Создаем капли дождя
-function createDrops() {
-    drops = [];
-    for (let i = 0; i < maxDrops; i++) {
-        let instance = new Droplet(
-            Math.random() * canvas.width,
-            Math.random() * canvas.height,
-            randVal(dropLengths),
-            randVal(dropSkews)
-        );
-        drops.push(instance);
-    }
-}
 
-function randVal(array) {
-    return array[Math.floor(Math.random() * array.length)];
-}
-
-function animateRain() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    for (let drop of drops) {
-        drop.move();
-        drop.draw(ctx);
-    }
-
-    animationId = requestAnimationFrame(animateRain);
-}
-
-// Управление видимостью дождя
-function toggleRainVisibility(visible) {
-    if (visible) {
-        canvas.style.display = 'block';
-        resizeCanvas();
-        createDrops();
-        if (animationId) cancelAnimationFrame(animationId);
-        animateRain();
-    } else {
-        canvas.style.display = 'none';
-        if (animationId) {
-            cancelAnimationFrame(animationId);
-            animationId = null;
-        }
-    }
-}
 
 // эффект hover мышки 
 // function mouseTracker(enable = true) {
