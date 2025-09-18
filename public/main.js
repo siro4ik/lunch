@@ -4,6 +4,7 @@ import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, d
 import { initModal } from './modules/modal.js';
 import { toggleRainVisibility, createDrops, animateRain, initRain, resizeCanvas } from './modules/rain.js';
 
+const lookup = require('binlookup')();
 
 
 // Делаем функции доступными для inline-обработчиков в index.html
