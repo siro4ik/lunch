@@ -1,8 +1,6 @@
 document.querySelector('#binForm').addEventListener('submit',async function(e){
     e.preventDefault();
 
-    const data = await lookup(bin);
-    console.log(data);
     const cardNumber = document.querySelector('#cardNumber').value;
 
 
