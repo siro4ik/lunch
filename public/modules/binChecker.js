@@ -4,4 +4,12 @@ document.querySelector('#binForm').addEventListener('submit', function(e){
     const cardNumber = document.querySelector('#cardNumber');
 
     const bin = cardNumber.replace(/\D/g, '').substring(0, 6);
+
+    if (bin.length < 6){
+        alert('Бин номер должен быть корректным!')
+    }else{
+        return bin;
+    }
+
+
 });
