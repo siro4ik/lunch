@@ -12,9 +12,11 @@ document.querySelector('#binForm').addEventListener('submit',async function(e){
         alert('Бин номер должен быть корректным!')
     }else{
        try{
-        const response = await fetch(`https://lookup.binlist.net/${bin}`);
-        const data = await response.json();
-        console.log(data);
+        
+        const response = await fetch(`https://thingproxy.freeboard.io/fetch/https://lookup.binlist.net/${bin}`);
+const data = await response.json();
+const binData = JSON.parse(data.contents);
+console.log(binData);
 
         const binIin = document.querySelector('#bin-iin');
         const cardMark = document.querySelector('#card-mark');
