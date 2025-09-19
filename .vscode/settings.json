@@ -2,6 +2,6 @@
     "liveServer.settings.port": 5501,
     "editor.fontSize": 12,
     "editor.tabSize": 2,
-    "editor.cursorStyle": "underline",
+    "editor.cursorStyle": "line",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true
 }
