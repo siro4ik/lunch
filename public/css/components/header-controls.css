@@ -129,6 +129,13 @@
     flex-direction: column ;
 }
 
+@media (max-width: 1200px){
+    .w_container{
+        padding-bottom: 50px;
+    }
+        
+}
+
 .result{
     display: flex;
     align-items: center;
@@ -178,6 +185,12 @@ form{
     border-right: 1px solid rgba(0, 0, 0, 0.315);
 }
 
+@media (max-width: 1200px){
+    .zodiacSign{
+        padding-bottom: 50px;
+    }
+}
+
 .zodiac-main-text{
     font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
     
@@ -206,6 +219,13 @@ form{
     padding: 10px;
     border-radius: 10px;
 }
+
+@media (max-width: 1200px){
+    #result{
+        margin-top: 10px;
+    }
+}
+
 
 #zodiacSign{
     font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
@@ -245,5 +265,3 @@ form{
         width: 80%;
     }
 }
-
-
