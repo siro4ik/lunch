@@ -167,4 +167,7 @@ span{
     .otp-icon{
         display: none;
     }
+    #calendar{
+        display: none;
+    }
 }
