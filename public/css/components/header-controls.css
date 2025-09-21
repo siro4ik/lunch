@@ -25,6 +25,12 @@
     border-right: 1px solid rgba(0, 0, 0, 0.315);
 }
 
+@media (max-width: 1200px){
+    .controls{
+        display: none;
+    }
+}
+
 .addMeal{
     padding:10px 0;
     width: 235px;
@@ -80,8 +86,8 @@
 
 .bi{
     position: absolute;
-    top: 10;
-    left:10;
+    top: 10px;
+    left:10px;
     width: clamp(1.25rem, 0.903rem + 1.852vw, 3.125rem);
     height: clamp(1.25rem, 0.903rem + 1.852vw, 3.125rem);
     border: none;
@@ -92,6 +98,13 @@
     transition:0.2s ease;
     display: grid;
     place-items: center;
+}
+
+@media (max-width: 1200px){
+    .bi{
+        place-items: left;
+        left:10px;
+    }
 }
 
 .bi:hover {
