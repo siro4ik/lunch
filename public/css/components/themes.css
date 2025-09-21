@@ -38,7 +38,10 @@
 @media (max-width: 1200px){
 .dark-theme .zodiacSign,
 .dark-theme #kody_widget,
-.dark-theme .controls{
-  border-right: none;
+.dark-theme .controls,
+.dark-theme #result,
+#kody_widget,
+.zodiacSign{
+  border-right: none !important;
 }
 }

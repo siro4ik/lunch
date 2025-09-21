@@ -223,6 +223,7 @@ body {
 @media (max-width: 1200px){
   .header{
     display: flex;
+    height: 100%;
     margin: auto;
     flex-direction: column;
     align-items: center;
