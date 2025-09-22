@@ -1,4 +1,4 @@
--const binDatabase = {
+const binDatabase = {
   // СБЕРБАНК
   '220100': { bank: 'Сбербанк России', brand: 'NSPK MIR', country: 'Россия', type: 'debit', level: '' },
   '220220': { bank: 'Сбербанк России', brand: 'NSPK MIR', country: 'Россия', type: 'debit', level: 'CLASSIC/GOLD' },
