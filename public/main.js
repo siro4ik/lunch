@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //     return data;
 // }
 
-checkBIN(220020)
+// checkBIN(220020)
 
 // Обработчики изменения размера окна
 let resizeTimeout;
