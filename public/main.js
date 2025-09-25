@@ -145,34 +145,34 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateCurrentTimeLine, 30000);
 });
 
-const express = require('express');
-const fetch = require('node-fetch'); // Убедитесь, что установили пакет node-fetch
+// const express = require('express');
+// const fetch = require('node-fetch'); 
 
-const app = express();
+// const app = express();
 
-// Разрешаем запросы с любого домена (для разработки)
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
 
-app.get('/api/bin-check/:bin', async (req, res) => {
-    try {
-        const response = await fetch(`https://www.freebinchecker.com/bin-api?bin=${req.params.bin}&hl=ru`);
-        const data = await response.json();
-        res.json(data);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     next();
+// });
 
-app.listen(3000, () => console.log('Прокси-сервер запущен на порту 3000'));
+// app.get('/api/bin-check/:bin', async (req, res) => {
+//     try {
+//         const response = await fetch(`https://www.freebinchecker.com/bin-api?bin=${req.params.bin}&hl=ru`);
+//         const data = await response.json();
+//         res.json(data);
+//     } catch (error) {
+//         res.status(500).json({ error: error.message });
+//     }
+// });
 
-async function checkBIN(binNumber) {
-    const response = await fetch(`http://localhost:3000/api/bin-check/${binNumber}`);
-    const data = await response.json();
-    return data;
-}
+// app.listen(3000, () => console.log('Прокси-сервер запущен на порту 3000'));
+
+// async function checkBIN(binNumber) {
+//     const response = await fetch(`http://localhost:3000/api/bin-check/${binNumber}`);
+//     const data = await response.json();
+//     return data;
+// }
 
 checkBIN(220020)
 
