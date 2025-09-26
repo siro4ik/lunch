@@ -585,4 +585,39 @@ const binDatabase = {
     "480086": { brand: "VISA", type: "debit", level: "PLATINUM", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
 
     // Альфа банк - mastercard 
+     "510126": { brand: "MASTERCARD", type: "DEBIT", level: "STANDARD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "519747": { brand: "MASTERCARD", type: "CREDIT", level: "PREFERRED BUSINESS", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "519778": { brand: "MASTERCARD", type: "CREDIT", level: "PREFERRED BUSINESS", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "521178": { brand: "MASTERCARD", type: "DEBIT", level: "STANDARD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "522828": { brand: "MASTERCARD", type: "DEBIT", level: "WORLD ELITE", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "523701": { brand: "MASTERCARD", type: "DEBIT", level: "PREPAID", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "530331": { brand: "MASTERCARD", type: "DEBIT", level: "WORLD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "530827": { brand: "MASTERCARD", type: "DEBIT", level: "PREPAID", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "537643": { brand: "MASTERCARD", type: "CREDIT", level: "STANDARD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "545036": { brand: "MASTERCARD", type: "CREDIT", level: "STANDARD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "547450": { brand: "MASTERCARD", type: "CREDIT", level: "BUSINESS", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "548601": { brand: "MASTERCARD", type: "CREDIT", level: "WORLD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "548655": { brand: "MASTERCARD", type: "CREDIT", level: "WORLD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "548673": { brand: "MASTERCARD", type: "DEBIT", level: "WORLD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "548674": { brand: "MASTERCARD", type: "DEBIT", level: "WORLD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "552175": { brand: "MASTERCARD", type: "DEBIT", level: "WORLD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "552186": { brand: "MASTERCARD", type: "CREDIT", level: "WORLD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "555156": { brand: "MASTERCARD", type: "CREDIT", level: "CORPORATE PURCHASING", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "555921": { brand: "MASTERCARD", type: "DEBIT", level: "WORLD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "555928": { brand: "MASTERCARD", type: "CREDIT", level: "WORLD BLACK", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "555933": { brand: "MASTERCARD", type: "CREDIT", level: "WORLD BLACK", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "555947": { brand: "MASTERCARD", type: "CREDIT", level: "WORLD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "555949": { brand: "MASTERCARD", type: "DEBIT", level: "WORLD", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "555957": { brand: "MASTERCARD", type: "CREDIT", level: "WORLD BLACK", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+
+    // Альфа банк - мир
+    "220015": { brand: "NSPK MIR", type: "DEBIT", level: "CLASSIC", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+
+    // Альфа банк - Маестро
+    "676248": { brand: "MAESTRO", type: "DEBIT", level: "PERSONAL", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+
+
+
+    
+
 };
