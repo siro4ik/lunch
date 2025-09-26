@@ -617,7 +617,8 @@ const binDatabase = {
     "676248": { brand: "MAESTRO", type: "DEBIT", level: "PERSONAL", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
 
 
-
+    // ВТБ - VISA
     
+
 
 };
