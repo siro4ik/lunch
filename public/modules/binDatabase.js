@@ -556,5 +556,33 @@ const binDatabase = {
     '964399': { bank: 'Сбербанк России', brand: 'SBERCARD', country: 'Россия', type: 'debit', level: 'STANDARD' },
 
     // Альфа банк - VISA
-    
+    "408396": { brand: "VISA", type: "credit", level: "REWARDS", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "408397": { brand: "VISA", type: "debit", level: "REWARDS", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "411672": { brand: "VISA", type: "debit", level: "CLASSIC", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "411674": { brand: "VISA", type: "debit", level: "ELECTRON", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "411675": { brand: "VISA", type: "credit", level: "", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "415428": { brand: "VISA", type: "credit", level: "CLASSIC", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "415429": { brand: "VISA", type: "credit", level: "REWARDS", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "415481": { brand: "VISA", type: "debit", level: "PLATINUM", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "415482": { brand: "VISA", type: "debit", level: "REWARDS", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "419539": { brand: "VISA", type: "credit", level: "INFINITE", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "419540": { brand: "VISA", type: "debit", level: "INFINITE", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "426101": { brand: "VISA", type: "debit", level: "SIGNATURE", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "426102": { brand: "VISA", type: "credit", level: "SIGNATURE", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "426113": { brand: "VISA", type: "debit", level: "SIGNATURE", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "426114": { brand: "VISA", type: "credit", level: "SIGNATURE", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "428804": { brand: "VISA", type: "credit", level: "PURCHASING", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "428905": { brand: "VISA", type: "debit", level: "CORPORATE T&E", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "428906": { brand: "VISA", type: "debit", level: "BUSINESS ENHANCED", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "458410": { brand: "VISA", type: "credit", level: "PLATINUM", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "458411": { brand: "VISA", type: "debit", level: "PLATINUM", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "458443": { brand: "VISA", type: "debit", level: "REWARDS", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "475791": { brand: "VISA", type: "debit", level: "PREPAID CLASSIC", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "477714": { brand: "VISA", type: "debit", level: "BUSINESS ENHANCED", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "477964": { brand: "VISA", type: "debit", level: "REWARDS", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "479004": { brand: "VISA", type: "credit", level: "REWARDS", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "479087": { brand: "VISA", type: "debit", level: "PLATINUM", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+    "480086": { brand: "VISA", type: "debit", level: "PLATINUM", country: "RUSSIAN FEDERATION", bank: "JOINT STOCK COMPANY ALFA-BANK" },
+
+    // Альфа банк - mastercard 
 };
