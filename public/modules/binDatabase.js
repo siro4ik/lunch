@@ -555,6 +555,6 @@ const binDatabase = {
     '964398': { bank: 'Сбербанк России', brand: 'SBERCARD', country: 'Россия', type: 'debit', level: 'STANDARD' },
     '964399': { bank: 'Сбербанк России', brand: 'SBERCARD', country: 'Россия', type: 'debit', level: 'STANDARD' },
 
-    // Альфа банк
-    "521178": { bank: "Альфа банк", brand: "Mastercard", country: "Россия", type: "debit", level: "STANDARD"}
+    // Альфа банк - VISA
+    
 };
