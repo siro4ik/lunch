@@ -16,7 +16,10 @@
 .dark-theme .result_number,
 .dark-theme .result_row,
 .dark-theme .result,
-.dark-theme .zodiac-main-text{
+.dark-theme .zodiac-main-text,
+.dark-theme .bin-main-text,
+.dark-theme .binChecker span,
+.dark-theme .binChecker h3{
   color: #ffffff !important;
   fill:white !important;
 }
