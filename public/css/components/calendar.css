@@ -70,6 +70,7 @@ th {
 
 span{
     color: #000;
+    font-size: clamp(0.429rem, -0.076rem + 0.784vw, 1rem);
 }
 
 .lunch-container {
