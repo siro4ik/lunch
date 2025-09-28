@@ -129,6 +129,10 @@
     flex-direction: column ;
 }
 
+.kody_link img{
+    display:none;
+    }
+
 @media (max-width: 1200px){
     .w_container{
         padding-bottom: 50px;
