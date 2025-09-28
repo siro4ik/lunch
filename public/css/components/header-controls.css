@@ -275,6 +275,24 @@ form{
   padding: 5px;
 }
 
+.bin-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bin-container{
+    width: 65%;
+}
+
+#cardNumber{
+    padding: 5px;
+    text-align: center;
+}
+
+.bin-button{
+    padding: 5px 10px;
+}
+
 
 @media(max-width:1500px){
     #result{

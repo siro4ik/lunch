@@ -69,8 +69,6 @@ th {
 }
 
 span{
-    /* font-size: clamp(0.5rem, 0.428rem + 0.361vw, 0.875rem); */
-    font-size: clamp(0.25rem, 0.06rem + 0.608vw, 0.813rem);
     color: #000;
 }
 
