@@ -291,6 +291,11 @@ form{
     border: 1px solid rgba(0, 0, 0, 0.813);
 }
 
+.bin-container span{
+    font-size: 14px;
+    font-weight: 600;
+}
+
 #cardNumber{
     padding: 5px;
     text-align: center;
