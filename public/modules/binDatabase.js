@@ -1,4 +1,4 @@
-const binData = {
+export const binData = {
   // VISA - 1 
   "400079": { brand: "VISA", type: "CREDIT", level: "REWARDS", country: "RUSSIAN FEDERATION", bank: "JSCB AK BARS (OJSC)" },
   "400171": { brand: "VISA", type: "DEBIT", level: "PLATINUM", country: "RUSSIAN FEDERATION", bank: "CSB NATIONAL RESERVE BANK" },

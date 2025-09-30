@@ -1,3 +1,5 @@
+import { binData } from "./modules/binDatabase.js";
+
 document.querySelector('#binForm').addEventListener('submit',async function(e){
     e.preventDefault();
 
