@@ -2946,4 +2946,7 @@ export const binData = {
 "499932": { brand: "VISA", type: "DEBIT", level: "BUSINESS", country: "RUSSIAN FEDERATION", bank: "PJSC ROSBANK" },
 "499966": { brand: "VISA", type: "DEBIT", level: "BUSINESS", country: "RUSSIAN FEDERATION", bank: "PJSC ROSBANK" },
 
+// мастеркард1 - начало
+
+
 };
