@@ -6378,17 +6378,4 @@ export const binData = {
 "220499": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" }
 
 // Пока что конец
-
-
-
-
-
-
-
-
-
-
-
-
-
 };
