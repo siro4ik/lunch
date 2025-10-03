@@ -4793,6 +4793,9 @@ export const binData = {
 "559992": { brand: "MASTERCARD", type: "CREDIT", level: "WORLD BLACK", country: "RUSSIAN FEDERATION", bank: "GAZPROMBANK (JOINT STOCK COMPANY)" },
 
 
+// MAESTRO
+
+
 
 
 
