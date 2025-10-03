@@ -4783,7 +4783,14 @@ export const binData = {
 "559814": { brand: "MASTERCARD", type: "DEBIT", level: "GOLD", country: "RUSSIAN FEDERATION", bank: "PJSC ROSBANK" },
 
 // мастеркард19
-
+"559815": { brand: "MASTERCARD", type: "DEBIT", level: "GOLD", country: "RUSSIAN FEDERATION", bank: "CREDIT UNION PAYMENT CENTER (LIMITED LIABILITY COMPANY)" },
+"559818": { brand: "MASTERCARD", type: "DEBIT", level: "GOLD", country: "RUSSIAN FEDERATION", bank: "PJSC ROSBANK" },
+"559819": { brand: "MASTERCARD", type: "DEBIT", level: "GOLD", country: "RUSSIAN FEDERATION", bank: "PUBLIC JOINT-STOCK COMPANY BANK OTKRITIE FINANCIAL CORPORATION" },
+"559836": { brand: "MASTERCARD", type: "DEBIT", level: "WORLD", country: "RUSSIAN FEDERATION", bank: "PUBLIC JOINT-STOCK COMPANY BANK OTKRITIE FINANCIAL CORPORATION" },
+"559899": { brand: "MASTERCARD", type: "DEBIT", level: "STANDARD", country: "RUSSIAN FEDERATION", bank: "PJSC ROSBANK" },
+"559900": { brand: "MASTERCARD", type: "DEBIT", level: "PREPAID", country: "RUSSIAN FEDERATION", bank: "YOOMONEY, NBCO LLC" },
+"559969": { brand: "MASTERCARD", type: "DEBIT", level: "STANDARD", country: "RUSSIAN FEDERATION", bank: "PJSC ROSBANK" },
+"559992": { brand: "MASTERCARD", type: "CREDIT", level: "WORLD BLACK", country: "RUSSIAN FEDERATION", bank: "GAZPROMBANK (JOINT STOCK COMPANY)" },
 
 
 
