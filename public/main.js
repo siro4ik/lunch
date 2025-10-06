@@ -3,7 +3,7 @@ import { app, database } from './modules/firebase.js';
 import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, deleteLunch, addLunch, adjustTime } from './modules/timeSlots.js';
 import { initModal } from './modules/modal.js';
 import { toggleRainVisibility, createDrops, animateRain, initRain, resizeCanvas } from './modules/rain.js';
-
+import {checkBIN} from './modules/binChecker.js';
 
 // Делаем функции доступными для inline-обработчиков в index.html
 window.addLunch = addLunch;

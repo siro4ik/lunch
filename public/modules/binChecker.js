@@ -1,7 +1,7 @@
 import { binData } from "./modules/binDatabase.js";
 
 // Валидация значения БИНов
-function checkBIN(bin){
+export function checkBIN(bin){
   let cleanBIN = bin.replace(/\D/g, '');
 
   if (cleanBIN === ""){
