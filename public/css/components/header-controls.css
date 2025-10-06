@@ -276,13 +276,15 @@ form{
 }
 
 .bin-info{
-    display: flex;
     justify-content: space-between;
+}
+
+.bin-info h3{
+    margin-top: 5px;
 }
 
 .bin-container{
     width: 65%;
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     padding:10px;
@@ -293,6 +295,14 @@ form{
 
 .bin-container span{
     font-size: 14px;
+    font-weight: 600;
+}
+
+#bin-brand,
+#card-type,
+#bank-country,
+#bank-name{
+    font-size: 12px;
     font-weight: 600;
 }
 
