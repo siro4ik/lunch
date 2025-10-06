@@ -103,6 +103,20 @@ document.getElementById("zodiacForm").addEventListener('submit', function(e){
     
 })
 
+document.querySelector('#binForm').addEventListener('submit',function(e){
+    e.preventDefault();
+
+    const cardNumberInput = document.querySelector('#cardNumber');
+
+    const result = checkBIN(cardNumberInput.value);
+
+    if(result.isValid){
+        dataChange(result.data);
+    }else{
+        alert(result.message);
+    }
+})
+
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
