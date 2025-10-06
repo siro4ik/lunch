@@ -3,7 +3,8 @@ import { app, database } from './modules/firebase.js';
 import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, deleteLunch, addLunch, adjustTime } from './modules/timeSlots.js';
 import { initModal } from './modules/modal.js';
 import { toggleRainVisibility, createDrops, animateRain, initRain, resizeCanvas } from './modules/rain.js';
-import {checkBIN, dataChange} from './modules/binChecker.js';
+import { dataChange, checkBIN} from './modules/binChecker.js';
+
 
 // Делаем функции доступными для inline-обработчиков в index.html
 window.addLunch = addLunch;
@@ -103,7 +104,17 @@ document.getElementById("zodiacForm").addEventListener('submit', function(e){
     
 })
 
-document.querySelector('#binForm').addEventListener('submit',function(e){
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+    const isRainEnabled = localStorage.getItem('sergeyRainMode') === 'true';
+
+    if (isDarkTheme) {
+        document.body.classList.add('dark-theme');
+    }
+
+    document.querySelector('#binForm').addEventListener('submit',function(e){
     e.preventDefault();
 
     const cardNumberInput = document.querySelector('#cardNumber');
@@ -116,16 +127,6 @@ document.querySelector('#binForm').addEventListener('submit',function(e){
         alert(result.message);
     }
 })
-
-
-// Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', () => {
-    const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
-    const isRainEnabled = localStorage.getItem('sergeyRainMode') === 'true';
-
-    if (isDarkTheme) {
-        document.body.classList.add('dark-theme');
-    }
 
     // Инициализируем canvas для дождя
     const rainCanvas = document.getElementById('rain-container');
