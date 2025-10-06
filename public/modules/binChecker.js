@@ -1,6 +1,6 @@
 import { binData } from "./modules/binDatabase.js";
 
-
+// Валидация значения БИНов
 function checkBIN(bin){
   let cleanBIN = bin.replace(/\D/g, '');
 
@@ -8,8 +8,12 @@ function checkBIN(bin){
     return {isValid: false, message: 'Введите корректный БИН!'}
   }
 
-  if (cleanBIN > 6){
+  if (cleanBIN.length > 6){
     cleanBIN = cleanBIN.slice(0, 6);
+  }
+
+  if(cleanBIN.length < 6){
+    return{isValid: false, message:'Введите корректный БИН!'}
   }
 
   const binData = binDatabase[cleanBIN];
