@@ -25,7 +25,7 @@ export function checkBIN(bin){
 }
 
 
-function dataChange (data) {
+export function dataChange (data) {
   let binBrand = document.querySelector('#bin-brand');
   let cardType = document.querySelector('#card-type');
   let bankCountry = document.querySelector('#bank-country');
