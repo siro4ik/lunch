@@ -135,7 +135,7 @@
 
 @media (max-width: 1200px){
     .w_container{
-        padding-bottom: 50px;
+        padding-bottom: 20px;
     }
         
 }
@@ -191,7 +191,7 @@ form{
 
 @media (max-width: 1200px){
     .zodiacSign{
-        padding-bottom: 50px;
+        padding-bottom: 20px;
     }
 }
 
