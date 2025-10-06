@@ -1,4 +1,4 @@
-import { binData } from "./modules/binDatabase.js";
+import { binData } from "./binDatabase.js";
 
 // Валидация значения БИНов
 export function checkBIN(bin){
