@@ -23,3 +23,14 @@ export function checkBIN(bin){
 
   return{isValid: true, data: binData};
 }
+
+
+function dataChange (data) {
+  let binBrand = document.querySelector('#bin-brand');
+  let cardType = document.querySelector('#card-type');
+  let bankCountry = document.querySelector('#bank-country');
+  let bankName = document.querySelector('#bank-name');
+
+
+
+}
