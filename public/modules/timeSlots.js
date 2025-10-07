@@ -89,6 +89,12 @@ export function adjustTime(field, minutes) {
     let totalMinutes = hours * 60 + mins + minutes;
     totalMinutes = (totalMinutes + 1440) % 1440;
 
+    if(totalMinutes < 8 * 60){
+        totalMinutes = 8 * 60;
+    }else if( totalMinutes > 24 * 60){
+        totalMinutes = 24 * 60;
+    }
+
     hours = Math.floor(totalMinutes / 60);
     mins = totalMinutes % 60;
 
