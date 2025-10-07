@@ -59,6 +59,12 @@ export function updateCurrentTimeLine() {
     const currentMinute = now.getMinutes();
     const currentTotalMinutes = currentHour * 60 + currentMinute;
 
+     if (currentTotalMinutes < 8 * 60) {
+        const line = document.querySelector('.current-time-line');
+        if (line) line.style.display = 'none';
+        return;
+    }
+
     const table = document.getElementById('calendar');
     const timeSlots = document.querySelectorAll('#slots tr');
 
@@ -69,7 +75,9 @@ export function updateCurrentTimeLine() {
     const lastRowRect = timeSlots[timeSlots.length - 1].getBoundingClientRect();
 
     const tableHeight = lastRowRect.bottom - firstRowRect.top;
-    const positionPercent = currentTotalMinutes / (24 * 60);
+
+    const workingDayMinutes = 16 * 60;
+    const positionPercent = (currentTotalMinutes - 8 * 60) / workingDayMinutes;
     const positionPixels = positionPercent * tableHeight;
 
     const line = document.querySelector('.current-time-line');
@@ -199,6 +207,11 @@ export function addLunch() {
 
     if (startTotal >= endTotal) {
         alert('Конец обеда должен быть позже начала!');
+        return;
+    }
+
+    if (startTotal < 8 * 60 || endTotal > 24 * 60){
+        alert("Обед должен быть в пределах с 8:00 до 24:00!");
         return;
     }
 
