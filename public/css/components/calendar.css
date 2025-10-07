@@ -36,9 +36,6 @@ th, td {
     padding: clamp(0.125rem, 0.053rem + 0.361vw, 0.5rem);
     text-align: center;
     width: clamp(1.25rem, -1.28rem + 12.651vw, 14.375rem);
-    /* height: clamp(0.938rem, 0.636rem + 1.506vw, 2.5rem); */
-    height:  5px;
-    /* font-size: clamp(0.313rem, 0.216rem + 0.482vw, 0.813rem); */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
