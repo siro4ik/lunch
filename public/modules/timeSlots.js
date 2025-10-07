@@ -12,7 +12,7 @@ export function createTimeSlots() {
     line.className = 'current-time-line';
     document.getElementById('calendar').appendChild(line);
 
-    for (let hour = 0; hour < 24; hour++) {
+    for (let hour = 8; hour < 24; hour++) {
         for (let minute = 0; minute < 60; minute += 30) {
             const row = document.createElement('tr');
 
