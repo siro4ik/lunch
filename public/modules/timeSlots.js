@@ -37,6 +37,10 @@ export function isSlotAvailable(day, start, end) {
     const startTotal = startHour * 60 + startMinute;
     const endTotal = endHour * 60 + endMinute;
 
+     if (startTotal < 8 * 60 || endTotal > 24 * 60) {
+        return false;
+    }
+
     for (let time = startTotal; time < endTotal; time += 30) {
         const hour = Math.floor(time / 60);
         const minute = time % 60;
