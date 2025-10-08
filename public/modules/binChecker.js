@@ -6304,7 +6304,7 @@ const binData = {
 "220420": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "NCO MOBI. MONEY LLC" },
 "220421": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" },
 "220422": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" },
-"220423": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" },
+"220423": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "WILDBERRIES BANK" },
 "220424": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "OZON BANK" },
 "220425": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" },
 "220426": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" },
