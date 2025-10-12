@@ -1491,7 +1491,14 @@ const bikCodes = {
 "298000132": { bank: "Центризбирком РС(Я)" },
 "040507101": { bank: "УФК по Еврейской автономной области" },
 "049923001": { bank: "ОТДЕЛЕНИЕ БИРОБИДЖАН БАНКА РОССИИ" },
-
-
-
 };
+
+function bikCheck (data){
+  
+  let bankInfo = bikCodes[data];
+  if(bankInfo){
+    console.log(`${bankInfo.bank} банк`)
+  }
+}
+
+bikCheck('049849000');
