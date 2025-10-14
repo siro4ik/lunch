@@ -111,7 +111,8 @@ body {
 }
 
 #kody_widget form input[type="submit"].submit,
- #kody_number,#birthDate{
+ #kody_number,#birthDate,
+ #BIKnum{
   -webkit-appearance: none;
   appearance: none;
   box-sizing: border-box;

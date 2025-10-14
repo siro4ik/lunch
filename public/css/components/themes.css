@@ -19,7 +19,8 @@
 .dark-theme .zodiac-main-text,
 .dark-theme .bin-main-text,
 .dark-theme .binChecker span,
-.dark-theme .binChecker h3{
+.dark-theme .binChecker h3,
+.dark-theme .BIKbank_main_text{
   color: #ffffff !important;
   fill:white !important;
 }

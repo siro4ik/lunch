@@ -327,6 +327,14 @@ form{
   font-size: 14px;
 }
 
+#BIKnum{
+  padding:2px;
+}
+
+.BIK_button{
+  padding: 5px 10px;
+}
+
 
 @media(max-width:1500px){
     #result{
