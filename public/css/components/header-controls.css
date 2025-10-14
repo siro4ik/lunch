@@ -315,6 +315,18 @@ form{
     padding: 5px 10px;
 }
 
+.BIKbank{  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+}
+
+.BIKbank_main_text{
+  font-size: 14px;
+}
+
 
 @media(max-width:1500px){
     #result{

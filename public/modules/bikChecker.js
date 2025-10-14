@@ -1512,3 +1512,4 @@ export function checkBIK(bik){
 
   return {isValid: true, data:foundDataBIK};
 }
+
