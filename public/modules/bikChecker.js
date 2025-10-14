@@ -1499,4 +1499,14 @@ export function checkBIK(bik){
   if (cleanBIK === ''){
     return{isValid: false, message:'Введите корректный БИК!'}
   }
+
+  if (cleanBIK.length < 9){
+    return{isValid: false, message: 'Введите корректный БИК!'};
+  }
+
+  const foundDataBIK = bikCodes[cleanBIK];
+
+  if(!foundDataBIK){
+    return{isValid: false, message: 'БИК не был найден!'}
+  }
 }
