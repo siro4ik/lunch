@@ -1493,12 +1493,10 @@ const bikCodes = {
 "049923001": { bank: "ОТДЕЛЕНИЕ БИРОБИДЖАН БАНКА РОССИИ" },
 };
 
-function bikCheck (data){
-  
-  let bankInfo = bikCodes[data];
-  if(bankInfo){
-    console.log(`${bankInfo.bank} банк`)
+export function checkBIK(bik){
+  let cleanBIK = bik.replace(/\D/g, '');
+
+  if (cleanBIK === ''){
+    return{isValid: false, message:'Введите корректный БИК!'}
   }
 }
-
-bikCheck('049849000');
