@@ -1509,4 +1509,6 @@ export function checkBIK(bik){
   if(!foundDataBIK){
     return{isValid: false, message: 'БИК не был найден!'}
   }
+
+  return {isValid: true, data:foundDataBIK};
 }
