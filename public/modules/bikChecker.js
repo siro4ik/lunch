@@ -1513,7 +1513,7 @@ export function checkBIK(bik){
   return {isValid: true, data:foundDataBIK};
 }
 
-export function dataCHangeBIK(data){
+export function dataChangeBIK(data){
   let bankName = document.querySelector('#BIKnum');
 
   bankName.textContent = data.bank;

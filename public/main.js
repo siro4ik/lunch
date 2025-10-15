@@ -4,6 +4,7 @@ import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, d
 import { initModal } from './modules/modal.js';
 import { toggleRainVisibility, createDrops, animateRain, initRain, resizeCanvas } from './modules/rain.js';
 import { dataChange, checkBIN} from './modules/binChecker.js';
+import {checkBIK, dataChangeBIK} from './modules/bikChecker.js';
 
 
 // Делаем функции доступными для inline-обработчиков в index.html
