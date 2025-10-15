@@ -6408,7 +6408,7 @@ export function checkBIN(bin){
   return{isValid: true, data: foundData};
 }
 
-
+// Изменение данных на странице
 export function dataChange (data) {
   let binBrand = document.querySelector('#bin-brand');
   let cardType = document.querySelector('#card-type');

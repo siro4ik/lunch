@@ -1493,6 +1493,8 @@ const bikCodes = {
 "049923001": { bank: "ОТДЕЛЕНИЕ БИРОБИДЖАН БАНКА РОССИИ" },
 };
 
+
+// Валидация БИКов
 export function checkBIK(bik){
   let cleanBIK = bik.replace(/\D/g, '');
 
@@ -1513,6 +1515,8 @@ export function checkBIK(bik){
   return {isValid: true, data:foundDataBIK};
 }
 
+
+// Изменение данных на странице
 export function dataChangeBIK(data){
   let bankName = document.querySelector('#BIKnum');
 
