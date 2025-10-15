@@ -300,9 +300,14 @@ form{
 #bin-brand,
 #card-type,
 #bank-country,
-#bank-name{
-    font-size: 12px;
+#bank-name,
+#BIKnum_result{
+    font-size: 14px;
     font-weight: 600;
+}
+
+#BIKnum_result{
+    margin-top: 5px;
 }
 
 #cardNumber{

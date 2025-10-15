@@ -1518,7 +1518,7 @@ export function checkBIK(bik){
 
 // Изменение данных на странице
 export function dataChangeBIK(data){
-  let bankName = document.querySelector('#BIKnum');
+  let bankName = document.querySelector('#BIKnum_result');
 
   bankName.textContent = data.bank;
 }

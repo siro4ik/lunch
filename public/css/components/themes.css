@@ -20,7 +20,8 @@
 .dark-theme .bin-main-text,
 .dark-theme .binChecker span,
 .dark-theme .binChecker h3,
-.dark-theme .BIKbank_main_text{
+.dark-theme .BIKbank_main_text,
+.dark-theme .bik-info-container span  {
   color: #ffffff !important;
   fill:white !important;
 }

@@ -136,10 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const BIKresult = checkBIK(BIKnumberInput.value);
 
-        if(result.valid){
-            dataChangeBIK(result.data);
+        if(BIKresult.isValid){
+            dataChangeBIK(BIKresult.data);
         }else{
-            alert(result.message);
+            alert(BIKresult.message);
         }
     })
 
