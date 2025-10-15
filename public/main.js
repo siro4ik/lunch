@@ -129,8 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
-    document.querySelector('#BIKnum').addEventListener('submit', function(e){
+    document.querySelector('#BIKform').addEventListener('submit', function(e){
         e.preventDefault();
+
+        const BIKnumberInput = document.querySelector('#BIKnum');
+
+        const BIKresult = checkBIK(BIKnumberInput.value);
+
+        if(result.valid){
+            dataChangeBIK(result.data);
+        }else{
+            alert(result.message);
+        }
     })
 
     // Инициализируем canvas для дождя
