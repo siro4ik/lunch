@@ -129,6 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
+    document.querySelector('#BIKnum').addEventListener('submit', function(e){
+        e.preventDefault();
+    })
+
     // Инициализируем canvas для дождя
     const rainCanvas = document.getElementById('rain-container');
     if (rainCanvas) {
