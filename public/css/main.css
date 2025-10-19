@@ -268,5 +268,52 @@ body {
     max-width: 700px;
     padding-top: 10px;
   }
+  
+  .header-swiper {
+    display: block;
+    width: 100%;
+  }
+  
+  /* Скрываем пагинацию */
+  .header-pagination {
+    display: none !important;
+  }
+  
+  .header-swiper {
+    pointer-events: none; /* Отключаем все взаимодействия со слайдером */
+  }
+  
+  /* Принудительно показываем только второй слайд */
+  .swiper-wrapper {
+    transform: translate3d(0px, 0px, 0px) !important; /* Убираем сдвиг */
+  }
+  
+  .swiper-slide:first-child {
+    display: none !important;
+  }
+  
+  .swiper-slide:nth-child(2) {
+    display: flex !important;
+    width: 100% !important;
+  }
+  
+  /* Перестраиваем инструменты в колонку */
+  .tools-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    pointer-events: auto; /* Включаем взаимодействие с контентом */
+  }
+  
+  .tools-slide > * {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.315);
+  }
+  
+  .tools-slide > *:last-child {
+    border-bottom: none;
+  }
 }
 

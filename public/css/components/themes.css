@@ -31,7 +31,9 @@
 }
 
 .dark-theme #result,
-.dark-theme .bin-container{
+.dark-theme .bin-container,
+.dark-theme .bik-info-container,
+.dark-theme #zodiac-result{
   border: 1px solid rgba(255, 255, 255, 0.341);
 }
 

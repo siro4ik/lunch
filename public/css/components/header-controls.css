@@ -130,7 +130,7 @@
 
 @media (max-width: 1200px){
     .w_container{
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
         
 }
@@ -188,13 +188,13 @@ form{
 #zodiac-result{
   gap: 35px;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.341);
+  border: 1px solid rgba(0, 0, 0, 0.813);
   border-radius: 10px;
 }
 
 .bik-info-container{
   padding: 7px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.341);
+  border: 1px solid rgba(0, 0, 0, 0.813);
   border-radius: 10px;
   width: 100%;
 }
@@ -202,7 +202,7 @@ form{
 
 @media (max-width: 1200px){
     .zodiacSign{
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
 }
 
