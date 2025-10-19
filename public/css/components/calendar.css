@@ -15,7 +15,6 @@ th:first-child{
 
 .time{
     margin: 0;
-    margin-top: 20px;
     margin-bottom:10px;
     font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
     text-align: center;
@@ -67,7 +66,8 @@ th {
 
 span{
     color: #000;
-    font-size: clamp(0.429rem, -0.076rem + 0.784vw, 1rem);
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .lunch-container {

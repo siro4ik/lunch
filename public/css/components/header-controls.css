@@ -16,7 +16,6 @@
 }
 
 .controls{
-    padding:10px 0; 
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -140,6 +139,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 60%;
 }
 
 form{
@@ -183,6 +184,21 @@ form{
     gap:10px;
     padding: 5px;
 }
+
+#zodiac-result{
+  gap: 35px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.341);
+  border-radius: 10px;
+}
+
+.bik-info-container{
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.341);
+  border-radius: 10px;
+  width: 100%;
+}
+
 
 @media (max-width: 1200px){
     .zodiacSign{
@@ -232,7 +248,7 @@ form{
 }
 
 #age{
-    font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -302,7 +318,7 @@ form{
 }
 
 #BIKnum_result{
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 #cardNumber{
