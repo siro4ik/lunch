@@ -155,6 +155,42 @@ body {
     box-shadow: 1px 5px 10px rgba(210, 210, 210, 0.398);
 }
 
+
+/* Свайпер */
+.header-swiper {
+    width: 100%;
+    height: 100%;
+    grid-column: 2 / span 4;
+}
+
+.header-swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Стили для слайда с инструментами */
+.tools-slide {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+/* Пагинация */
+.header-pagination {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    --swiper-pagination-color: #7edd90;
+    --swiper-pagination-bullet-size: 8px;
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+}
+
 /* BG-иконки */
 
 .otp-icon{
