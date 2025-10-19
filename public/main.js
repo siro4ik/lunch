@@ -6,6 +6,20 @@ import { toggleRainVisibility, createDrops, animateRain, initRain, resizeCanvas 
 import { dataChange, checkBIN} from './modules/binChecker.js';
 import {checkBIK, dataChangeBIK} from './modules/bikChecker.js';
 
+// Инициализация header слайдера
+const headerSwiper = new Swiper(".header-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    centeredSlides: true,
+    loop: false,
+    speed: 300,
+    pagination: {
+        el: ".header-pagination",
+        clickable: true,
+    },
+});
+
+
 
 // Делаем функции доступными для inline-обработчиков в index.html
 window.addLunch = addLunch;
@@ -67,18 +81,6 @@ document.getElementById('calendar').appendChild(line);
 //     }
 // }
 
-// Инициализация header слайдера
-const headerSwiper = new Swiper(".header-swiper", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    centeredSlides: true,
-    loop: false,
-    speed: 300,
-    pagination: {
-        el: ".header-pagination",
-        clickable: true,
-    },
-});
 
 const dateInput = document.querySelector ("#birthDate")
 
