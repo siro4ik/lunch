@@ -6410,12 +6410,10 @@ export function checkBIN(bin){
 
 // Изменение данных на странице
 export function dataChange (data) {
-  let binBrand = document.querySelector('#bin-brand');
   let cardType = document.querySelector('#card-type');
   let bankCountry = document.querySelector('#bank-country');
   let bankName = document.querySelector('#bank-name');
 
-  binBrand.textContent = data.brand;
   cardType.textContent = data.type;
   bankCountry.textContent = data.country;
   bankName.textContent = data.bank;

@@ -22,7 +22,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid rgba(0, 0, 0, 0.315);
 }
 
 @media (max-width: 1200px){
@@ -56,6 +55,7 @@
 .time-controls {
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 15px;
 }
@@ -116,10 +116,6 @@
     align-items: center ;
     justify-content: center ;
     flex-direction: column ;
-}
-
-#kody_widget{
-    border-right: 1px solid rgba(0, 0, 0, 0.315);
 }
 
 .w_container{
@@ -186,7 +182,6 @@ form{
     align-items: center;
     gap:10px;
     padding: 5px;
-    border-right: 1px solid rgba(0, 0, 0, 0.315);
 }
 
 @media (max-width: 1200px){
