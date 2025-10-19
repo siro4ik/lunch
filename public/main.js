@@ -13,6 +13,7 @@ window.adjustTime = adjustTime;
 window.toggleRainVisibility = toggleRainVisibility;
 window.createDrops = createDrops;
 window.animateRain = animateRain;
+window.headerSwiper = headerSwiper;
 
 
 const OpenModalButton = document.querySelector('#setting-btn');
@@ -66,6 +67,18 @@ document.getElementById('calendar').appendChild(line);
 //     }
 // }
 
+// Инициализация header слайдера
+const headerSwiper = new Swiper(".header-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    centeredSlides: true,
+    loop: false,
+    speed: 300,
+    pagination: {
+        el: ".header-pagination",
+        clickable: true,
+    },
+});
 
 const dateInput = document.querySelector ("#birthDate")
 
