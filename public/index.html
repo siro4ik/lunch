@@ -16,166 +16,148 @@
     <link rel="icon" href="img/ogo.png">
     <title>Antifraud</title>
 </head>
-<body >
-
-    <img src="img/OTP-without-back.png"  class="mouse-animation" alt="otp">
-
+<body>
+    <img src="img/OTP-without-back.png" class="mouse-animation" alt="otp">
     <canvas id="rain-container"></canvas>
-
     <img class="otp-icon otp-1" src="img/OTP-without-back.png" alt="otp-icon">
     <img class="otp-icon otp-2" src="img/OTP-without-back.png" alt="otp-icon">
 
-    
-        <div class="header">
-
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="bi" id="setting-btn" type="button">
-        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
-        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
-        </svg>
-            </div>
-
-            <div class="swiper header-swiper">
-                <div class="swiper-wrapper">
-            
-<div class="swiper-slide header-slide">
-            <div class="controls">
-                <div class="start">
-                    <input type="text" id="userName" placeholder="Ваше имя" maxlength="13" class="glow-on-hover">
-                    <h2 class="time">Время начала</h2>
-                    <button onclick="adjustTime('start', -30) " class=" lunch-button glow-on-hover">-30 мин</button>
-                    <input type="time" id="start" step="1800" value="12:00" class="glow-on-hover">
-                    <button onclick="adjustTime('start', 30)" class=" lunch-button glow-on-hover">+30 мин</button>
-                </div>
-                <div class="end">
-
-                    <h2 class="time">Время конца</h2>
-                    <button onclick="adjustTime('end', -30)" class=" lunch-button glow-on-hover">-30 мин</button>
-                    <input type="time" id="end" step="1800" value="13:00" class="glow-on-hover">
-                    <button onclick="adjustTime('end', 30)" class=" lunch-button glow-on-hover">+30 мин</button>
-                </div>
-                <button onclick="addLunch()" class="addMeal  glow-on-hover">Добавить</button>
-            </div>
-            </div>
-
-            
-            <div class="swiper-slide header-slide">
-        <div id="kody_widget">
-        <a href="https://www.kody.su/" target="_blank">
-            <img alt="kody.su: телефонные коды" src="https://www.kody.su/img/mlogo.png">
-        </a>
+    <div class="header">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="bi" id="setting-btn" type="button">
+                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+            </svg>
         </div>
 
-        <!-- ЗЗ/Проверка возраста -->
+        <div class="swiper header-swiper">
+            <div class="swiper-wrapper">
 
-        <div class="zodiacSign">
-
-            <h2 class="zodiac-main-text">Узнайте знак зодиака и возраст</h2>
-                
-                <form id="zodiacForm" class="compact-form">
-                    <input type="text" id="birthDate" placeholder="ДД.ММ.ГГГГ" required>
-                    <button type="submit" class="glow-on-hover zodiac-button">Узнать</button>
-                </form>
-
-                <div id="result" class="result hidden">
-                    <div class="result-item">
-                        <span>Знак зодиака :</span>
-                        <h3 id="zodiacSign">-</h3> 
-                    </div>
-                    <div class="result-item">
-                        <span>Полных лет :</span>
-                        <h3 id="age">-</h3> 
+                <div class="swiper-slide">
+                    <div class="controls">
+                        <input type="text" id="userName" placeholder="Ваше имя" maxlength="13" class="glow-on-hover">
+                        <div class="time-controls">
+                            <div class="start">
+                                <h2 class="time">Время начала</h2>
+                                <button onclick="adjustTime('start', -30)" class="lunch-button glow-on-hover">-30 мин</button>
+                                <input type="time" id="start" step="1800" value="12:00" class="glow-on-hover">
+                                <button onclick="adjustTime('start', 30)" class="lunch-button glow-on-hover">+30 мин</button>
+                            </div>
+                            <div class="end">
+                                <h2 class="time">Время конца</h2>
+                                <button onclick="adjustTime('end', -30)" class="lunch-button glow-on-hover">-30 мин</button>
+                                <input type="time" id="end" step="1800" value="13:00" class="glow-on-hover">
+                                <button onclick="adjustTime('end', 30)" class="lunch-button glow-on-hover">+30 мин</button>
+                            </div>
+                        </div>
+                        <button onclick="addLunch()" class="addMeal glow-on-hover">Добавить</button>
                     </div>
                 </div>
 
-        </div>
+                <div class="swiper-slide">
+                    <div class="tools-slide">
+                        <div id="kody_widget">
+                            <a href="https://www.kody.su/" target="_blank">
+                                <img alt="kody.su: телефонные коды" src="https://www.kody.su/img/mlogo.png">
+                            </a>
+                        </div>
 
-        <div class="BIKbank">
+                        <div class="zodiacSign">
+                            <h2 class="zodiac-main-text">Узнайте знак зодиака и возраст</h2>
+                            <form id="zodiacForm" class="compact-form">
+                                <input type="text" id="birthDate" placeholder="ДД.ММ.ГГГГ" required>
+                                <button type="submit" class="glow-on-hover zodiac-button">Узнать</button>
+                            </form>
+                            <div id="zodiac-result" class="result hidden">
+                                <div class="result-item">
+                                    <span>Знак зодиака:</span>
+                                    <h3 id="zodiacSign">-</h3> 
+                                </div>
+                                <div class="result-item">
+                                    <span>Полных лет:</span>
+                                    <h3 id="age">-</h3> 
+                                </div>
+                            </div>
+                        </div>
 
-            <h2 class="BIKbank_main_text">Узнайте БИК банка</h2>
-                
-                <form id="BIKform" class="compact-form">
-                    <input type="text" id="BIKnum" placeholder="*********" required>
-                    <button type="submit" class="glow-on-hover BIK_button">Узнать</button>
-                </form>
+                        <div class="BIKbank">
+                            <h2 class="BIKbank_main_text">Узнайте БИК банка</h2>
+                            <form id="BIKform" class="compact-form">
+                                <input type="text" id="BIKnum" placeholder="*********" required>
+                                <button type="submit" class="glow-on-hover BIK_button">Узнать</button>
+                            </form>
+                            <div id="bik-result" class="result hidden">
+                                <div class="bik-info-container">
+                                    <span>Банк:</span>
+                                    <h3 id="BIKnum_result">-</h3> 
+                                </div>
+                            </div>
+                        </div>
 
-                <div id="result" class="result hidden">
-                    <div class="bik-info-container">
-                        <span>Банк :</span>
-                        <h3 id="BIKnum_result">-</h3> 
+                        <div class="binChecker">
+                            <h2 class="bin-main-text">Проверка карты банка</h2>
+                            <form id="binForm">
+                                <input type="text" id="cardNumber" class="glow-on-hover" maxlength="6" placeholder="**** **" required>  
+                                <button type="submit" class="glow-on-hover bin-button">Узнать</button>
+                            </form>
+                            <div class="bin-container">
+                                <div class="bin-info">
+                                    <span>Платежная система:</span>
+                                    <h3 id="bin-brand">-</h3>
+                                </div>
+                                <div class="bin-info">
+                                    <span>Тип карты:</span>
+                                    <h3 id="card-type">-</h3>
+                                </div>
+                                <div class="bin-info">
+                                    <span>Страна:</span>
+                                    <h3 id="bank-country">-</h3>
+                                </div>
+                                <div class="bin-info">
+                                    <span>Банк:</span>
+                                    <h3 id="bank-name">-</h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-        </div>
-
-        <div class="binChecker">
-            <h2 class="bin-main-text">Проверка карты банка</h2>
-            <form id="binForm">
-                <input type="text" id="cardNumber" class="glow-on-hover" maxlength="6" placeholder="**** **" required>  
-                <button type="submit" class="glow-on-hover bin-button">Узнать</button>
-            </form>
-            <div class="bin-container">
-                <div class="bin-info"><span>Платежная система:</span>
-                    <h3 id="bin-brand">-</h3> </div>
-                <div class="bin-info"><span>Тип карты:</span>
-                    <h3 id="card-type">-</h3> </div>
-                <div class="bin-info"><span>Страна:</span>
-                    <h3 id="bank-country">-</h3> </div>
-                <div class="bin-info"><span>Банк:</span>
-                    <h3 id="bank-name">-</h3> </div>
             </div>
+            <div class="swiper-pagination header-pagination"></div>
         </div>
-        </div>
-        </div>
-
-        <div class="swiper-pagination header-pagination"></div>
-
     </div>
-</div>
 
+    <table id="calendar">
+        <thead>
+            <tr>
+                <th class="element-to-hide">Время</th>
+                <th>Понедельник</th>
+                <th>Вторник</th>
+                <th>Среда</th>
+                <th>Четверг</th>
+                <th>Пятница</th>
+                <th>Суббота</th>
+                <th>Воскресенье</th>
+            </tr>
+        </thead>
+        <tbody id="slots"></tbody>
+    </table>
 
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="./modules/bikChecker.js"></script>
 
-<table id="calendar">
-    <!-- <div class="cats">       
-        <img src="img/Малек-обрезанный.png" alt="кот" id="cat">
-        <img src="img/серый малек.png" alt="кот2" id="cat2"></div> -->
-    <thead>
-        <tr>
-            <th class="element-to-hide">Время</th>
-            <th>Понедельник</th>
-            <th>Вторник</th>
-            <th>Среда</th>
-            <th>Четверг</th>
-            <th>Пятница</th>
-            <th>Суббота</th>
-            <th>Воскресенье</th>
-        </tr>
-    </thead>
-    <tbody id="slots">
-
-    </tbody>
-    
-</table>
-
-
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
-<script type= 'module' src="main.js"></script>
-<script type="module" src="./modules/bikChecker.js"></script>
-
-<!-- Скрипт проверки номеров -->
-<script>
-  var kody_options = {id:'kody_widget', caption:'Оператор/город по номеру телефона'};
-  (function(){
-    var s = document.createElement('script'); 
-    s.type = 'text/javascript'; 
-    s.charset = 'UTF-8';
-    s.async = true; 
-    s.src = "https://www.kody.su/embed/widget.min.js";
-    document.getElementsByTagName('head')[0].appendChild(s);
-  })();
-</script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <script>
+        var kody_options = {id:'kody_widget', caption:'Оператор/город по номеру телефона'};
+        (function(){
+            var s = document.createElement('script'); 
+            s.type = 'text/javascript'; 
+            s.charset = 'UTF-8';
+            s.async = true; 
+            s.src = "https://www.kody.su/embed/widget.min.js";
+            document.getElementsByTagName('head')[0].appendChild(s);
+        })();
+    </script>
 </body>
 </html>
