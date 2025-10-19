@@ -144,7 +144,7 @@ body {
 }
 
 .header{
-    position: relative;
+    position: static;
     display: grid;
     border: 1px solid;
     grid-template-columns: 50px repeat(4,1fr);
@@ -153,6 +153,7 @@ body {
     margin-bottom: 10px;
     border-radius: 20px;
     box-shadow: 1px 5px 10px rgba(210, 210, 210, 0.398);
+
 }
 
 
