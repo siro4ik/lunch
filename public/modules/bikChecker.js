@@ -1520,14 +1520,15 @@ export function checkBIK(bik){
 export function dataChangeBIK(data){
   let bankName = document.querySelector('#BIKnum_result');
 
-  
+  bankName.style.opacity = '0';
 
 
   setTimeout (()=>{
     bankName.textContent = data.bank;
 
+    bankName.style.opacity = '1';
 
-  })
+  }, 200);
   
 }
 

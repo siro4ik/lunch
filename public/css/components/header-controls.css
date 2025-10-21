@@ -253,8 +253,10 @@ form{
     font-weight: 600;
 }
 
-#zodiacSign, #age {
-    transition: all 0.3s ease;
+#zodiacSign,
+#age,
+#BIKnum_result{
+    transition: opacity 0.2s ease;
 }
 
 #zodiacSign.show, #age.show {

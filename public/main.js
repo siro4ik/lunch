@@ -113,7 +113,7 @@ document.getElementById("zodiacForm").addEventListener('submit', function(e){
             
             zodiacSign.style.opacity = '1';
             fullAge.style.opacity = '1';
-        }, 100);
+        }, 200);
     }else{
         console.log('Парсинг не удался');
     }
