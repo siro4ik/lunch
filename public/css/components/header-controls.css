@@ -256,7 +256,7 @@ form{
 #zodiacSign,
 #age,
 #BIKnum_result{
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease-in-out;
 }
 
 #zodiacSign.show, #age.show {
