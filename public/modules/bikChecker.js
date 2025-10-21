@@ -1520,6 +1520,14 @@ export function checkBIK(bik){
 export function dataChangeBIK(data){
   let bankName = document.querySelector('#BIKnum_result');
 
-  bankName.textContent = data.bank;
+  
+
+
+  setTimeout (()=>{
+    bankName.textContent = data.bank;
+
+
+  })
+  
 }
 
