@@ -256,9 +256,9 @@ form{
 #zodiacSign,
 #age,
 #BIKnum_result,
-#cardType,
-#bankCountry,
-#bankName{
+#card-type,
+#bank-country,
+#bank-name{
     transition: opacity 0.2s ease-in-out;
 }
 
