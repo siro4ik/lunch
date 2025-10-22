@@ -103,7 +103,6 @@ document.getElementById("zodiacForm").addEventListener('submit', function(e){
         zodiacSign.textContent = zodiac;
 
         const fullAge = document.querySelector('#age');
-        fullAge.textContent = age;
         zodiacSign.style.opacity = '0';
         fullAge.style.opacity = '0';
         
