@@ -115,6 +115,8 @@ export function adjustTime(field, minutes) {
         mins.toString().padStart(2, '0');
 }
 
+
+
 export function loadLunches() {
     database.ref('lunches').on('value', (snapshot) => {
         const lunches = snapshot.val();
