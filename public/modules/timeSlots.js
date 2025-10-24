@@ -115,7 +115,11 @@ export function adjustTime(field, minutes) {
         mins.toString().padStart(2, '0');
 }
 
-
+function showNotification(user, startTime, minutesUntil){
+    if ("Notification" in window){
+        
+    }
+}
 
 export function loadLunches() {
     database.ref('lunches').on('value', (snapshot) => {
