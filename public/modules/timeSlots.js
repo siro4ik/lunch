@@ -117,7 +117,11 @@ export function adjustTime(field, minutes) {
 
 function showNotification(user, startTime, minutesUntil){
     if ("Notification" in window){
-        
+        if (Notification.permission === "granted"){
+            new Notification ("Скоро перерыв!",{
+                body: `${user} уходит на перерыв через ${minutesUntil} минут (${startTime})`
+            })
+        }
     }
 }
 
