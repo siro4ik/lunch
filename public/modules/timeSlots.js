@@ -119,7 +119,9 @@ function showNotification(user, startTime, minutesUntil){
     if ("Notification" in window){
         if (Notification.permission === "granted"){
             new Notification ("Скоро перерыв!",{
-                body: `${user} уходит на перерыв через ${minutesUntil} минут (${startTime})`
+                body: `${user} уходит на перерыв через ${minutesUntil} минут (${startTime})`,
+                // icon:
+                tag: "lunch notification" 
             })
         }
     }
