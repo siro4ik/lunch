@@ -86,6 +86,7 @@ const dateInput = document.querySelector ("#birthDate")
 
 document.getElementById("zodiacForm").addEventListener('submit', function(e){
     e.preventDefault();
+    
     const dateValue = dateInput.value;
     console.log('Введенная дата:', dateValue);
 
