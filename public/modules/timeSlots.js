@@ -118,6 +118,7 @@ export function adjustTime(field, minutes) {
 
 
 // сделать стилизацию для уведомления
+// сделать уведомление относительно нынешнего времени, если таймлайн будет отбирать уведомления на основе прошлых или будущщих дней, то это будет ошибкой
 
 function showNotification(user, startTime, minutesUntil){
     if ("Notification" in window){
