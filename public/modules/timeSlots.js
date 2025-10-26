@@ -117,6 +117,8 @@ export function adjustTime(field, minutes) {
 
 
 
+// сделать стилизацию для уведомления
+
 function showNotification(user, startTime, minutesUntil){
     if ("Notification" in window){
         if (Notification.permission === "granted"){
