@@ -115,6 +115,8 @@ export function adjustTime(field, minutes) {
         mins.toString().padStart(2, '0');
 }
 
+
+
 function showNotification(user, startTime, minutesUntil){
     if ("Notification" in window){
         if (Notification.permission === "granted"){
