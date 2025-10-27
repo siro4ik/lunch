@@ -122,22 +122,16 @@ export function adjustTime(field, minutes) {
 // как вариант, если не получится сделать относительно всех таймлайнов - автоматическое удаление слотов времени у !времени сегодняшнего после 00 00
 
 
-function showNotification(user, startTime, minutesUntil){
+function createNotification(user, startTime, minutesUntil){
 
-    if(!("Notification" in window)){
-        alert("браузер не поддерживает уведомления!");
-        return;
-    }
+    const notification = new Notification("Скоро перерыв",{
+        body: `${user} уходит на перерыв через ${minutesUntil} минут в ${startTime}`,
+        tag: 'notificationl-lunch',
+        // icon: 
+        requireInteraction: true
+    })
 
-    if ("Notification" in window){
-        if (Notification.permission === "granted"){
-            new Notification ("Скоро перерыв!",{
-                body: `${user} уходит на перерыв через ${minutesUntil} минут (${startTime})`,
-                // icon:
-                tag: "lunch notification" 
-            })
-        }
-    }
+
 }
 
 export function loadLunches() {
