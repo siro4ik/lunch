@@ -121,7 +121,7 @@ export function adjustTime(field, minutes) {
 // сделать уведомление относительно нынешнего времени, если таймлайн будет отбирать уведомления на основе прошлых или будущщих дней, то это будет ошибкой
 // как вариант, если не получится сделать относительно всех таймлайнов - автоматическое удаление слотов времени у !времени сегодняшнего после 00 00
 
-function showBrowserNotification(user, startTime, minutesUntil){
+export function showBrowserNotification(user, startTime, minutesUntil){
 
     if(!('Notification' in window)){
         alert('Браузер не поддерживает уведомления');
@@ -146,7 +146,7 @@ function showBrowserNotification(user, startTime, minutesUntil){
 
 
 
-function createNotification(user, startTime, minutesUntil){
+export function createNotification(user, startTime, minutesUntil){
 
     const notification = new Notification("Скоро перерыв",{
         body: `${user} уходит на перерыв через ${minutesUntil} минут в ${startTime}`,
