@@ -28,6 +28,8 @@ window.toggleRainVisibility = toggleRainVisibility;
 window.createDrops = createDrops;
 window.animateRain = animateRain;
 window.headerSwiper = headerSwiper;
+window.showBrowserNotification = showBrowserNotification;
+window.createNotification = createNotification;
 
 
 const OpenModalButton = document.querySelector('#setting-btn');
@@ -184,6 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
     loadLunches();
     updateCurrentTimeLine();
     setInterval(updateCurrentTimeLine, 30000);
+
+    
+    console.log("функции уведомлений работают",{
+        showBrowserNotification: typeof window.showBrowserNotification,
+        createNotification: typeof window.createNotification
+    });
 });
 
 // Обработчики изменения размера окна
