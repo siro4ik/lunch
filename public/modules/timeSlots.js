@@ -129,10 +129,19 @@ function createNotification(user, startTime, minutesUntil){
         tag: 'notificationl-lunch',
         // icon: 
         requireInteraction: true
-    })
+    });
 
+     notification.onclick = function(){
+        console.log('пользователь кликнул на уведомление')
+        window.focus();
+        notification.close();
+     }
 
-}
+     setTimeout(()=>{
+        notification.close();
+     },10000); 
+    
+    }
 
 export function loadLunches() {
     database.ref('lunches').on('value', (snapshot) => {
