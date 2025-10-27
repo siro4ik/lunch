@@ -123,6 +123,11 @@ export function adjustTime(field, minutes) {
 
 function showBrowserNotification(user, startTime, minutesUntil){
 
+    if(!('Notification' in window)){
+        alert('Браузер не поддерживает уведомления');
+        return;
+    }
+
     
 
 }
