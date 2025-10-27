@@ -128,7 +128,19 @@ function showBrowserNotification(user, startTime, minutesUntil){
         return;
     }
 
-    
+     if (Notification.permission === 'granted'){
+        createNotification(user, startTime, minutesUntil);
+     }else if(Notification.permission === 'default'){
+        Notification.requestPermission().then(function(permission){
+            if(permission === 'granted'){
+                createNotification(user, startTime, minutesUntil);
+            }else{
+                console.log('Пользователь отказал в уведомлениях');
+            }
+        });
+     }else{
+        console.log("Уведомления заблокированы")
+     }
 
 }
 
