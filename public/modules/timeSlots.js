@@ -1,5 +1,6 @@
 import { database } from './firebase.js';
 
+let notificationTimer = [];
 
 // Создание временных слотов
 export function createTimeSlots() {
