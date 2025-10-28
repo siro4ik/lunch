@@ -6,7 +6,14 @@ function getTimeInMinutes (timeStr){
     
     const [hours, minutes] = timeStr.split(':').map(Number); 
     return hours * 60 + minutes;
-    
+
+}
+
+function showLunchNotification (user, startTime){
+    console.log(`уведомление ${user} в ${startTime}`);
+
+    showBrowserNotification(user, startTime, 0);
+
 }
 
 // Создание временных слотов
