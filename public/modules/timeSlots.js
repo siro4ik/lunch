@@ -2,6 +2,13 @@ import { database } from './firebase.js';
 
 let notificationTimer = [];
 
+function getTimeInMinutes (timeStr){
+    
+    const [hours, minutes] = timeStr.split(':').map(Number); 
+    return hours * 60 + minutes;
+    
+}
+
 // Создание временных слотов
 export function createTimeSlots() {
     const table = document.getElementById('slots');
