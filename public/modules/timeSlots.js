@@ -16,6 +16,14 @@ function showLunchNotification (user, startTime){
 
 }
 
+function cleanupPastLunches(lunches){
+    const now = new Date();
+    const currentDay = (now.getDate()+ 6) % 7;
+    const currentTime = now.getHours() * 60 + now.getMinutes();
+
+
+}
+
 // Создание временных слотов
 export function createTimeSlots() {
     const table = document.getElementById('slots');
