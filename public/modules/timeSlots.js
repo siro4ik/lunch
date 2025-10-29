@@ -23,8 +23,12 @@ function cleanupPastLunches(lunches){
 
 // создать через объект и проходки по нему удаление прошлого времени при помощи databse.ref
 
+    Object.entries(lunches).forEach (([id, lunch])=> {
+
+        
+
     
-}
+    });
 
 // Создание временных слотов
 export function createTimeSlots() {
