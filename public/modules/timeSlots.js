@@ -22,6 +22,8 @@ function cleanupPastLunches(lunches){
     const currentTime = now.getHours() * 60 + now.getMinutes();
 
 // создать через объект и проходки по нему удаление прошлого времени при помощи databse.ref
+
+    
 }
 
 // Создание временных слотов
