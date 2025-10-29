@@ -25,7 +25,10 @@ function cleanupPastLunches(lunches){
 
     Object.entries(lunches).forEach (([id, lunch])=> {
 
-
+        if(lunch.day < currentDay || (lunch.day === currentDay && getTimeInMinutes(lunch.end) < currentTime)){
+            console.log(`Удаляем прошлый перерыв ${lunch.user} (${lunch.start} - ${lunch.end})`)
+            database.ref(`lunches/${id}`).remove();
+        }
 
     
     });
