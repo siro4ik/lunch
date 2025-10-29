@@ -25,10 +25,12 @@ function cleanupPastLunches(lunches){
 
     Object.entries(lunches).forEach (([id, lunch])=> {
 
-        
+
 
     
     });
+
+}
 
 // Создание временных слотов
 export function createTimeSlots() {
