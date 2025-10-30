@@ -37,8 +37,9 @@ function cleanupPastLunches(lunches){
 
 export function sheduleLunchNotifications (lunches){
 
+    notificationTimer.forEach(timer => clearTimeout(timer));
+    notificationTimer = [];
 
-    
 }
 
 
