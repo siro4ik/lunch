@@ -35,6 +35,13 @@ function cleanupPastLunches(lunches){
 
 }
 
+export function sheduleLunchNotifications (lunches){
+
+
+    
+}
+
+
 // Создание временных слотов
 export function createTimeSlots() {
     const table = document.getElementById('slots');
