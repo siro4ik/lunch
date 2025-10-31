@@ -1,5 +1,5 @@
 .dark-theme{
-    background: #000000;
+    background: hsl(0, 0%, 0%);
 }
 
 .dark-theme h1,
@@ -22,19 +22,19 @@
 .dark-theme .binChecker h3,
 .dark-theme .BIKbank_main_text,
 .dark-theme .bik-info-container span  {
-  color: #ffffff !important;
-  fill:white !important;
+  color: hsl(0, 0%, 100%) !important;
+  fill:hsl(0, 0%, 100%) !important;
 }
 
 .dark-theme .header{
-  background-color: #1a1a1ae9;
+  background-color: hsl(0, 0%, 5%);
 }
 
 .dark-theme #result,
 .dark-theme .bin-container,
 .dark-theme .bik-info-container,
 .dark-theme #zodiac-result{
-  border: 1px solid rgba(255, 255, 255, 0.341);
+  border: 1px solid hsl(0, 0%, 20%) ;
 }
 
 @media (max-width: 1200px){
