@@ -189,13 +189,13 @@ form{
 #zodiac-result{
   gap: 35px;
   padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.813);
+  border: 1px solid hsl(0, 0%, 70%);
   border-radius: 10px;
 }
 
 .bik-info-container{
   padding: 7px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.813);
+  border: 1px solid hsl(0, 0%, 70%);
   border-radius: 10px;
   width: 100%;
 }
@@ -231,7 +231,7 @@ form{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    border: 1px solid rgba(0, 0, 0, 0.813);
+    border: 1px solid hsl(0, 0%, 70%);
     padding: 10px;
     border-radius: 10px;
 }
@@ -306,7 +306,7 @@ form{
     padding:10px;
     border-radius: 10px;
     gap: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.813);
+    border: 1px solid hsl(0, 0%, 70%);
 }
 
 .bin-container span{

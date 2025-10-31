@@ -120,7 +120,6 @@ input:focus {
 
   border: 1px solid transparent !important;
   border-radius: 10px !important;
-  color: hsl(0, 0%, 100%) !important;
   cursor: pointer;
   text-align: center;
 

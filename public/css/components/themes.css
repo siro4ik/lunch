@@ -7,7 +7,18 @@ input,
 .glow-on-hover,
 .addMeal,
 .submit {
+  background-color: hsl(0, 0%, 90%) !important;
+  color: hsl(0, 0%, 10%) !important;
+}
+
+.dark-theme input,
+.dark-theme .lunch-button,
+.dark-theme .glow-on-hover,
+.dark-theme .addMeal,
+.dark-theme .submit,
+.dark-theme .zodiac-button{
   background-color: hsl(0, 0%, 10%) !important;
+  color: hsl(0, 0%, 100%) !important;
 }
 
 .dark-theme h1,
@@ -29,13 +40,14 @@ input,
 .dark-theme .binChecker span,
 .dark-theme .binChecker h3,
 .dark-theme .BIKbank_main_text,
-.dark-theme .bik-info-container span  {
+.dark-theme .bik-info-container span,
+.dark-theme input  {
   color: hsl(0, 0%, 100%) !important;
   fill:hsl(0, 0%, 100%) !important;
 }
 
 .dark-theme .header{
-  background-color: hsl(0, 0%, 5%);
+  background-color: hsl(0, 0%, 5%) !important;
 }
 
 .dark-theme #result,
