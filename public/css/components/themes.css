@@ -2,6 +2,11 @@
     background: hsl(0, 0%, 0%);
 }
 
+button,
+.lunch-button, .glow-on-hover{
+  background-color: hsl(0, 0%, 10%) !important;
+}
+
 .dark-theme h1,
 .dark-theme .result-item span,
 .dark-theme .time,

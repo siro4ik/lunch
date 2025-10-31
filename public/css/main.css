@@ -42,13 +42,11 @@ body {
 
   border: 1px solid transparent !important;
   border-radius: 10px !important;
-  color: #000 !important;
+  color: hsl(0, 0%, 100%) !important;
   cursor: pointer;
 
   background:
-    linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(60deg, #ff0000, #ff7300, #fffb00, #48ff00,
-                            #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000) border-box !important;
+    linear-gradient(hsl(0, 0%, 10%), hsl(0, 0%, 10%)) padding-box;
   background-size: 100% 100%, 400% 100% !important;
   animation: kody-glowing 20s linear infinite !important;
 
