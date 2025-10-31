@@ -2,8 +2,11 @@
     background: hsl(0, 0%, 0%);
 }
 
-button,
-.lunch-button, .glow-on-hover{
+input,
+.lunch-button, 
+.glow-on-hover,
+.addMeal,
+.submit {
   background-color: hsl(0, 0%, 10%) !important;
 }
 
