@@ -40,7 +40,9 @@ export function sheduleLunchNotifications (lunches){
     notificationTimer.forEach(timer => clearTimeout(timer));
     notificationTimer = [];
 
-    
+    const now = new Date();
+    const currentDay = (now.getDay() + 6) % 7 ;
+        
 
 }
 
