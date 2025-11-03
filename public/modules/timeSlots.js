@@ -50,6 +50,11 @@ export function sheduleLunchNotifications (lunches){
 
         if (lunch.day === currentDay){
             
+            const [startHour, startMinute] = lunch.start.split(':').map(Number);
+            const lunchStartTime = startHour * 60 + startMinute;
+
+            const NotificationTime = lunchStartTime  - 5;
+
         }
 
     })
