@@ -18,7 +18,7 @@ function showLunchReminder (user, startTime){
 
 function cleanupPastLunches(lunches){
     const now = new Date();
-    const currentDay = (now.getDate()+ 6) % 7;
+    const currentDay = (now.getDay()+ 6) % 7;
     const currentTime = now.getHours() * 60 + now.getMinutes();
 
 // создать через объект и проходки по нему удаление прошлого времени при помощи databse.ref
@@ -35,7 +35,7 @@ function cleanupPastLunches(lunches){
 
 }
 
-export function sheduleLunchNotifications (lunches){
+export function scheduleLunchNotifications (lunches){
 
     notificationTimer.forEach(timer => clearTimeout(timer));
     notificationTimer = [];
@@ -64,9 +64,11 @@ export function sheduleLunchNotifications (lunches){
 
                 const timer = setTimeout (()=>{
 
-                    showLunchReminder(lunch.user, lunchStart);
+                    showLunchReminder(lunch.user, lunch.start);
 
                 },delay);
+
+                notificationTimer.push(timer);
 
             }
 
@@ -226,7 +228,7 @@ export function createNotification(user, startTime, minutesUntil){
 
     const notification = new Notification("Скоро перерыв",{
         body: `${user} уходит на перерыв через ${minutesUntil} минут в ${startTime}`,
-        tag: 'notificationl-lunch',
+        tag: 'notification-lunch',
         // icon: 
         requireInteraction: true
     });
