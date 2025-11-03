@@ -46,6 +46,14 @@ export function sheduleLunchNotifications (lunches){
 
     console.log ('Планируем уведомления для перерыва сегодня (день',currentDay, ')');
 
+    Object.entries(lunches).forEach(([id, lunch])=>{
+
+        if (lunch.day === currentDay){
+            
+        }
+
+    })
+
 }
 
 
