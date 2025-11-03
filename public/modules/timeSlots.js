@@ -42,7 +42,8 @@ export function sheduleLunchNotifications (lunches){
 
     const now = new Date();
     const currentDay = (now.getDay() + 6) % 7 ;
-        
+    const currentTime = now.getHours() * 60 + now.getMinutes();
+    
 
 }
 
