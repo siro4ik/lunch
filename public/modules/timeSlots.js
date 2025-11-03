@@ -9,8 +9,8 @@ function getTimeInMinutes (timeStr){
 
 }
 
-function showLunchNotification (user, startTime){
-    console.log(`уведомление ${user} в ${startTime}`);
+function showLunchReminder (user, startTime){
+    console.log(`Уведомление ${user} в ${startTime}`);
 
     showBrowserNotification(user, startTime, 0);
 
@@ -61,6 +61,12 @@ export function sheduleLunchNotifications (lunches){
                 const delay = (NotificationTime - currentTime) * 60 * 1000;
 
                 console.log ( `уведомление для ${lunch.user} через ${Math.round(delay/1000/60)} минут`);
+
+                const timer = setTimeout (()=>{
+
+                    showLunchReminder(lunch.user, lunchStart);
+
+                },delay);
 
             }
 
