@@ -55,6 +55,15 @@ export function sheduleLunchNotifications (lunches){
 
             const NotificationTime = lunchStartTime  - 5;
 
+            console.log (`Перерыв у ${lunch.user} в ${lunch.start}, уведомление за 5 минут`);
+
+            if (NotificationTime > currentTime ){
+                const delay = (NotificationTime - currentTime) * 60 * 1000;
+
+                console.log ( `уведомление для ${lunch.user} через ${Math.round(delay/1000/60)} минут`);
+
+            }
+
         }
 
     })
