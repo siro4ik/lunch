@@ -1,6 +1,6 @@
 import { zodiacSigns, parseDate, getZodiacSign, calculateAge } from "./modules/zodiac.js";
 import { app, database } from './modules/firebase.js';
-import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, deleteLunch, addLunch, adjustTime, showBrowserNotification, createNotification } from './modules/timeSlots.js';
+import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, deleteLunch, addLunch, adjustTime, showBrowserNotification, createNotification, scheduleLunchNotifications } from './modules/timeSlots.js';
 import { initModal } from './modules/modal.js';
 import { toggleRainVisibility, createDrops, animateRain, initRain, resizeCanvas } from './modules/rain.js';
 import { dataChange, checkBIN} from './modules/binChecker.js';
@@ -30,6 +30,7 @@ window.animateRain = animateRain;
 window.headerSwiper = headerSwiper;
 window.showBrowserNotification = showBrowserNotification;
 window.createNotification = createNotification;
+window.scheduleLunchNotifications = scheduleLunchNotifications;
 
 
 const OpenModalButton = document.querySelector('#setting-btn');
