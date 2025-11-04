@@ -12,7 +12,7 @@ function getTimeInMinutes (timeStr){
 function showLunchReminder (user, startTime){
     console.log(`Уведомление ${user} в ${startTime}`);
 
-    showBrowserNotification(user, startTime, 0);
+    showBrowserNotification(user, startTime, 5);
 
 }
 
