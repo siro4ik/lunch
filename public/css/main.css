@@ -275,12 +275,11 @@ input:focus {
   }
   
   .header-swiper {
-    pointer-events: none; /* Отключаем все взаимодействия со слайдером */
+    pointer-events: none;
   }
   
-  /* Принудительно показываем только второй слайд */
   .swiper-wrapper {
-    transform: translate3d(0px, 0px, 0px) !important; /* Убираем сдвиг */
+    transform: translate3d(0px, 0px, 0px) !important; 
   }
   
   .swiper-slide:first-child {
@@ -298,7 +297,7 @@ input:focus {
     flex-direction: column;
     gap: 20px;
     width: 100%;
-    pointer-events: auto; /* Включаем взаимодействие с контентом */
+    pointer-events: auto;
   }
   
   .tools-slide > * {
