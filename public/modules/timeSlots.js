@@ -250,7 +250,7 @@ export function loadLunches() {
             cell.onclick = null;
         });
 
-         cleanupPastLunches(lunches);
+         
 
         Object.entries(lunches).forEach(([id, lunch]) => {
             const [startHour, startMinute] = lunch.start.split(':').map(Number);
@@ -296,6 +296,8 @@ export function loadLunches() {
                 }
             }
         });
+
+        cleanupPastLunches(lunches);
         scheduleLunchNotifications(lunches);
     });
 }
