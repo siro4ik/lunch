@@ -277,7 +277,7 @@ export function loadLunches() {
                     const deleteBtn = document.createElement('button');
                     if (lunch.user.includes('z') || lunch.user.includes('Z')) {
                         deleteBtn.textContent = 'z'
-                        cell.style.backgroundColor = "#ff0080ff"
+                        cell.style.backgroundColor = "#ff3a9cff"
                         timeText.style.color = "#ffffffde"
                     } else {
                         deleteBtn.textContent = 'x'
