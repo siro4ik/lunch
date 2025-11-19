@@ -9,16 +9,10 @@
 }
 
 [data-theme='dark'] {
-    color-scheme: dark;
-    --bg-color: #111;
-    --text-color: #fff;
-    --cord: #fff;
-    --stroke: #fff;
-    --cap: #fff;
-    --filament: #fff;
+    background: hsl(0, 0%, 0%);
 }
 
-[data-theme='light'] {
+/* [data-theme='light'] {
     color-scheme: light;
     --bg-color: #fff;
     --text-color: #111;
@@ -26,7 +20,7 @@
     --stroke: #333;
     --cap: #333;
     --filament: orange;
-}
+} */
 
 * {
     box-sizing: border-box;

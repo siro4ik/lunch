@@ -1,7 +1,3 @@
-.dark-theme{
-    background: hsl(0, 0%, 0%);
-}
-
 input,
 .lunch-button, 
 .glow-on-hover,
@@ -11,57 +7,57 @@ input,
   color: hsl(0, 0%, 10%) !important;
 }
 
-.dark-theme input,
-.dark-theme .lunch-button,
-.dark-theme .glow-on-hover,
-.dark-theme .addMeal,
-.dark-theme .submit,
-.dark-theme .zodiac-button{
+[data-theme='dark'] input,
+[data-theme='dark'] .lunch-button,
+[data-theme='dark'] .glow-on-hover,
+[data-theme='dark'] .addMeal,
+[data-theme='dark'] .submit,
+[data-theme='dark'] .zodiac-button{
   background-color: hsl(0, 0%, 10%) !important;
   color: hsl(0, 0%, 100%) !important;
 }
 
-.dark-theme h1,
-.dark-theme .result-item span,
-.dark-theme .time,
-.dark-theme th,
-.dark-theme td,
-.dark-theme #setting-btn,
-.dark-theme .result h4,
-.dark-theme .request h4,
-.dark-theme .result_clock,
-.dark-theme .result_time,
-.dark-theme .result_bdpn,
-.dark-theme .result_number,
-.dark-theme .result_row,
-.dark-theme .result,
-.dark-theme .zodiac-main-text,
-.dark-theme .bin-main-text,
-.dark-theme .binChecker span,
-.dark-theme .binChecker h3,
-.dark-theme .BIKbank_main_text,
-.dark-theme .bik-info-container span,
-.dark-theme input  {
+[data-theme='dark'] h1,
+[data-theme='dark'] .result-item span,
+[data-theme='dark'] .time,
+[data-theme='dark'] th,
+[data-theme='dark'] td,
+[data-theme='dark'] #setting-btn,
+[data-theme='dark'] .result h4,
+[data-theme='dark'] .request h4,
+[data-theme='dark'] .result_clock,
+[data-theme='dark'] .result_time,
+[data-theme='dark'] .result_bdpn,
+[data-theme='dark'] .result_number,
+[data-theme='dark'] .result_row,
+[data-theme='dark'] .result,
+[data-theme='dark'] .zodiac-main-text,
+[data-theme='dark'] .bin-main-text,
+[data-theme='dark'] .binChecker span,
+[data-theme='dark'] .binChecker h3,
+[data-theme='dark'] .BIKbank_main_text,
+[data-theme='dark'] .bik-info-container span,
+[data-theme='dark'] input  {
   color: hsl(0, 0%, 100%) !important;
   fill:hsl(0, 0%, 100%) !important;
 }
 
-.dark-theme .header{
+[data-theme='dark'] .header{
   background-color: hsl(0, 0%, 5%) !important;
 }
 
-.dark-theme #result,
-.dark-theme .bin-container,
-.dark-theme .bik-info-container,
-.dark-theme #zodiac-result{
+[data-theme='dark'] #result,
+[data-theme='dark'] .bin-container,
+[data-theme='dark'] .bik-info-container,
+[data-theme='dark'] #zodiac-result{
   border: 1px solid hsl(0, 0%, 20%) ;
 }
 
 @media (max-width: 1200px){
-.dark-theme .zodiacSign,
-.dark-theme #kody_widget,
-.dark-theme .controls,
-.dark-theme #result,
+[data-theme='dark'] .zodiacSign,
+[data-theme='dark'] #kody_widget,
+[data-theme='dark'] .controls,
+[data-theme='dark'] #result,
 #kody_widget,
 .zodiacSign{
   border-right: none !important;
