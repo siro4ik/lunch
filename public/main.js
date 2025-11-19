@@ -1,7 +1,7 @@
 import { zodiacSigns, parseDate, getZodiacSign, calculateAge } from "./modules/zodiac.js";
 import { app, database } from './modules/firebase.js';
 import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, deleteLunch, addLunch, adjustTime, showBrowserNotification, createNotification, scheduleLunchNotifications } from './modules/timeSlots.js';
-import { initModal } from './modules/modal.js';
+// import { initModal } from './modules/modal.js';
 import { toggleRainVisibility, createDrops, animateRain, initRain, resizeCanvas } from './modules/rain.js';
 import { dataChange, checkBIN} from './modules/binChecker.js';
 import {checkBIK, dataChangeBIK} from './modules/bikChecker.js';
@@ -32,9 +32,124 @@ window.showBrowserNotification = showBrowserNotification;
 window.createNotification = createNotification;
 window.scheduleLunchNotifications = scheduleLunchNotifications;
 
+// Инициализация темы
+document.documentElement.dataset.theme = 'dark';
 
-const OpenModalButton = document.querySelector('#setting-btn');
-initModal(OpenModalButton, toggleRainVisibility);
+const AUDIO = {
+    CLICK: new Audio('https://assets.codepen.io/605876/click.mp3'),
+};
+
+
+// Элементы DOM
+const FORM = document.querySelector('.theme-toggle');
+const TOGGLE = FORM.querySelector('button');
+const CORDS = document.querySelectorAll('.toggle-scene__cord');
+const HIT = document.querySelector('.grab-handle');
+const DUMMY = document.querySelector('.toggle-scene__dummy-cord');
+const DUMMY_CORD = document.querySelector('.toggle-scene__dummy-cord line');
+const PROXY = document.createElement('div');
+
+// Начальные позиции
+const ENDX = DUMMY_CORD.getAttribute('x2');
+const ENDY = DUMMY_CORD.getAttribute('y2');
+
+// Сброс позиции
+const RESET = () => {
+    gsap.set(PROXY, {
+        x: ENDX,
+        y: ENDY,
+    });
+};
+
+RESET();
+
+// Переключение темы
+const toggleTheme = () => {
+    AUDIO.CLICK.play();
+    const isLightTheme = TOGGLE.matches('[aria-pressed=false]');
+    TOGGLE.setAttribute('aria-pressed', isLightTheme);
+    document.documentElement.dataset.theme = isLightTheme ? 'light' : 'dark';
+};
+
+// Обработчик отправки формы
+FORM.addEventListener('submit', (event) => {
+    event.preventDefault();
+    toggleTheme();
+});
+
+// Анимация шнура
+const CORD_TL = gsap.timeline({
+    paused: true,
+    onStart: () => {
+        toggleTheme();
+        gsap.set([DUMMY, HIT], { display: 'none' });
+        gsap.set(CORDS[0], { display: 'block' });
+    },
+    onComplete: () => {
+        gsap.set([DUMMY, HIT], { display: 'block' });
+        gsap.set(CORDS[0], { display: 'none' });
+        RESET();
+    },
+});
+
+// Добавление анимации для каждого шнура
+for (let i = 1; i < CORDS.length; i++) {
+    CORD_TL.add(
+        gsap.to(CORDS[0], {
+            morphSVG: CORDS[i],
+            duration: 0.1,
+            repeat: 1,
+            yoyo: true,
+        })
+    );
+}
+
+// Перетаскивание
+let startX, startY;
+
+Draggable.create(PROXY, {
+    trigger: HIT,
+    type: 'x,y',
+    onPress: (e) => {
+        startX = e.x;
+        startY = e.y;
+    },
+    onDragStart: () => {
+        document.documentElement.style.cursor = 'grabbing';
+    },
+    onDrag: function () {
+        // Масштабирование координат
+        const ratio = 1 / ((FORM.offsetWidth * 0.65) / 134);
+        gsap.set(DUMMY_CORD, {
+            attr: {
+                x2: this.startX + (this.x - this.startX) * ratio,
+                y2: this.startY + (this.y - this.startY) * ratio,
+            },
+        });
+    },
+    onRelease: (e) => {
+        const DISTX = Math.abs(e.x - startX);
+        const DISTY = Math.abs(e.y - startY);
+        const TRAVELLED = Math.sqrt(DISTX * DISTX + DISTY * DISTY);
+        document.documentElement.style.cursor = 'unset';
+        
+        gsap.to(DUMMY_CORD, {
+            attr: { x2: ENDX, y2: ENDY },
+            duration: 0.1,
+            onComplete: () => {
+                if (TRAVELLED > 50) {
+                    CORD_TL.restart();
+                } else {
+                    RESET();
+                }
+            },
+        });
+    },
+});
+
+
+// const OpenModalButton = document.querySelector('#setting-btn');
+// initModal(OpenModalButton, toggleRainVisibility);
 
 // сокрытие элемента при скролле
 const hide = document.querySelector(".element-to-hide");
@@ -126,12 +241,12 @@ document.getElementById("zodiacForm").addEventListener('submit', function(e){
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
-    const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+    // const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
     const isRainEnabled = localStorage.getItem('sergeyRainMode') === 'true';
 
-    if (isDarkTheme) {
-        document.body.classList.add('dark-theme');
-    }
+    // if (isDarkTheme) {
+    //     document.body.classList.add('dark-theme');
+    // }
 
     document.querySelector('#binForm').addEventListener('submit',function(e){
     e.preventDefault();
