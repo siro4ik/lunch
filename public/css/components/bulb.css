@@ -1,0 +1,159 @@
+:root {
+    --cord: #333;
+    --stroke: #333;
+    --shine: hsl(210 20% 80% / 0.75);
+    --cap: #333;
+    --filament: #333;
+    --bulb: transparent;
+    --width: 48px;
+}
+
+[data-theme='dark'] {
+    color-scheme: dark;
+    --bg-color: #111;
+    --text-color: #fff;
+    --cord: #fff;
+    --stroke: #fff;
+    --cap: #fff;
+    --filament: #fff;
+}
+
+[data-theme='light'] {
+    color-scheme: light;
+    --bg-color: #fff;
+    --text-color: #111;
+    --cord: #333;
+    --stroke: #333;
+    --cap: #333;
+    --filament: orange;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: var(--width);
+    aspect-ratio: 1;
+    z-index: 1000;
+}
+
+.theme-toggle button {
+    width: 100%;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.grab-handle {
+    width: 48px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    top: calc((48px * (0.35 / 2)) + ((48px * 0.65) * (125 / 48)));
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999999;
+}
+
+.toggle-scene {
+    overflow: visible !important;
+    position: absolute;
+    width: 65%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle-scene__cord {
+    stroke: var(--cord);
+    stroke-width: 10;
+    cursor: move;
+}
+
+.toggle-scene__cord:nth-of-type(1) {
+    display: none;
+}
+
+.toggle-scene__cord:nth-of-type(2),
+.toggle-scene__cord:nth-of-type(3),
+.toggle-scene__cord:nth-of-type(4),
+.toggle-scene__cord:nth-of-type(5) {
+    display: none;
+}
+
+.toggle-scene__cord-end {
+    stroke: var(--cord);
+    fill: var(--cord);
+}
+
+.toggle-scene__dummy-cord {
+    stroke-width: 10;
+    stroke: var(--cord);
+}
+
+.bulb__filament {
+    stroke: var(--filament);
+    stroke-width: 8;
+}
+
+[data-theme='light'] .bulb__filament {
+    stroke-width: 12;
+}
+
+.bulb__shine {
+    stroke: var(--shine);
+}
+
+.bulb__bulb {
+    stroke: var(--stroke);
+    fill: var(--bulb);
+    stroke-width: 10;
+}
+
+.bulb__cap {
+    fill: var(--cap);
+}
+
+.bulb__cap-shine {
+    fill: var(--shine);
+}
+
+.bulb__cap-outline {
+    stroke-width: 10;
+    stroke: var(--stroke);
+}
+
+/* Utilities */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
