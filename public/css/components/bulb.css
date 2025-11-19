@@ -126,3 +126,9 @@
     white-space: nowrap;
     border-width: 0;
 }
+
+@media(max-width: 1200px){
+  .theme-toggle {
+    left: 3rem;
+}
+}
