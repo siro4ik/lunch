@@ -310,6 +310,7 @@ export function deleteLunch(id, day, hour, minute) {
                 if (cell) {
                     cell.innerHTML = '';
                     cell.classList.remove('lunch-time');
+                    cell.style.backgroundColor = '';
                 }
             })
             .catch(error => {
