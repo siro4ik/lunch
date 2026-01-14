@@ -5,6 +5,7 @@ import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, d
 import { toggleRainVisibility, createDrops, animateRain, initRain, resizeCanvas } from './modules/rain.js';
 import { dataChange, checkBIN} from './modules/binChecker.js';
 import {checkBIK, dataChangeBIK} from './modules/bikChecker.js';
+// import {MCCcodes} from './modules/MCC.js';
 
 // Инициализация header слайдера
 const headerSwiper = new Swiper(".header-swiper", {
