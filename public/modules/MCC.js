@@ -4309,7 +4309,7 @@ const mccData = {
   }
 }
 
-export function mccData(MCCcodes){
+export function mccData(mccData){
 
   
 
