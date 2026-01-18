@@ -4310,7 +4310,11 @@ const mccData = {
 }
 
 export function mccData(mccData){
+  let cleanMCC = mccData.replace(/\D/g, '');
 
+  if (cleanMCC ===  "" ){
+    return {isValid: false,message: "Вы ввели некорректный МСС код!"}
+  }
   
 
 }
