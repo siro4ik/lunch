@@ -6,11 +6,6 @@
     align-items: center;
 }
 
-@media (max-width: 1200px){
-    .controls{
-        display: none;
-    }
-}
 
 .addMeal{
     padding:10px 0;
@@ -80,13 +75,6 @@
     z-index: 9999;
 }
 
-@media (max-width: 1200px){
-    .bi{
-        place-items: left;
-        left:50px;
-    }
-}
-
 .bi:hover {
   transform: rotate(60deg);
 }
@@ -108,13 +96,6 @@
 .kody_link img{
     display:none;
     }
-
-@media (max-width: 1200px){
-    .w_container{
-        padding-bottom: 10px;
-    }
-        
-}
 
 .result{
     display: flex;
@@ -181,12 +162,6 @@ form{
 }
 
 
-@media (max-width: 1200px){
-    .zodiacSign{
-        padding-bottom: 10px;
-    }
-}
-
 .zodiac-main-text{
     font-size: 14px;
     
@@ -215,13 +190,6 @@ form{
     padding: 10px;
     border-radius: 10px;
 }
-
-@media (max-width: 1200px){
-    #result{
-        margin-top: 10px;
-    }
-}
-
 
 #zodiacSign{
     font-size: 14px;
@@ -342,3 +310,23 @@ form{
         width: 80%;
     }
 }
+
+@media (max-width: 1200px){
+    .zodiacSign{
+        padding-bottom: 10px;
+    }
+    .controls{
+        display: none;
+    }
+    #result{
+        margin-top: 10px;
+    }
+    .w_container{
+        padding-bottom: 10px;
+    }
+    .bi{
+        place-items: left;
+        left:50px;
+    }       
+}
+
