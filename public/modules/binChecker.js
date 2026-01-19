@@ -6411,20 +6411,16 @@ export function checkBIN(bin){
 // Изменение данных на странице
 export function dataChange (data) {
   let cardType = document.querySelector('#card-type');
-  let bankCountry = document.querySelector('#bank-country');
   let bankName = document.querySelector('#bank-name');
 
   cardType.style.opacity = '0';
-  bankCountry.style.opacity = '0';
   bankName.style.opacity = '0';
 
   setTimeout(()=>{
     cardType.textContent = data.type;
-    bankCountry.textContent = data.country;
     bankName.textContent = data.bank;
 
     cardType.style.opacity = '1';
-    bankCountry.style.opacity = '1';
     bankName.style.opacity = '1';
 
 
