@@ -6262,7 +6262,7 @@ const binData = {
 "220380": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" },
 "220381": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "JSC ECONOMBANK" },
 "220382": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" },
-"220383": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" },
+"220383": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "CLOSED EXPORT IMPORT JSCB ZAO EXIBANK" },
 "220384": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" },
 "220385": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" },
 "220386": { brand: "NSPK MIR", type: "DEBIT", level: "", country: "RUSSIAN FEDERATION", bank: "" },
