@@ -1502,7 +1502,7 @@ export function checkBIK(bik){
     return{isValid: false, message:'Введите корректный БИК!'}
   }
 
-  if (cleanBIK.length < 9){
+  if (cleanBIK.length !== 9){
     return{isValid: false, message: 'Введите корректный БИК!'};
   }
 

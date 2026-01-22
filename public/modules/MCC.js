@@ -4320,9 +4320,17 @@ export function mccData(mccData){
     return {isValid: false, message:"Вы ввели некорректный МСС код!"}
   }
   
-  if (cleanMCC < 4){
+  if (cleanMCC.length !== 4){
     return{isValid: false, message:"Вы ввели некорректный МСС код!"}
   }
+
+  const foundMCC = mccData[cleanMCC];
+
+  if(!foundMCC){
+    return{isValid: false,message:"Данный МСС не найден!"}
+  }
+
+  return{isValid:true, data:foundMCC};
 
 
 }

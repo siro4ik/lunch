@@ -6396,7 +6396,7 @@ export function checkBIN(bin){
     cleanBIN = cleanBIN.slice(0, 6);
   }
 
-  if(cleanBIN.length < 6){
+  if(cleanBIN.length !== 6){
     return{isValid: false, message:'Введите корректный БИН!'}
   }
 
