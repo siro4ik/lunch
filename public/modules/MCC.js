@@ -1,4 +1,4 @@
-const mccData = {
+const mccDataBase = {
   "0742": {
     "Название": "Ветеринарные услуги",
     "Описание": "Лицензированные специалисты в основном занимающиеся практикой ветеринарии, стоматологии или хирургии для всех видов животных; таких как домашние животные (например, собаки, кошки, рыба), домашний скот и другие фермерские животные (например, рогатый скот, лошади, овцы, свиньи, козы, домашние птицы, пчелы) и экзотические животные."
@@ -4309,8 +4309,8 @@ const mccData = {
   }
 }
 
-export function mccData(mccData){
-  let cleanMCC = mccData.replace(/\D/g, '');
+export function mccData(mccInput){
+  let cleanMCC = mccInput.replace(/\D/g, '');
 
   if (cleanMCC ===  "" ){
     return {isValid: false,message: "Вы ввели некорректный МСС код!"}
@@ -4320,13 +4320,11 @@ export function mccData(mccData){
     return{isValid: false, message:"Вы ввели некорректный МСС код!"}
   }
 
-  const foundMCC = mccData[cleanMCC];
+  const foundMCC = mccDataBase[cleanMCC];
 
   if(!foundMCC){
     return{isValid: false,message:"Данный МСС не найден!"}
   }
 
   return{isValid:true, data:foundMCC};
-
-
 }
