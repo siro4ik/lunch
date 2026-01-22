@@ -283,7 +283,9 @@ form{
 #card-type,
 #bank-country,
 #bank-name,
-#BIKnum_result{
+#BIKnum_result,
+#mcc-name,
+#mcc-info{
     font-size: 14px;
     font-weight: 600;
 }

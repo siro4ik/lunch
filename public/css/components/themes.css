@@ -22,7 +22,6 @@ input,
 [data-theme='dark'] .time,
 [data-theme='dark'] th,
 [data-theme='dark'] td,
-[data-theme='dark'] #setting-btn,
 [data-theme='dark'] .result h4,
 [data-theme='dark'] .request h4,
 [data-theme='dark'] .result_clock,
@@ -37,7 +36,12 @@ input,
 [data-theme='dark'] .binChecker h3,
 [data-theme='dark'] .BIKbank_main_text,
 [data-theme='dark'] .bik-info-container span,
-[data-theme='dark'] input  {
+[data-theme='dark'] input,
+[data-theme='dark'] .mcc-main-text,
+[data-theme='dark'] .bin-button,
+[data-theme='dark'] .mccChecker span,
+[data-theme='dark'] #mcc-name, 
+[data-theme='dark'] #mcc-description{
   color: hsl(0, 0%, 100%) !important;
   fill:hsl(0, 0%, 100%) !important;
 }

@@ -168,7 +168,7 @@ input:focus {
 /* Стили для слайда с инструментами */
 .tools-slide {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     padding-top:10px;
     width: 100%;
