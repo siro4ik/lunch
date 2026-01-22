@@ -279,6 +279,41 @@ form{
     font-weight: 600;
 }
 
+.mcc-main-text{
+    font-size: 14px;
+}
+
+.mccChecker{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+}
+
+.mcc-info{
+    justify-content: space-between;
+}
+
+.mcc-info h3{
+    margin-top: 5px;
+}
+
+.mcc-container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    border-radius: 10px;
+    gap: 10px;
+    border: 1px solid hsl(0, 0%, 70%);
+}
+
+.mcc-container span{
+    font-size: 14px;
+    font-weight: 600;
+}
+
 #bin-brand,
 #card-type,
 #bank-country,
@@ -295,6 +330,11 @@ form{
 }
 
 #cardNumber{
+    padding: 5px;
+    text-align: center;
+}
+
+#mccNumber{
     padding: 5px;
     text-align: center;
 }
