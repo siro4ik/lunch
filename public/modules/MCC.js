@@ -4328,3 +4328,10 @@ export function mccData(mccInput){
 
   return{isValid:true, data:foundMCC};
 }
+
+export function dataChangeMcc(data){
+  
+
+
+
+}
