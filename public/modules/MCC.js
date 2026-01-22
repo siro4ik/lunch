@@ -4315,6 +4315,14 @@ export function mccData(mccData){
   if (cleanMCC ===  "" ){
     return {isValid: false,message: "Вы ввели некорректный МСС код!"}
   }
+
+  if (cleanMCC === 'string'){
+    return {isValid: false, message:"Вы ввели некорректный МСС код!"}
+  }
   
+  if (cleanMCC < 4){
+    return{isValid: false, message:"Вы ввели некорректный МСС код!"}
+  }
+
 
 }
