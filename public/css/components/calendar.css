@@ -64,12 +64,6 @@ th {
     transform: scale(0.9);
 }
 
-span{
-    color: #000;
-    font-size: 14px;
-    font-weight: 600;
-}
-
 .lunch-container {
     display: flex;
     justify-content: space-between;

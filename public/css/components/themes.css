@@ -3,7 +3,7 @@ input,
 .glow-on-hover,
 .addMeal,
 .submit {
-  background-color: hsl(0, 0%, 90%) !important;
+  background-color: #f8fafd !important;
   color: hsl(0, 0%, 10%) !important;
 }
 
