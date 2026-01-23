@@ -128,7 +128,7 @@ span{
 .current-slot {
     box-shadow: 0 0 0 2px #ea4335;
     position: relative;
-} */
+} 
 
 .current-slot::after {
     position: absolute;
@@ -142,9 +142,10 @@ span{
 
 #calendar {
     position: relative;
-    width: 95%;
+    width: 98%;
     overflow-x: hidden;
     margin: 0 auto;
+    
 }
 
 .current-time-slot td:not(.time-cell) {

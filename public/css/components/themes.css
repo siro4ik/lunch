@@ -47,8 +47,14 @@ input,
 }
 
 [data-theme='dark'] .header{
-  background-color: hsl(0, 0%, 5%) !important;
+  background-color: #1b1b1b !important;
 }
+
+[data-theme='dark'] body{
+  background-color: #131314 !important;
+}
+
+
 
 [data-theme='dark'] #result,
 [data-theme='dark'] .bin-container,

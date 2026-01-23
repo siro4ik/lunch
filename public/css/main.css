@@ -11,9 +11,7 @@ html{
 
 body {
   min-height: 100vh;
-  font-family: system-ui, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  font-family: "Google Sans Text","Google Sans",Helvetica,Arial,sans-serif;
   transition: background-color 0.3s, color 0.3s;
   overflow-x: hidden;
   animation: beginani 15s infinite;

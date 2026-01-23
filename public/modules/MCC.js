@@ -4330,8 +4330,20 @@ export function mccData(mccInput){
 }
 
 export function dataChangeMcc(data){
-  
 
+    let mccName = document.querySelector("#mcc-name");
+    let mccDescription = document.querySelector("#mcc-description");
 
+    mccName.style.opacity = '0';
+    mccDescription.opacity = '0';
+
+    setTimeout(()=>{
+      mccName.textContent = data.Название;
+      mccDescription.textContent = data.Описание;
+
+      mccName.style.opacity = '1';
+      mccDescription.style.opacity = '1';
+
+    }, 200)
 
 }
