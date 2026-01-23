@@ -13,8 +13,8 @@ input,
 [data-theme='dark'] .addMeal,
 [data-theme='dark'] .submit,
 [data-theme='dark'] .zodiac-button{
-  background-color: hsl(0, 0%, 10%) !important;
-  color: hsl(0, 0%, 100%) !important;
+  background-color: #1b1b1b !important;
+  color: #e3e3e3 !important;
 }
 
 [data-theme='dark'] h1,
@@ -42,7 +42,7 @@ input,
 [data-theme='dark'] .mccChecker span,
 [data-theme='dark'] #mcc-name, 
 [data-theme='dark'] #mcc-description{
-  color: hsl(0, 0%, 100%) !important;
+  color: #e3e3e3 !important;
   fill:hsl(0, 0%, 100%) !important;
 }
 

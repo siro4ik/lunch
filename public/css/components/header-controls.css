@@ -124,7 +124,7 @@ form{
 .submit{
     background-color: #ffffff;
     padding: 5px 10px;
-    border: solid 1px;
+    border: 1px solid;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.1s ease;
@@ -152,9 +152,29 @@ form{
     border-radius: 10px !important;
 }
 
-.caption{
+#bin-brand,
+#card-type,
+#bank-country,
+#bank-name,
+#BIKnum_result,
+#mcc-name,
+#mcc-info,
+.mcc-container span,
+.mcc-main-text,
+.bin-container span,
+.caption,
+.zodiac-main-text,
+#zodiacSign,
+#mcc-description,
+#age,
+.result-item span,
+.bin-main-text,
+.BIKbank_main_text{
     font-size: 14px;
+    font-weight: 600;
 }
+
+
 
 .zodiacSign{
     display: flex;
@@ -167,33 +187,21 @@ form{
 #zodiac-result{
   gap: 35px;
   padding: 10px;
-  border: 1px solid hsl(0, 0%, 70%);
+  border: 1px solid #8e918f;
   border-radius: 10px;
 }
 
 .bik-info-container{
   padding: 7px 10px;
-  border: 1px solid hsl(0, 0%, 70%);
+  border: 1px solid #8e918f;
   border-radius: 10px;
   width: 100%;
-}
-
-
-.zodiac-main-text{
-    font-size: 14px;
-    
 }
 
 .zodiac-button,
 .BIK_button,
 .bin-button{
     padding: 5px 10px;
-    border: 1px solid;
-}
-
-#birthDate{
-    border-radius: 8px;
-    padding: 2px;
     border: 1px solid;
 }
 
@@ -205,19 +213,9 @@ form{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    border: 1px solid hsl(0, 0%, 70%);
+    border: 1px solid #8e918f;
     padding: 10px;
     border-radius: 10px;
-}
-
-#zodiacSign{
-    font-size: 14px;
-    font-weight: 600;
-}
-
-#age{
-    font-size: 14px;
-    font-weight: 600;
 }
 
 #zodiacSign,
@@ -243,15 +241,6 @@ form{
     justify-content:space-between;
 }
 
-.result-item span{
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.bin-main-text{
-    font-size: 14px;
-}
-
 .binChecker{
   display: flex;
   flex-direction: column;
@@ -275,16 +264,7 @@ form{
     padding:10px;
     border-radius: 10px;
     gap: 10px;
-    border: 1px solid hsl(0, 0%, 70%);
-}
-
-.bin-container span{
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.mcc-main-text{
-    font-size: 14px;
+    border: 1px solid #8e918f;
 }
 
 .mccChecker{
@@ -310,23 +290,7 @@ form{
     padding:10px;
     border-radius: 10px;
     gap: 10px;
-    border: 1px solid hsl(0, 0%, 70%);
-}
-
-.mcc-container span{
-    font-size: 14px;
-    font-weight: 600;
-}
-
-#bin-brand,
-#card-type,
-#bank-country,
-#bank-name,
-#BIKnum_result,
-#mcc-name,
-#mcc-info{
-    font-size: 14px;
-    font-weight: 600;
+    border: 1px solid #8e918f;
 }
 
 #BIKnum_result{
@@ -349,10 +313,6 @@ form{
   align-items: center;
   gap: 10px;
   padding: 5px;
-}
-
-.BIKbank_main_text{
-  font-size: 14px;
 }
 
 #BIKnum{

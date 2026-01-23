@@ -91,21 +91,21 @@ span{
     padding: 8px 0 8px 0;
     border-radius: 10px;
     font-size: 16px;
-    border:solid 1px;
+    border:solid 1px #8e918f;
 }
 
 #start{
     text-align: center;
     padding: 5px;
     border-radius: 10px;
-    border:solid 1px;
+    border:solid 1px #8e918f;
 }
 
 #end{
     text-align: center;
     padding: 5px;
     border-radius: 10px;
-    border:solid 1px;
+    border:solid 1px #8e918f;
 }
 
 .current-time-line {

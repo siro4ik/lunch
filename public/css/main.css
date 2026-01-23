@@ -121,7 +121,7 @@ input:focus {
   position: relative;
   z-index: 0;
 
-  border: 1px solid transparent !important;
+  border: 1px solid #8e918f !important;
   border-radius: 10px !important;
   cursor: pointer;
   text-align: center;

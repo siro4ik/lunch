@@ -5,7 +5,7 @@ import { createTimeSlots, isSlotAvailable, updateCurrentTimeLine, loadLunches, d
 import { toggleRainVisibility, createDrops, animateRain, initRain, resizeCanvas } from './modules/rain.js';
 import { dataChange, checkBIN} from './modules/binChecker.js';
 import {checkBIK, dataChangeBIK} from './modules/bikChecker.js';
-// import {MCCcodes} from './modules/MCC.js';
+import {mccData, dataChangeMcc} from './modules/MCC.js';
 
 // Инициализация header слайдера
 const headerSwiper = new Swiper(".header-swiper", {
@@ -274,6 +274,20 @@ document.addEventListener('DOMContentLoaded', () => {
             dataChangeBIK(BIKresult.data);
         }else{
             alert(BIKresult.message);
+        }
+    })
+
+    document.querySelector('#mccForm').addEventListener('submit', function(e){
+        e.preventDefault();
+
+        const mccNumberInput = document.querySelector('#mccNumber');
+
+        const mccResult = mccData(mccNumberInput.value);
+
+        if(mccResult.isValid){
+            dataChangeMcc(mccResult.data);
+        }else{
+            alert(mccResult.message);
         }
     })
 
