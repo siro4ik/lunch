@@ -17,6 +17,11 @@ body {
   animation: beginani 15s infinite;
 }
 
+button{
+  border:none;
+  border-color: #8e918f !important;
+}
+
 input:focus {
     outline: none;
 }
@@ -40,7 +45,6 @@ input:focus {
   box-sizing: border-box;
   position: relative;
 
-  border: 1px solid transparent !important;
   border-radius: 10px !important;
   color: hsl(0, 0%, 100%) !important;
   cursor: pointer;
@@ -108,7 +112,9 @@ input:focus {
 
 #kody_widget form input[type="submit"].submit,
  #kody_number,#birthDate,
- #BIKnum{
+ #BIKnum,
+ #cardNumber,
+ #mccNumber{
   -webkit-appearance: none;
   appearance: none;
   box-sizing: border-box;

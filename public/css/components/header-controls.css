@@ -184,7 +184,9 @@ form{
     
 }
 
-.zodiac-button{
+.zodiac-button,
+.BIK_button,
+.bin-button{
     padding: 5px 10px;
     border: 1px solid;
 }
@@ -223,7 +225,9 @@ form{
 #BIKnum_result,
 #card-type,
 #bank-country,
-#bank-name{
+#bank-name,
+#mcc-name,
+#mcc-description{
     transition: opacity 0.2s ease-in-out;
 }
 
@@ -339,10 +343,6 @@ form{
     text-align: center;
 }
 
-.bin-button{
-    padding: 5px 10px;
-}
-
 .BIKbank{  
   display: flex;
   flex-direction: column;
@@ -359,9 +359,6 @@ form{
   padding:2px;
 }
 
-.BIK_button{
-  padding: 5px 10px;
-}
 
 
 @media(max-width:1500px){
