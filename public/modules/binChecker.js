@@ -6382,27 +6382,29 @@ const binData = {
 // Пока что конец
 };
 
-export function formatCardNumber (cardNumber){
-
-  let cleanBin = cardNumber.replace(/\D/g, '');
-
-  for(let i = 0; i<cleanBin.lenght; i++){
-    
-
-
-  }
-
-}
+// валидация и изменение сразу в инпуте
+document.getElementById('cardNumber').addEventListener('input', function() {
+  this.value = this.value
+    .replace(/\D/g, '')
+    .replace(/(\d{4})(?=\d)/g, '$1 '); 
+});
 
 
+// Форматирование карты - неактуально
+// export function formatCardNumber (cardNumber){
 
+//   let cleanBin = cardNumber.replace(/\D/g, '');
 
+//   let formattedValue = '';
 
-
-
-
-
-
+//   for(let i = 0; i<cleanBin.length; i++){
+//     if(i > 0 && i % 4 === 0){
+//       formattedValue += ' ';
+//         }
+//         formattedValue += cleanBin [i];
+//   }
+//   return formattedValue;
+// }
 
 // Валидация значения БИНов
 export function checkBIN(bin){
