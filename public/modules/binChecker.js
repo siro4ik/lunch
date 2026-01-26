@@ -6382,6 +6382,26 @@ const binData = {
 // Пока что конец
 };
 
+export function formatCardNumber (cardNumber){
+
+  let cleanBin = cardNumber.replace(/\D/g, '');
+
+  for(let i = 0; i<cleanBin.lenght; i++){
+    
+
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
 
 
 // Валидация значения БИНов
@@ -6392,12 +6412,8 @@ export function checkBIN(bin){
     return {isValid: false, message: 'Введите корректный БИН!'}
   }
 
-  if (cleanBIN.length > 6){
-    cleanBIN = cleanBIN.slice(0, 6);
-  }
-
-  if(cleanBIN.length !== 6){
-    return{isValid: false, message:'Введите корректный БИН!'}
+  if (cleanBIN !== 19){
+    return {isValid: false, message: 'Введите корректный БИН!'}
   }
 
   const foundData = binData[cleanBIN];
