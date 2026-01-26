@@ -6408,13 +6408,13 @@ document.getElementById('cardNumber').addEventListener('input', function() {
 
 // Валидация значения БИНов
 export function checkBIN(bin){
-  let cleanBIN = bin.replace(/\D/g, '');
+  let cleanBIN = bin.replace(/\D/g, '').slice(0,6);
 
   if (cleanBIN === ""){
     return {isValid: false, message: 'Введите корректный БИН!'}
   }
 
-  if (cleanBIN !== 19){
+  if (cleanBIN.length !== 6){
     return {isValid: false, message: 'Введите корректный БИН!'}
   }
 
