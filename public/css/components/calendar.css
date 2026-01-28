@@ -3,10 +3,6 @@
     border-radius: 8px;
 }
 
-.time-cell {
-    width: 50px;
-}
-
 th:first-child{
     width: 100px;
 }
@@ -139,12 +135,27 @@ th {
     width: 98%;
     overflow-x: hidden;
     margin: 0 auto;
-    
+}
+
+.time-cell{
+    border-left-color: #131314;
+}
+
+.element-to-hide{
+    border-left-color: #131314;
 }
 
 .current-time-slot td:not(.time-cell) {
     box-shadow: inset 0 0 0 2px #ea4335;
     position: relative;
+}
+
+th:last-child{
+    border-right-color: #131314;
+}
+
+td:last-child{
+    border-right-color: #131314;
 }
 
 
