@@ -15,7 +15,8 @@ th:first-child{
 .time{
     margin: 0;
     margin-bottom:10px;
-    font-size: clamp(0.75rem, 0.666rem + 0.27vw, 1rem);
+    font-size: 12px;
+    font-weight: 600;
     text-align: center;
 }
 
